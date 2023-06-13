@@ -8,6 +8,7 @@ import 'package:inci_kuruyemis/product/utility/theme/app_bar_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(milliseconds: 300));
   FlutterNativeSplash.remove();
   runApp(MyApp());
 }

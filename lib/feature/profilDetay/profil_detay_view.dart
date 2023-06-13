@@ -33,9 +33,11 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
     if (_formKey.currentState != null) {
       if (_formKey.currentState!.validate()) {
         print("is valid");
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => AnaSayfaView(),
-        ));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+              builder: (context) => AnaSayfaView(),
+            ),
+            (route) => false);
       } else {
         print("is not valid");
       }

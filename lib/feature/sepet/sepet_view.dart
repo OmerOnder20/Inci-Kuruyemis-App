@@ -44,7 +44,7 @@ class BasketListViewBuilder extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      itemCount: 8,
+      itemCount: 1,
       scrollDirection: Axis.vertical,
       itemBuilder: (BuildContext context, int index) {
         return BasketProductColumn();

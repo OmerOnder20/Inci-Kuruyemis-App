@@ -3,7 +3,6 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-
 version: 1.0.0+1
 
 environment:
@@ -60,9 +59,7 @@ flutter_native_splash:
   #Linter
   flutter_lints: ^2.0.0
 
-
 flutter:
-
 
   uses-material-design: true
 
@@ -70,7 +67,6 @@ flutter:
     - assets/svg/
     - assets/png/
     - assets/randomImage/
-
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

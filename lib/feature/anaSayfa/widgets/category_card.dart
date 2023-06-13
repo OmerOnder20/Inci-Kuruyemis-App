@@ -14,6 +14,7 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      highlightColor: ColorUtility.scaffoldBackGroundColor,
       onTap: () {
         context.router.push(KategoriRoute());
       },

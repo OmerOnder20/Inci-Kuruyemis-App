@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
+import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
 
@@ -57,7 +58,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: Colors.black,
+                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -67,7 +68,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: const Color(0xffC2CCD8),
+                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.anaSayfa),
@@ -79,7 +80,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: Colors.black,
+                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -89,7 +90,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: const Color(0xffC2CCD8),
+                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.ara),
@@ -101,7 +102,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: Colors.black,
+                          color: ColorUtility.blackColor,
                         ),
                       ),
                       icon: Padding(
@@ -111,7 +112,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: const Color(0xffC2CCD8),
+                          color: ColorUtility.tabItemsGrey,
                         ),
                       ),
                       label: StringConstants.sepetim),
@@ -123,7 +124,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.contain,
-                          color: Colors.black,
+                          color: ColorUtility.blackColor,
                         ),
                       ),
                       icon: Padding(
@@ -133,7 +134,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.contain,
-                          color: const Color(0xffC2CCD8),
+                          color: ColorUtility.tabItemsGrey,
                         ),
                       ),
                       label: StringConstants.kampanya),
@@ -145,7 +146,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: Colors.black,
+                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -155,7 +156,7 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          color: const Color(0xffC2CCD8),
+                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.profil)

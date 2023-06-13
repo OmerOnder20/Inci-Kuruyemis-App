@@ -2,28 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/widget_size.dart';
+import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
+import 'package:inci_kuruyemis/product/widgets/texts/label/label_small_3.dart';
 import 'package:inci_kuruyemis/product/widgets/texts/title/title_small_1.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+class CategoryAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CategoryAppBar({
     super.key,
-    required this.title,
-    this.leading,
-    this.actions,
   });
-  final String title;
-  final Widget? leading;
-  final List<Widget>? actions;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: leading,
-      actions: actions,
+      automaticallyImplyLeading: false,
       elevation: 1,
       backgroundColor: ColorUtility.yellowColor,
+      leading: PopButton(),
       title: Padding(
-        padding: EdgeInsets.only(top: 30.h),
-        child: TitleSmall1(text: title),
+        padding: EdgeInsets.only(top: 18.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TitleSmall1(text: "Kuruyemiş,Çerez"),
+            LabelSmall3(text: "36 sonuç bulundu"),
+          ],
+        ),
       ),
       centerTitle: true,
     );

@@ -52,7 +52,7 @@ class CategoryGridViewBuilder extends StatelessWidget {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: 16,
+        itemCount: 5,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3, mainAxisSpacing: 10.h, crossAxisSpacing: 10.w, childAspectRatio: 0.87),
         itemBuilder: (context, index) {

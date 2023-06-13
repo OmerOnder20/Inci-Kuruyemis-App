@@ -16,7 +16,10 @@ class PopButton extends StatelessWidget {
         left: 5.w,
       ),
       child: IconButton(
-          style: IconButton.styleFrom(padding: EdgeInsets.zero),
+          highlightColor: ColorUtility.yellowColor,
+          style: IconButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
           alignment: Alignment.bottomLeft,
           onPressed: () {
             Navigator.of(context).pop();
