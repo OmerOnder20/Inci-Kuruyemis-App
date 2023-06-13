@@ -1,0 +1,176 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
+import 'package:inci_kuruyemis/product/widgets/texts/body/body_large_1.dart';
+import 'package:inci_kuruyemis/product/widgets/texts/body/body_medium_1.dart';
+import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_2.dart';
+import '../../product/utility/colors/color_utility.dart';
+import '../../product/utility/constants/string_constants.dart';
+import '../../product/utility/sizes/sizes.dart';
+import '../../product/utility/sizes/widget_size.dart';
+import '../../product/utility/spacer/spacer_utility.dart';
+import '../../product/widgets/textFormField/custom_text_form_field.dart';
+import '../../product/widgets/texts/headline/headline_small_2.dart';
+import '../anaSayfa/ana_sayfa_view.dart';
+
+@RoutePage()
+class ProfilDetayView extends StatefulWidget {
+  const ProfilDetayView({super.key});
+
+  @override
+  State<ProfilDetayView> createState() => _ProfilDetayViewState();
+}
+
+class _ProfilDetayViewState extends State<ProfilDetayView> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _surnameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool isChecked = false;
+
+  void isValidate() {
+    if (_formKey.currentState != null) {
+      if (_formKey.currentState!.validate()) {
+        print("is valid");
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => AnaSayfaView(),
+        ));
+      } else {
+        print("is not valid");
+      }
+    }
+  }
+
+  @override
+  @override
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+    _surnameController.dispose();
+    _emailController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: CustomAppBar(title: StringConstants.profilDetay),
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          child: Column(children: [
+            SpacerUtility.mediumXX,
+            Center(
+              child: HeadlineSmall2(
+                text: StringConstants.sonBirAdimKaldi,
+              ),
+            ),
+            SpacerUtility.mediumXX,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.warning_rounded,
+                        color: ColorUtility.textColorBlack,
+                        size: SizeUtility.mediumxX.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.w),
+                        child: BodyLarge1(
+                          text: StringConstants.eksiksizDoldurunuz,
+                        ),
+                      )
+                    ],
+                  ),
+                  SpacerUtility.medium,
+                  CustomTextFormField(
+                    controller: _nameController,
+                    hintText: StringConstants.adiniz,
+                    textInputType: TextInputType.name,
+                    height: WidgetSizes.profilTextFieldHeight,
+                    width: double.infinity,
+                    validator: (p0) => p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                  ),
+                  CustomTextFormField(
+                    controller: _surnameController,
+                    hintText: StringConstants.soyadiniz,
+                    textInputType: TextInputType.name,
+                    height: WidgetSizes.profilTextFieldHeight,
+                    width: double.infinity,
+                    validator: (p2) => p2!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                  ),
+                  CustomTextFormField(
+                    controller: _emailController,
+                    hintText: StringConstants.epostaAdresiniz,
+                    textInputType: TextInputType.emailAddress,
+                    height: WidgetSizes.profilTextFieldHeight,
+                    width: double.infinity,
+                    validator: (p1) => p1!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: SizedBox(
+                height: WidgetSizes.profilCheckBoxRowHeight,
+                width: double.infinity,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Transform.scale(
+                      scale: 1.1.h,
+                      child: Checkbox(
+                        shape: CircleBorder(),
+                        activeColor: ColorUtility.yellowColor,
+                        value: isChecked,
+                        checkColor: ColorUtility.greyColor,
+                        side: BorderSide(
+                          width: 2.w,
+                          color: ColorUtility.greyColor,
+                        ),
+                        onChanged: (newBool) {
+                          setState(() {
+                            isChecked = newBool!;
+                          });
+                        },
+                      ),
+                    ),
+                    Flexible(
+                      child: LabelLarge2(
+                        text: StringConstants.uyelikSozlesmesini,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SpacerUtility.smallXXX,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
+              child: SizedBox(
+                height: WidgetSizes.profilElevatedButtonHeight,
+                width: double.infinity,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorUtility.blackColor,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60))),
+                    onPressed: isChecked ? isValidate : null,
+                    child: BodyMedium1(
+                      text: StringConstants.uyeOl,
+                    )),
+              ),
+            )
+          ]),
+        ),
+      ),
+    );
+  }
+}
