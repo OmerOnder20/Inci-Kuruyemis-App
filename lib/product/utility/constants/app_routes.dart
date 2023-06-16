@@ -18,6 +18,7 @@ class AppRoutes {
   static const String routePayment = "ödeme";
   static const String routeCampaignDetail = "kampanyaDetay";
   static const String routeProfileDetail = "profilDetay";
+  static const String routeProfileInfo = "profilInfo";
   static const String routeEmpty1 = "empty1";
   static const String routeEmpty2 = "empty2";
   static const String routeEmpty3 = "empty3";

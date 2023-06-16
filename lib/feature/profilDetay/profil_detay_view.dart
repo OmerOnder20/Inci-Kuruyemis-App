@@ -1,18 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inci_kuruyemis/product/controller/global_controller.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/body/body_large_1.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/body/body_medium_1.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_2.dart';
+import 'package:inci_kuruyemis/product/widgets/text/body/body_large_1.dart';
+import 'package:inci_kuruyemis/product/widgets/text/body/body_medium_1.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_large_2.dart';
+import 'package:provider/provider.dart';
+import '../../product/navigator/app_router.dart';
 import '../../product/utility/colors/color_utility.dart';
 import '../../product/utility/constants/string_constants.dart';
 import '../../product/utility/sizes/sizes.dart';
 import '../../product/utility/sizes/widget_size.dart';
 import '../../product/utility/spacer/spacer_utility.dart';
 import '../../product/widgets/textFormField/custom_text_form_field.dart';
-import '../../product/widgets/texts/headline/headline_small_2.dart';
-import '../anaSayfa/ana_sayfa_view.dart';
+import '../../product/widgets/text/headline/headline_small_2.dart';
 
 @RoutePage()
 class ProfilDetayView extends StatefulWidget {
@@ -28,23 +30,19 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
   final TextEditingController _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool isChecked = false;
-
-  void isValidate() {
+  bool _isValidate() {
     if (_formKey.currentState != null) {
       if (_formKey.currentState!.validate()) {
         print("is valid");
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(
-              builder: (context) => AnaSayfaView(),
-            ),
-            (route) => false);
+        return true;
       } else {
         print("is not valid");
+        return false;
       }
     }
+    return false;
   }
 
-  @override
   @override
   void dispose() {
     super.dispose();
@@ -164,7 +162,14 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: ColorUtility.blackColor,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60))),
-                    onPressed: isChecked ? isValidate : null,
+                    onPressed: isChecked
+                        ? () {
+                            if (_isValidate()) {
+                              context.read<GlobalController>().changeCompleted();
+                              context.router.replace(ProfilInfoRoute());
+                            }
+                          }
+                        : null,
                     child: BodyMedium1(
                       text: StringConstants.uyeOl,
                     )),

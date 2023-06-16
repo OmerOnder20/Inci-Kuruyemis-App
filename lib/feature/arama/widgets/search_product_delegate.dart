@@ -74,10 +74,21 @@ class SearchProductDelegate extends SearchDelegate {
               onTap: () {
                 context.router.navigate(UrunDetayRoute());
                 context.router.pop();
+
                 FocusScope.of(context).unfocus();
               },
               child: ListTile(
                 title: Text(searchItems[index]),
+                trailing: Container(
+                  height: SizeUtility.largeXX.h,
+                  width: SizeUtility.largeXX.w,
+                  decoration: BoxDecoration(color: ColorUtility.yellowColor, shape: BoxShape.circle),
+                  child: Icon(
+                    Icons.chevron_right_rounded,
+                    color: ColorUtility.whiteColor,
+                    size: SizeUtility.mediumX,
+                  ),
+                ),
               ),
             ),
           ],

@@ -5,7 +5,7 @@ import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/sizes/sizes.dart';
-import '../../../product/widgets/texts/label/label_small_2.dart';
+import '../../../product/widgets/text/label/label_small_2.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({

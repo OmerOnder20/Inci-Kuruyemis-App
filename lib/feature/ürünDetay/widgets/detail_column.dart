@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/widget_size.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_5.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_large_5.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../product/utility/colors/color_utility.dart';

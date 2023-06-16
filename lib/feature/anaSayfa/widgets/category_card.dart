@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
-import '../../../product/widgets/texts/label/label_small_1.dart';
+import '../../../product/widgets/text/label/label_small_1.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -31,44 +31,22 @@ class CategoryCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CategoryAvatar(),
+                CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/randomImage/kuruyemis.jpg",
+                  ),
+                  radius: 34.r,
+                  backgroundColor: ColorUtility.avatarColorGrey,
+                ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.h, left: 19, right: 25),
-                  child: CategoryText(),
+                  child: LabelSmall1(
+                    text: "Kuruyemiş, Çerez",
+                  ),
                 )
               ]),
         ),
       ),
-    );
-  }
-}
-
-class CategoryText extends StatelessWidget {
-  const CategoryText({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return LabelSmall1(
-      text: "Kuruyemiş, Çerez",
-    );
-  }
-}
-
-class CategoryAvatar extends StatelessWidget {
-  const CategoryAvatar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundImage: AssetImage(
-        "assets/randomImage/kuruyemis.jpg",
-      ),
-      radius: 34.r,
-      backgroundColor: ColorUtility.avatarColorGrey,
     );
   }
 }

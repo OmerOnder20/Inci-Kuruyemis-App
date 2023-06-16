@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/%C3%BCr%C3%BCn_detay_view.dart';
 import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/button/gramaj_button.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_5.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_medium_4.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/title/title_large_3.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_large_5.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_4.dart';
+import 'package:inci_kuruyemis/product/widgets/text/title/title_large_3.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';

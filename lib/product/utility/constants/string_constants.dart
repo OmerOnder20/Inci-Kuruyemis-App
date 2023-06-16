@@ -44,4 +44,13 @@ class StringConstants {
   static const String epostaAdresiniz = "E-Posta Adresiniz";
   static const String uyelikSozlesmesini = "Üyelik Sözleşmesini ve Aydınlatma Metni’ni okudum ve kabul ediyorum.";
   static const String uyeOl = "Üye Ol";
+  static const String gecmisSiparislerim = "Geçmiş Siparişlerim";
+  static const String adreslerim = "Adreslerim";
+  static const String sikcaSorular = "Sıkça Sorulan Sorular";
+  static const String iletisim = "İletişim";
+  static const String yardim = "Yardım";
+  static const String hakkinda = "İnci Kuruyemiş Hakkında";
+  static const String cikisYap = "Çıkış Yap";
+  static const String kayitOldunuz = "Tebrikler Kayıt Oldunuz!";
+  static const String alisveriseBasla = "Alışverişe Başla";
 }

@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_1.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/title/title_large_2.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_large_1.dart';
+import 'package:inci_kuruyemis/product/widgets/text/title/title_large_2.dart';
 
 import '../../product/utility/colors/color_utility.dart';
 import '../../product/utility/constants/string_constants.dart';

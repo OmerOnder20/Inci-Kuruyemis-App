@@ -28,7 +28,7 @@ class WidgetSizes {
   static double basketFloatingActionButtonWidth = 210.w;
   static double detailFloatingActionButtonHeight = 56.h;
   static double detailFloatingActionButtonWidth = 150.w;
-  static double campaignCardHeight = 310.h;
+  static double campaignCardHeight = 320.h;
   static double campaignCardImageHeight = 230.h;
   static double campaignCardTextButtonHeight = 40.h;
   static double campaignDetailCardWidth = 325.w;
@@ -41,4 +41,7 @@ class WidgetSizes {
   static double profilPinputHeight = 50.h;
   static double profilPinputWidth = 50.w;
   static double profilCheckBoxRowHeight = 45.h;
+  static double profilInfoColumn = 145.h;
+  static double profilInfoItemHeight = 60.h;
+  static double profilInfoItemSvgHeightAndWidth = 100.h;
 }

@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/title/title_large_2.dart';
+import 'package:inci_kuruyemis/product/widgets/text/title/title_large_2.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/sizes/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
-import '../../../product/widgets/texts/label/label_medium_1.dart';
+import '../../../product/widgets/text/label/label_medium_1.dart';
 
 class CampaignCard extends StatelessWidget {
   const CampaignCard({

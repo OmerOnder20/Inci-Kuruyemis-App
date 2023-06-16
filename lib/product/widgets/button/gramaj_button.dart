@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_large_5.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_large_5.dart';
 
 import '../../utility/colors/color_utility.dart';
 import '../../utility/sizes/widget_size.dart';

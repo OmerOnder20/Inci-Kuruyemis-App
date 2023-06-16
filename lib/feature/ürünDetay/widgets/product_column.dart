@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/label/label_medium_4.dart';
+import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_4.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';

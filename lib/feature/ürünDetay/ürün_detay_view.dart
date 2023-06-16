@@ -6,7 +6,7 @@ import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/widgets/detail_info_r
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
-import 'package:inci_kuruyemis/product/widgets/texts/title/title_small_1.dart';
+import 'package:inci_kuruyemis/product/widgets/text/title/title_small_1.dart';
 
 import '../../product/utility/colors/color_utility.dart';
 import '../../product/utility/sizes/sizes.dart';

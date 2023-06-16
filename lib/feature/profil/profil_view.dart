@@ -2,12 +2,13 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/profil/widgets/profile_elevated_button.dart';
-import 'package:inci_kuruyemis/feature/profil/widgets/profile_text_field.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
+import '../../product/utility/sizes/widget_size.dart';
 import '../../product/utility/spacer/spacer_utility.dart';
-import '../../product/widgets/texts/body/body_large_1.dart';
-import '../../product/widgets/texts/headline/headline_small_1.dart';
+import '../../product/widgets/textFormField/custom_text_form_field.dart';
+import '../../product/widgets/text/body/body_large_1.dart';
+import '../../product/widgets/text/headline/headline_small_1.dart';
 
 @RoutePage()
 class ProfilView extends StatefulWidget {
@@ -59,10 +60,16 @@ class _ProfilViewState extends State<ProfilView> {
                       text: StringConstants.girisIcinSms,
                     ),
                     SpacerUtility.mediumXX,
-                    ProfileTextField(
+                    CustomTextFormField(
+                      validator: (p0) => p0!.length != 11 ? StringConstants.gecerliTelefonNumarasi : null,
                       controller: _controller,
+                      hintText: StringConstants.telefonNumarasi,
+                      textInputType: TextInputType.number,
+                      height: WidgetSizes.profilTextFieldHeight,
+                      width: double.infinity,
                     ),
                     ProfileElevatedButton(
+                      formKey: _formKey,
                       controller: _pinputController,
                     ),
                   ],

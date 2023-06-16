@@ -28,7 +28,7 @@ class _InitViewState extends State<InitView> {
       builder: (context, child, tabController) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
-          backgroundColor: Colors.amber,
+          resizeToAvoidBottomInset: false,
           body: child,
           bottomNavigationBar: SizedBox(
             height: WidgetSizes.bottomNavigationBarHeight,

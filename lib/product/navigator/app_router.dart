@@ -10,6 +10,7 @@ import '../../feature/kargoTeslimat/kargo_teslimat_view.dart';
 import '../../feature/kategori/kategori_view.dart';
 import '../../feature/profil/profil_view.dart';
 import '../../feature/profilDetay/profil_detay_view.dart';
+import '../../feature/profilInfo/profile_info_view.dart';
 import '../../feature/sepet/sepet_view.dart';
 import '../../feature/splash/splash_view.dart';
 import '../../feature/ödemeSeçenekleri/ödeme_seçenekleri_view.dart';
@@ -41,7 +42,8 @@ class AppRouter extends _$AppRouter {
           AutoRoute(page: AramaRoute.page, path: AppRoutes.routeSearch),
           AutoRoute(page: EmptyProfilRoute.page, path: AppRoutes.routeEmpty3, children: [
             AutoRoute(page: ProfilRoute.page, path: AppRoutes.routeProfile, initial: true),
-            AutoRoute(page: ProfilDetayRoute.page, path: AppRoutes.routeProfileDetail)
+            AutoRoute(page: ProfilDetayRoute.page, path: AppRoutes.routeProfileDetail),
+            AutoRoute(page: ProfilInfoRoute.page, path: AppRoutes.routeProfileInfo),
           ])
         ]),
       ];

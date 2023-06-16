@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/asset_constants.dart';
@@ -21,6 +22,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     nagigateToInit();
+    FlutterNativeSplash.remove();
   }
 
   void nagigateToInit() async {
