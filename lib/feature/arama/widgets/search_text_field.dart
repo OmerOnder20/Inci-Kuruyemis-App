@@ -38,6 +38,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
           height: WidgetSizes.searchTextFieldHeight,
           width: double.infinity,
           child: TextField(
+              cursorColor: ColorUtility.blackColor,
               textInputAction: TextInputAction.search,
               focusNode: _focusNode,
               onTap: () {

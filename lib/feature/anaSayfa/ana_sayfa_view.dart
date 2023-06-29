@@ -33,17 +33,15 @@ class _AnaSayfaViewState extends State<AnaSayfaView> {
             Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
           SpacerUtility.mediumXXX,
           PageStack(controller: _controller),
-          CategoryGridViewBuilder(),
+          _CategoryGridViewBuilder(),
         ]),
       ),
     );
   }
 }
 
-class CategoryGridViewBuilder extends StatelessWidget {
-  const CategoryGridViewBuilder({
-    super.key,
-  });
+class _CategoryGridViewBuilder extends StatelessWidget {
+  const _CategoryGridViewBuilder();
 
   @override
   Widget build(BuildContext context) {

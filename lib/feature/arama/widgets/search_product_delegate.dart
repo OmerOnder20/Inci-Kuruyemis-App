@@ -154,6 +154,9 @@ class SearchProductDelegate extends SearchDelegate {
                   textStyle: Theme.of(context).textTheme.titleSmall),
             ),
         scaffoldBackgroundColor: ColorUtility.scaffoldBackGroundColor,
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: ColorUtility.blackColor,
+        ),
         inputDecorationTheme: InputDecorationTheme(
             hintStyle: GoogleFonts.poppins(
                 letterSpacing: 0,
@@ -177,6 +180,7 @@ class SearchProductDelegate extends SearchDelegate {
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5))),
         appBarTheme: AppBarTheme(
+            titleSpacing: 5,
             elevation: 0,
             color: ColorUtility.scaffoldBackGroundColor,
             toolbarHeight: WidgetSizes.delegateTextFieldHeight));

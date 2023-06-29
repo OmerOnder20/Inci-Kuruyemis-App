@@ -53,4 +53,11 @@ class StringConstants {
   static const String cikisYap = "Çıkış Yap";
   static const String kayitOldunuz = "Tebrikler Kayıt Oldunuz!";
   static const String alisveriseBasla = "Alışverişe Başla";
+  static const String alisverisIlerle = "Alısveriş için ilerleyin";
+  static const String ulke = "Ülke";
+  static const String sehir = "Şehir";
+  static const String ilce = "İlçe";
+  static const String detayliAdres = "Detaylı Adres";
+  static const String aliciAdSoyad = "Alıcı Ad Soyad";
+  static const String aliciTelNo = "Alıcı Telefon Numarası";
 }

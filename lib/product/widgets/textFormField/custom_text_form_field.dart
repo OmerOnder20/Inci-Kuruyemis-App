@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
   final double height;
   final double width;
   final String? Function(String?)? validator;
+  final List<TextInputFormatter>? inputFormatters;
 
   const CustomTextFormField({
     Key? key,
@@ -20,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.height,
     required this.width,
     required this.validator,
+    this.inputFormatters,
   }) : super(key: key);
 
   @override
@@ -28,6 +32,8 @@ class CustomTextFormField extends StatelessWidget {
         height: height,
         width: width,
         child: TextFormField(
+            inputFormatters: inputFormatters,
+            cursorColor: ColorUtility.blackColor,
             validator: validator,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: controller,

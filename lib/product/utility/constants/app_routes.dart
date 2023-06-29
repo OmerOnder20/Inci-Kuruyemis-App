@@ -19,9 +19,11 @@ class AppRoutes {
   static const String routeCampaignDetail = "kampanyaDetay";
   static const String routeProfileDetail = "profilDetay";
   static const String routeProfileInfo = "profilInfo";
+  static const String routePurchase = "purchase";
   static const String routeEmpty1 = "empty1";
   static const String routeEmpty2 = "empty2";
   static const String routeEmpty3 = "empty3";
+  static const String routeEmpty4 = "empty3";
 
 //Ana rootlarda slash yani iç çizgi kullanılır ama çocuklarında kullanılmaz.
 //İç rootlarda slash kullanılması taktirde hata verir.

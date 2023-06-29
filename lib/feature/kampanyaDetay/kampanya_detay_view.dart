@@ -50,7 +50,7 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
             SpacerUtility.smallXXX,
             TitleLarge1(text: "Kargo Bedava Kampanyası"),
             SpacerUtility.smallX,
-            CampaignDetailDivider(),
+            _CampaignDetailDivider(),
             SpacerUtility.smallX,
             LabelLarge1(
               text:
@@ -63,10 +63,8 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
   }
 }
 
-class CampaignDetailDivider extends StatelessWidget {
-  const CampaignDetailDivider({
-    super.key,
-  });
+class _CampaignDetailDivider extends StatelessWidget {
+  const _CampaignDetailDivider();
 
   @override
   Widget build(BuildContext context) {

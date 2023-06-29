@@ -18,16 +18,14 @@ class _KategoriViewState extends State<KategoriView> {
     return Scaffold(
       appBar: CategoryAppBar(),
       body: SingleChildScrollView(
-        child: Column(children: [ProductGridViewBuilder()]),
+        child: Column(children: [_ProductGridViewBuilder()]),
       ),
     );
   }
 }
 
-class ProductGridViewBuilder extends StatelessWidget {
-  const ProductGridViewBuilder({
-    super.key,
-  });
+class _ProductGridViewBuilder extends StatelessWidget {
+  const _ProductGridViewBuilder();
 
   @override
   Widget build(BuildContext context) {

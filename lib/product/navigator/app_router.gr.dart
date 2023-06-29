@@ -71,6 +71,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const KategoriView(),
       );
     },
+    ProfilInfoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilInfoView(),
+      );
+    },
     OdemeSecenekleriRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -119,10 +125,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: EmptyProfilView(),
       );
     },
-    ProfilInfoRoute.name: (routeData) {
+    EmptySepetRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfilInfoView(),
+        child: EmptySepetView(),
+      );
+    },
+    SatinAlmaRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SatinAlmaView(),
       );
     },
   };
@@ -270,6 +282,20 @@ class KategoriRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ProfilInfoView]
+class ProfilInfoRoute extends PageRouteInfo<void> {
+  const ProfilInfoRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfilInfoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfilInfoRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [OdemeSecenekleriView]
 class OdemeSecenekleriRoute extends PageRouteInfo<void> {
   const OdemeSecenekleriRoute({List<PageRouteInfo>? children})
@@ -382,15 +408,29 @@ class EmptyProfilRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ProfilInfoView]
-class ProfilInfoRoute extends PageRouteInfo<void> {
-  const ProfilInfoRoute({List<PageRouteInfo>? children})
+/// [EmptySepetView]
+class EmptySepetRoute extends PageRouteInfo<void> {
+  const EmptySepetRoute({List<PageRouteInfo>? children})
       : super(
-          ProfilInfoRoute.name,
+          EmptySepetRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ProfilInfoRoute';
+  static const String name = 'EmptySepetRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SatinAlmaView]
+class SatinAlmaRoute extends PageRouteInfo<void> {
+  const SatinAlmaRoute({List<PageRouteInfo>? children})
+      : super(
+          SatinAlmaRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SatinAlmaRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

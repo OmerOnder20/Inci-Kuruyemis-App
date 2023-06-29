@@ -33,17 +33,15 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SplashAppBar(),
+      appBar: const _SplashAppBar(),
       backgroundColor: ColorUtility.yellowColor,
-      body: SplashLogo(),
+      body: _SplashLogo(),
     );
   }
 }
 
-class SplashLogo extends StatelessWidget {
-  const SplashLogo({
-    super.key,
-  });
+class _SplashLogo extends StatelessWidget {
+  const _SplashLogo();
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +56,8 @@ class SplashLogo extends StatelessWidget {
   }
 }
 
-class SplashAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const SplashAppBar({
-    super.key,
-  });
+class _SplashAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const _SplashAppBar();
 
   @override
   Widget build(BuildContext context) {

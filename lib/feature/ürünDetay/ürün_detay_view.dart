@@ -35,7 +35,7 @@ class _UrunDetayViewState extends State<UrunDetayView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: DetailFloatingActionButton(),
+      floatingActionButton: _DetailFloatingActionButton(),
       appBar: CustomAppBar(
         title: StringConstants.urunDetayi,
         leading: PopButton(),
@@ -65,10 +65,8 @@ class _UrunDetayViewState extends State<UrunDetayView> {
   }
 }
 
-class DetailFloatingActionButton extends StatelessWidget {
-  const DetailFloatingActionButton({
-    super.key,
-  });
+class _DetailFloatingActionButton extends StatelessWidget {
+  const _DetailFloatingActionButton();
 
   @override
   Widget build(BuildContext context) {

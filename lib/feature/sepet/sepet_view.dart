@@ -1,8 +1,9 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_app_bar.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_product_column.dart';
+import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 
 import '../../product/utility/colors/color_utility.dart';
 import '../../product/utility/constants/string_constants.dart';
@@ -21,23 +22,21 @@ class _SepetViewState extends State<SepetView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: BasketFloatingActionButton(),
+      floatingActionButton: _BasketFloatingActionButton(),
       appBar: BasketAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SizedBox(
           width: double.infinity,
-          child: BasketListViewBuilder(),
+          child: _BasketListViewBuilder(),
         ),
       ),
     );
   }
 }
 
-class BasketListViewBuilder extends StatelessWidget {
-  const BasketListViewBuilder({
-    super.key,
-  });
+class _BasketListViewBuilder extends StatelessWidget {
+  const _BasketListViewBuilder();
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +52,8 @@ class BasketListViewBuilder extends StatelessWidget {
   }
 }
 
-class BasketFloatingActionButton extends StatelessWidget {
-  const BasketFloatingActionButton({
-    super.key,
-  });
+class _BasketFloatingActionButton extends StatelessWidget {
+  const _BasketFloatingActionButton();
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +66,9 @@ class BasketFloatingActionButton extends StatelessWidget {
         elevation: 1,
         splashColor: ColorUtility.yellowColor,
         backgroundColor: Colors.amber,
-        onPressed: () {},
+        onPressed: () {
+          context.router.navigate(SatinAlmaRoute());
+        },
         label: RichText(
             text: TextSpan(
                 style: GoogleFonts.poppins(

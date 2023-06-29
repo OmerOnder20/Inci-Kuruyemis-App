@@ -11,6 +11,7 @@ import '../../feature/kategori/kategori_view.dart';
 import '../../feature/profil/profil_view.dart';
 import '../../feature/profilDetay/profil_detay_view.dart';
 import '../../feature/profilInfo/profile_info_view.dart';
+import '../../feature/satınAlma/satin_alma_view.dart';
 import '../../feature/sepet/sepet_view.dart';
 import '../../feature/splash/splash_view.dart';
 import '../../feature/ödemeSeçenekleri/ödeme_seçenekleri_view.dart';
@@ -38,7 +39,10 @@ class AppRouter extends _$AppRouter {
             AutoRoute(page: KampanyaRoute.page, path: AppRoutes.routeCampaign, initial: true),
             AutoRoute(page: KampanyaDetayRoute.page, path: AppRoutes.routeCampaignDetail),
           ]),
-          AutoRoute(page: SepetRoute.page, path: AppRoutes.routeBasket),
+          AutoRoute(page: EmptySepetRoute.page, path: AppRoutes.routeEmpty4, children: [
+            AutoRoute(page: SepetRoute.page, path: AppRoutes.routeBasket, initial: true),
+            AutoRoute(page: SatinAlmaRoute.page, path: AppRoutes.routePurchase)
+          ]),
           AutoRoute(page: AramaRoute.page, path: AppRoutes.routeSearch),
           AutoRoute(page: EmptyProfilRoute.page, path: AppRoutes.routeEmpty3, children: [
             AutoRoute(page: ProfilRoute.page, path: AppRoutes.routeProfile, initial: true),
@@ -57,3 +61,6 @@ class EmptyKampanyaView extends AutoRouter {}
 
 @RoutePage()
 class EmptyProfilView extends AutoRouter {}
+
+@RoutePage()
+class EmptySepetView extends AutoRouter {}

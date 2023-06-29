@@ -70,8 +70,10 @@ class BasketProductColumn extends StatelessWidget {
                       children: [
                         IncreaseDeincreaseButton(),
                         SpacerUtility.smallXXX,
-                        TitleMedium1(
-                          text: "200.00 ₺",
+                        Flexible(
+                          child: TitleMedium1(
+                            text: "200.00 ₺",
+                          ),
                         )
                       ],
                     ),

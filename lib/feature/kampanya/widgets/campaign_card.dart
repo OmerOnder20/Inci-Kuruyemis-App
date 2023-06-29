@@ -53,9 +53,7 @@ class CampaignCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: WidgetSizes.campaignCardTextHeight,
-                            width: WidgetSizes.campaignCardTextWidth,
+                          Flexible(
                             child: LabelMedium1(
                                 text:
                                     "300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme mevcuttur"),

@@ -44,4 +44,6 @@ class WidgetSizes {
   static double profilInfoColumn = 145.h;
   static double profilInfoItemHeight = 60.h;
   static double profilInfoItemSvgHeightAndWidth = 100.h;
+  static double purchaseFloatingActionHeight = 50.h;
+  static double purchaseFloatingActionWidth = 130.w;
 }

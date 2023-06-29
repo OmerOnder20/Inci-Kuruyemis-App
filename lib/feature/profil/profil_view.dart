@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/profil/widgets/profile_elevated_button.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
@@ -61,10 +62,11 @@ class _ProfilViewState extends State<ProfilView> {
                     ),
                     SpacerUtility.mediumXX,
                     CustomTextFormField(
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       validator: (p0) => p0!.length != 11 ? StringConstants.gecerliTelefonNumarasi : null,
                       controller: _controller,
                       hintText: StringConstants.telefonNumarasi,
-                      textInputType: TextInputType.number,
+                      textInputType: TextInputType.phone,
                       height: WidgetSizes.profilTextFieldHeight,
                       width: double.infinity,
                     ),

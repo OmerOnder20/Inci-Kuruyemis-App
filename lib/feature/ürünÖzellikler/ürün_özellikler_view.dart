@@ -39,7 +39,7 @@ class _UrunOzelliklerViewState extends State<UrunOzelliklerView> {
                     text: "Kavrulmuş Yer Fıstığı",
                   ),
                   SpacerUtility.smallX,
-                  OzelliklerDivider(),
+                  _OzelliklerDivider(),
                   SpacerUtility.smallX,
                   Align(
                     alignment: Alignment.centerLeft,
@@ -56,10 +56,8 @@ class _UrunOzelliklerViewState extends State<UrunOzelliklerView> {
   }
 }
 
-class OzelliklerDivider extends StatelessWidget {
-  const OzelliklerDivider({
-    super.key,
-  });
+class _OzelliklerDivider extends StatelessWidget {
+  const _OzelliklerDivider();
 
   @override
   Widget build(BuildContext context) {

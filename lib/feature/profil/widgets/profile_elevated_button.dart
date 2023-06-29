@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inci_kuruyemis/product/widgets/text/headline/headline_small_1.dart';
@@ -97,6 +98,8 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                                 SpacerUtility.mediumXXX,
                                 Center(
                                   child: Pinput(
+                                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                                    androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
                                     forceErrorState: true,
                                     textInputAction: TextInputAction.send,
                                     controller: widget.controller,
