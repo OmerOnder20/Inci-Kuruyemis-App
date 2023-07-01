@@ -20,7 +20,7 @@ class DetailInfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         LabelMedium4(text: StringConstants.gramaj),
@@ -28,7 +28,7 @@ class DetailInfoRow extends StatelessWidget {
         ChooseGramajButton(),
         DetailDividerTwo(),
         Padding(
-          padding: const EdgeInsets.only(left: 20),
+          padding: EdgeInsets.only(left: 20),
           child: TitleLarge3(text: "100.00 ₺"),
         ),
       ],
@@ -49,61 +49,68 @@ class ChooseGramajButton extends StatelessWidget {
         height: WidgetSizes.detailTextButtonHeight,
         width: WidgetSizes.detailTextButtonWidth,
         child: TextButton(
-            style: TextButton.styleFrom(foregroundColor: ColorUtility.textColorGrey, padding: EdgeInsets.zero),
+            style: TextButton.styleFrom(
+                foregroundColor: ColorUtility.textColorGrey,
+                padding: EdgeInsets.zero),
             onPressed: () {
               showModalBottomSheet(
                 backgroundColor: ColorUtility.scaffoldBackGroundColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(10))),
+                shape: const RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(10))),
                 context: context,
                 builder: (context) {
                   return SizedBox(
                     height: WidgetSizes.detailSheetHeight,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
-                      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 15.w),
-                          child: LabelLarge5(text: StringConstants.gramaj),
-                        ),
-                        SpacerUtility.smallX,
-                        DetailDividerOne(),
-                        SpacerUtility.smallX,
-                        GramajButton(
-                          text: StringConstants.gram250,
-                          onPressed: () {
-                            context.router.pop();
-                          },
-                        ),
-                        SpacerUtility.smallX,
-                        DetailDividerThree(),
-                        SpacerUtility.smallX,
-                        GramajButton(
-                          text: StringConstants.gram500,
-                          onPressed: () {
-                            context.router.pop();
-                          },
-                        ),
-                        SpacerUtility.smallX,
-                        DetailDividerThree(),
-                        SpacerUtility.smallX,
-                        GramajButton(
-                          text: StringConstants.gram750,
-                          onPressed: () {
-                            context.router.pop();
-                          },
-                        ),
-                        SpacerUtility.smallX,
-                        DetailDividerThree(),
-                        SpacerUtility.smallX,
-                        GramajButton(
-                          text: StringConstants.kg1,
-                          onPressed: () {
-                            context.router.pop();
-                          },
-                        ),
-                        SpacerUtility.smallX,
-                        DetailDividerThree(),
-                      ]),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 15.w),
+                              child: const LabelLarge5(
+                                  text: StringConstants.gramaj),
+                            ),
+                            SpacerUtility.smallX,
+                            const DetailDividerOne(),
+                            SpacerUtility.smallX,
+                            GramajButton(
+                              text: StringConstants.gram250,
+                              onPressed: () {
+                                context.router.pop();
+                              },
+                            ),
+                            SpacerUtility.smallX,
+                            const DetailDividerThree(),
+                            SpacerUtility.smallX,
+                            GramajButton(
+                              text: StringConstants.gram500,
+                              onPressed: () {
+                                context.router.pop();
+                              },
+                            ),
+                            SpacerUtility.smallX,
+                            const DetailDividerThree(),
+                            SpacerUtility.smallX,
+                            GramajButton(
+                              text: StringConstants.gram750,
+                              onPressed: () {
+                                context.router.pop();
+                              },
+                            ),
+                            SpacerUtility.smallX,
+                            const DetailDividerThree(),
+                            SpacerUtility.smallX,
+                            GramajButton(
+                              text: StringConstants.kg1,
+                              onPressed: () {
+                                context.router.pop();
+                              },
+                            ),
+                            SpacerUtility.smallX,
+                            const DetailDividerThree(),
+                          ]),
                     ),
                   );
                 },
@@ -113,7 +120,7 @@ class ChooseGramajButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                LabelMedium4(text: StringConstants.sec),
+                const LabelMedium4(text: StringConstants.sec),
                 Align(
                   alignment: Alignment.center,
                   child: Icon(

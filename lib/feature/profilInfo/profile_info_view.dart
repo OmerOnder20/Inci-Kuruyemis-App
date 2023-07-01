@@ -31,14 +31,17 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final globalController = Provider.of<GlobalController>(context, listen: false);
+      final globalController =
+          Provider.of<GlobalController>(context, listen: false);
       if (globalController.isCompleted) {
         showDialog(
           context: context,
           builder: (context) => SimpleDialog(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            contentPadding: EdgeInsets.symmetric(horizontal: 75.w, vertical: 50.h),
-            title: Center(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 75.w, vertical: 50.h),
+            title: const Center(
                 child: TitleMedium1(
               text: StringConstants.kayitOldunuz,
             )),
@@ -47,15 +50,16 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 1,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
                   backgroundColor: Colors.amber,
                 ),
                 onPressed: () {
                   globalController.changeCompleted();
                   context.router.pop();
-                  context.router.navigate(AnaSayfaRoute());
+                  context.router.navigate(const AnaSayfaRoute());
                 },
-                child: TitleSmall1(text: StringConstants.alisveriseBasla),
+                child: const TitleSmall1(text: StringConstants.alisveriseBasla),
               ),
             ],
           ),
@@ -67,75 +71,77 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: StringConstants.profilim,
       ),
       body: SingleChildScrollView(
-        child:
-            Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SizedBox(
-              height: WidgetSizes.profilInfoColumn,
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SpacerUtility.mediumX,
-                  TitleLarge1(text: "Ömer Faruk Önder"),
-                  SpacerUtility.smallXX,
-                  LabelMedium3(text: "kyrieirving20112000@gmail.com"),
-                  SpacerUtility.smallX,
-                  LabelMedium3(text: "+90 552 711 7135")
-                ],
-              )),
-          Container(
-            height: 30.h,
-            width: double.infinity,
-            color: ColorUtility.avatarColorGrey,
-          ),
-          ProfilInfoItem(
-            text: StringConstants.gecmisSiparislerim,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          //
-          //
-          //***Yeni Sayfalar ekledikçe AnaSayfaRoute kısmını doldur.
-          //
-          //
-          ProfilInfoItem(
-            text: StringConstants.adreslerim,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          ProfilInfoItem(
-            text: StringConstants.sikcaSorular,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          ProfilInfoItem(
-            text: StringConstants.iletisim,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          ProfilInfoItem(
-            text: StringConstants.yardim,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          ProfilInfoItem(
-            text: StringConstants.hakkinda,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
-          ProfilInfoItem(
-            text: StringConstants.cikisYap,
-            // pageRouteInfo: AnaSayfaRoute(),
-          ),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                  height: WidgetSizes.profilInfoColumn,
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SpacerUtility.mediumX,
+                      const TitleLarge1(text: "Ömer Faruk Önder"),
+                      SpacerUtility.smallXX,
+                      const LabelMedium3(text: "kyrieirving20112000@gmail.com"),
+                      SpacerUtility.smallX,
+                      const LabelMedium3(text: "+90 552 711 7135")
+                    ],
+                  )),
+              Container(
+                height: 30.h,
+                width: double.infinity,
+                color: ColorUtility.avatarColorGrey,
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.gecmisSiparislerim,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              //
+              //
+              //***Yeni Sayfalar ekledikçe AnaSayfaRoute kısmını doldur.
+              //
+              //
+              const ProfilInfoItem(
+                text: StringConstants.adreslerim,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.sikcaSorular,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.iletisim,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.yardim,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.hakkinda,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
+              const ProfilInfoItem(
+                text: StringConstants.cikisYap,
+                // pageRouteInfo: AnaSayfaRoute(),
+              ),
 
-          Center(
-            child: SvgPicture.asset(
-              AssetConstants.logoSvg,
-              height: WidgetSizes.profilInfoItemSvgHeightAndWidth,
-              width: WidgetSizes.profilInfoItemSvgHeightAndWidth,
-              fit: BoxFit.cover,
-            ),
-          )
-        ]),
+              Center(
+                child: SvgPicture.asset(
+                  AssetConstants.logoSvg,
+                  height: WidgetSizes.profilInfoItemSvgHeightAndWidth,
+                  width: WidgetSizes.profilInfoItemSvgHeightAndWidth,
+                  fit: BoxFit.cover,
+                ),
+              )
+            ]),
       ),
     );
   }

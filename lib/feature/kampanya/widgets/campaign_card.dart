@@ -24,7 +24,7 @@ class CampaignCard extends StatelessWidget {
             elevation: 1,
             margin: EdgeInsets.zero,
             color: ColorUtility.whiteColor,
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                     top: Radius.circular(
                       20,
@@ -38,14 +38,17 @@ class CampaignCard extends StatelessWidget {
                 children: [
                   Container(
                     height: WidgetSizes.campaignCardImageHeight,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                        image:
-                            DecorationImage(image: AssetImage("assets/randomImage/delivery.jpg"), fit: BoxFit.cover)),
+                    decoration: const BoxDecoration(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(20)),
+                        image: DecorationImage(
+                            image:
+                                AssetImage("assets/randomImage/delivery.jpg"),
+                            fit: BoxFit.cover)),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 10.w, top: 5),
-                    child: TitleLarge2(text: "Kargo Bedava Kampanyası"),
+                    child: const TitleLarge2(text: "Kargo Bedava Kampanyası"),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 5.h, left: 5.w),
@@ -53,7 +56,7 @@ class CampaignCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Flexible(
+                          const Flexible(
                             child: LabelMedium1(
                                 text:
                                     "300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme mevcuttur"),
@@ -65,12 +68,14 @@ class CampaignCard extends StatelessWidget {
                               focusColor: ColorUtility.whiteColor,
                               splashColor: ColorUtility.whiteColor,
                               onTap: () {
-                                context.router.push(KampanyaDetayRoute());
+                                context.router.push(const KampanyaDetayRoute());
                               },
                               child: Container(
                                 height: SizeUtility.mediumXX.h,
                                 width: SizeUtility.mediumXX.w,
-                                decoration: BoxDecoration(color: ColorUtility.yellowColor, shape: BoxShape.circle),
+                                decoration: const BoxDecoration(
+                                    color: ColorUtility.yellowColor,
+                                    shape: BoxShape.circle),
                                 child: Icon(
                                   Icons.chevron_right_rounded,
                                   color: ColorUtility.whiteColor,

@@ -29,12 +29,14 @@ class _AnaSayfaViewState extends State<AnaSayfaView> {
     return Scaffold(
       appBar: const AnaSayfaAppBar(),
       body: SingleChildScrollView(
-        child:
-            Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SpacerUtility.mediumXXX,
-          PageStack(controller: _controller),
-          _CategoryGridViewBuilder(),
-        ]),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SpacerUtility.mediumXXX,
+              PageStack(controller: _controller),
+              const _CategoryGridViewBuilder(),
+            ]),
       ),
     );
   }
@@ -48,13 +50,16 @@ class _CategoryGridViewBuilder extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 5,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 10.h, crossAxisSpacing: 10.w, childAspectRatio: 0.87),
+            crossAxisCount: 3,
+            mainAxisSpacing: 10.h,
+            crossAxisSpacing: 10.w,
+            childAspectRatio: 0.87),
         itemBuilder: (context, index) {
-          return CategoryCard();
+          return const CategoryCard();
         },
       ),
     );

@@ -16,7 +16,7 @@ class CategoryCard extends StatelessWidget {
     return InkWell(
       highlightColor: ColorUtility.scaffoldBackGroundColor,
       onTap: () {
-        context.router.push(KategoriRoute());
+        context.router.push(const KategoriRoute());
       },
       child: Card(
         elevation: 1,
@@ -32,7 +32,7 @@ class CategoryCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage(
+                  backgroundImage: const AssetImage(
                     "assets/randomImage/kuruyemis.jpg",
                   ),
                   radius: 34.r,
@@ -40,7 +40,7 @@ class CategoryCard extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.h, left: 19, right: 25),
-                  child: LabelSmall1(
+                  child: const LabelSmall1(
                     text: "Kuruyemiş, Çerez",
                   ),
                 )

@@ -17,10 +17,10 @@ class CategoryAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       elevation: 1,
       backgroundColor: ColorUtility.yellowColor,
-      leading: PopButton(),
+      leading: const PopButton(),
       title: Padding(
         padding: EdgeInsets.only(top: 18.h),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TitleSmall1(text: "Kuruyemiş,Çerez"),

@@ -17,5 +17,5 @@ class SpacerUtility {
   static final Widget largeX = SizedBox(height: 50.h);
   static final Widget largeXX = SizedBox(height: 55.h);
   static final Widget largeXXX = SizedBox(height: 60.h);
-  static final Widget huge = SizedBox(height: 250.h);
+  static final Widget huge = SizedBox(height: 270.h);
 }

@@ -20,7 +20,7 @@ class SepetView extends StatefulWidget {
 class _SepetViewState extends State<SepetView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: _BasketFloatingActionButton(),
       appBar: BasketAppBar(),
@@ -42,11 +42,11 @@ class _BasketListViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: 1,
       scrollDirection: Axis.vertical,
       itemBuilder: (BuildContext context, int index) {
-        return BasketProductColumn();
+        return const BasketProductColumn();
       },
     );
   }
@@ -67,7 +67,7 @@ class _BasketFloatingActionButton extends StatelessWidget {
         splashColor: ColorUtility.yellowColor,
         backgroundColor: Colors.amber,
         onPressed: () {
-          context.router.navigate(SatinAlmaRoute());
+          context.router.navigate(const SatinAlmaRoute());
         },
         label: RichText(
             text: TextSpan(

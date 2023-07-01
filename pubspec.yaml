@@ -60,7 +60,7 @@ flutter_native_splash:
   web: false
 
   #Linter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.2
 
 flutter:
 

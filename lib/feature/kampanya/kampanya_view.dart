@@ -19,11 +19,14 @@ class _KampanyaViewState extends State<KampanyaView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: StringConstants.kampanya),
+      appBar: const CustomAppBar(title: StringConstants.kampanya),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
-          child: Column(children: [SpacerUtility.mediumX, CampaignCard()]),
+          child: Column(children: [
+            SpacerUtility.mediumX,
+            const CampaignCard(),
+          ]),
         ),
       ),
     );

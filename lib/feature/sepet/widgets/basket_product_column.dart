@@ -35,14 +35,15 @@ class BasketProductColumn extends StatelessWidget {
                     height: WidgetSizes.basketImageHeight,
                     width: WidgetSizes.basketImageWidth,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
                               "assets/randomImage/real_pizza.jpg",
                             )),
                         color: ColorUtility.avatarColorGrey,
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 1, color: ColorUtility.greyColor)),
+                        border: Border.all(
+                            width: 1, color: ColorUtility.greyColor)),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 17.w, top: 6.h),
@@ -50,15 +51,15 @@ class BasketProductColumn extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        LabelMedium2(
+                        const LabelMedium2(
                           text: "Kavrulmuş Yer Fıstığı",
                         ),
                         SpacerUtility.smallX,
-                        LabelLarge3(
+                        const LabelLarge3(
                           text: "100.00 ₺",
                         ),
                         SpacerUtility.smallX,
-                        LabelMedium3(
+                        const LabelMedium3(
                           text: "500 GR",
                         )
                       ],
@@ -68,9 +69,9 @@ class BasketProductColumn extends StatelessWidget {
                     padding: EdgeInsets.only(top: 10.h, left: 20.w),
                     child: Column(
                       children: [
-                        IncreaseDeincreaseButton(),
+                        const IncreaseDeincreaseButton(),
                         SpacerUtility.smallXXX,
-                        Flexible(
+                        const Flexible(
                           child: TitleMedium1(
                             text: "200.00 ₺",
                           ),
@@ -81,7 +82,7 @@ class BasketProductColumn extends StatelessWidget {
                 ]),
           ),
         ),
-        BasketDivider()
+        const BasketDivider()
       ],
     );
   }
@@ -103,7 +104,7 @@ class IncreaseDeincreaseButton extends StatelessWidget {
           border: Border.all(width: 1, color: ColorUtility.greyColor)),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 4.w),
-        child: Row(
+        child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [IncreaseButton(), CountText(), DeincreaseButton()]),
@@ -119,7 +120,7 @@ class CountText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LabelLarge4(
+    return const LabelLarge4(
       text: "2",
     );
   }
@@ -137,7 +138,9 @@ class DeincreaseButton extends StatelessWidget {
       width: SizeUtility.mediumX.w,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.zero, backgroundColor: ColorUtility.textColorGrey, shape: CircleBorder()),
+              padding: EdgeInsets.zero,
+              backgroundColor: ColorUtility.textColorGrey,
+              shape: const CircleBorder()),
           onPressed: () {},
           child: Icon(
             Icons.add_rounded,
@@ -160,7 +163,9 @@ class IncreaseButton extends StatelessWidget {
       width: SizeUtility.mediumX.w,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.zero, backgroundColor: ColorUtility.textColorGrey, shape: CircleBorder()),
+              padding: EdgeInsets.zero,
+              backgroundColor: ColorUtility.textColorGrey,
+              shape: const CircleBorder()),
           onPressed: () {},
           child: Icon(
             Icons.remove_rounded,

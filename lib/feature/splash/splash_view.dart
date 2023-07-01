@@ -32,8 +32,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const _SplashAppBar(),
+    return const Scaffold(
+      appBar: _SplashAppBar(),
       backgroundColor: ColorUtility.yellowColor,
       body: _SplashLogo(),
     );
@@ -63,7 +63,8 @@ class _SplashAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: ColorUtility.yellowColor),
+      systemOverlayStyle:
+          const SystemUiOverlayStyle(statusBarColor: ColorUtility.yellowColor),
     );
   }
 

@@ -25,7 +25,7 @@ class DetailColumn extends StatelessWidget {
             itemCount: 3,
             itemBuilder: (context, index) {
               return CircleAvatar(
-                backgroundImage: AssetImage(
+                backgroundImage: const AssetImage(
                   "assets/randomImage/kuruyemis.jpg",
                 ),
                 radius: 40.r,
@@ -43,7 +43,7 @@ class DetailColumn extends StatelessWidget {
         controller: controller,
       ),
       SpacerUtility.mediumX,
-      LabelLarge5(text: "Kavrulmuş Yer Fıstığı"),
+      const LabelLarge5(text: "Kavrulmuş Yer Fıstığı"),
     ]);
   }
 }
@@ -61,7 +61,7 @@ class DetailIndicator extends StatelessWidget {
     return SmoothPageIndicator(
         controller: controller,
         count: 3,
-        effect: ScrollingDotsEffect(
+        effect: const ScrollingDotsEffect(
             activeDotScale: 1,
             spacing: 4,
             dotHeight: 8,

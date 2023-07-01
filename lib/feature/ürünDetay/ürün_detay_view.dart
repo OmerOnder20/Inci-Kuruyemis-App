@@ -35,8 +35,8 @@ class _UrunDetayViewState extends State<UrunDetayView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: _DetailFloatingActionButton(),
-      appBar: CustomAppBar(
+      floatingActionButton: const _DetailFloatingActionButton(),
+      appBar: const CustomAppBar(
         title: StringConstants.urunDetayi,
         leading: PopButton(),
       ),
@@ -47,16 +47,16 @@ class _UrunDetayViewState extends State<UrunDetayView> {
             children: [
               DetailColumn(controller: _controller),
               SpacerUtility.smallXXX,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 60),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 60),
                 child: DetailDividerOne(),
               ),
               SpacerUtility.smallXX,
-              DetailInfoRow(),
+              const DetailInfoRow(),
               SpacerUtility.smallX,
-              DetailDividerOne(),
+              const DetailDividerOne(),
               SpacerUtility.smallX,
-              ProductColumn()
+              const ProductColumn()
             ],
           ),
         ),
@@ -84,13 +84,14 @@ class _DetailFloatingActionButton extends StatelessWidget {
         label: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TitleSmall1(
+            const TitleSmall1(
               text: StringConstants.sepeteEkle,
             ),
             SizedBox(
               width: 5.w,
             ),
-            Icon(Icons.shopping_cart_rounded, color: ColorUtility.whiteColor, size: SizeUtility.mediumx)
+            Icon(Icons.shopping_cart_rounded,
+                color: ColorUtility.whiteColor, size: SizeUtility.mediumx)
           ],
         ),
       ),

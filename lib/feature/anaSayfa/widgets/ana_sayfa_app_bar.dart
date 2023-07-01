@@ -74,7 +74,8 @@ class HasNotification extends StatelessWidget {
     return Container(
       height: 8,
       width: 8,
-      decoration: const BoxDecoration(color: Color(0xffD83C00), shape: BoxShape.circle),
+      decoration:
+          const BoxDecoration(color: Color(0xffD83C00), shape: BoxShape.circle),
     );
   }
 }

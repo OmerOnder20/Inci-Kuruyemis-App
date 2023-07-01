@@ -39,7 +39,7 @@ class ProfilInfoItem extends StatelessWidget {
                     Container(
                       height: SizeUtility.mediumxX.h,
                       width: SizeUtility.mediumxX.w,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: ColorUtility.yellowColor,
                       ),

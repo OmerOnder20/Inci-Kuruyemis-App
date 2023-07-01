@@ -8,7 +8,7 @@ import '../../utility/colors/color_utility.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
-  final String hintText;
+  final String labelText;
   final TextInputType textInputType;
   final double height;
   final double width;
@@ -18,12 +18,12 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     Key? key,
     required this.controller,
-    required this.hintText,
     required this.textInputType,
     required this.height,
     required this.width,
     required this.validator,
     this.inputFormatters,
+    required this.labelText,
   }) : super(key: key);
 
   @override
@@ -40,33 +40,39 @@ class CustomTextFormField extends StatelessWidget {
             textInputAction: TextInputAction.next,
             keyboardType: textInputType,
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.only(top: 0, bottom: 0, left: 20.w),
-              hintText: hintText,
-              hintStyle: GoogleFonts.poppins(
+              labelText: labelText,
+              labelStyle: GoogleFonts.poppins(
                   letterSpacing: 0,
                   color: ColorUtility.textColorGrey,
                   fontWeight: FontWeight.w400,
                   textStyle: Theme.of(context).textTheme.labelMedium),
+              contentPadding: EdgeInsets.only(top: 0, bottom: 0, left: 20.w),
               filled: true,
               focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
               fillColor: ColorUtility.scaffoldBackGroundColor,
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
               disabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: ColorUtility.greyColor, width: 1.w)),
+                  borderSide:
+                      BorderSide(color: ColorUtility.greyColor, width: 1.w)),
             )));
   }
 }

@@ -15,7 +15,8 @@ class BasketAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAppBar(title: StringConstants.sepetim, actions: [DeleteButton()]);
+    return const CustomAppBar(
+        title: StringConstants.sepetim, actions: [DeleteButton()]);
   }
 
   @override

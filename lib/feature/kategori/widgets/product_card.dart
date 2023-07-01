@@ -33,19 +33,19 @@ class ProductCard extends StatelessWidget {
                   child: CircleAvatar(
                       radius: 50.h,
                       backgroundColor: ColorUtility.avatarColorGrey,
-                      backgroundImage: AssetImage(
+                      backgroundImage: const AssetImage(
                         "assets/randomImage/kuruyemis.jpg",
                       )),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10.h, left: 10.w),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: EdgeInsets.only(left: 10),
                       child: LabelSmall2(text: "Kavrulmuş Yer Fıstığı"),
                     ),
                   ],
@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
                     backgroundColor: ColorUtility.blackColor,
                     elevation: 0,
                     padding: EdgeInsets.zero,
-                    shape: CircleBorder()),
+                    shape: const CircleBorder()),
                 onPressed: () {
                   context.router.push(UrunDetayRoute());
                 },

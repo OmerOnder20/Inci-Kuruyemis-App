@@ -69,13 +69,13 @@ class _SatinAlmaViewState extends State<SatinAlmaView> {
           onPressed: () {
             _isValidate();
           },
-          label: TitleSmall1(
+          label: const TitleSmall1(
             text: StringConstants.devamEt,
           ),
         ),
       ),
       resizeToAvoidBottomInset: false,
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: StringConstants.alisverisIlerle,
         leading: PopButton(),
       ),
@@ -89,47 +89,58 @@ class _SatinAlmaViewState extends State<SatinAlmaView> {
                 SpacerUtility.smallXXX,
                 CustomTextFormField(
                   controller: _ulkeController,
-                  hintText: StringConstants.ulke,
+                  labelText: StringConstants.ulke,
                   textInputType: TextInputType.streetAddress,
                   height: WidgetSizes.profilTextFieldHeight,
                   width: double.infinity,
-                  validator: (p0) => p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                  validator: (p0) =>
+                      p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                 ),
                 CustomTextFormField(
                     controller: _sehirController,
-                    hintText: StringConstants.sehir,
+                    labelText: StringConstants.sehir,
                     textInputType: TextInputType.streetAddress,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p1) => p1!.isEmpty ? StringConstants.buAlanBosGecilemez : null),
+                    validator: (p1) => p1!.isEmpty
+                        ? StringConstants.buAlanBosGecilemez
+                        : null),
                 CustomTextFormField(
                     controller: _ilceController,
-                    hintText: StringConstants.ilce,
+                    labelText: StringConstants.ilce,
                     textInputType: TextInputType.streetAddress,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p3) => p3!.isEmpty ? StringConstants.buAlanBosGecilemez : null),
+                    validator: (p3) => p3!.isEmpty
+                        ? StringConstants.buAlanBosGecilemez
+                        : null),
                 CustomTextFormField(
                     controller: _adresController,
-                    hintText: StringConstants.detayliAdres,
+                    labelText: StringConstants.detayliAdres,
                     textInputType: TextInputType.streetAddress,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p4) => p4!.isEmpty ? StringConstants.buAlanBosGecilemez : null),
+                    validator: (p4) => p4!.isEmpty
+                        ? StringConstants.buAlanBosGecilemez
+                        : null),
                 CustomTextFormField(
                     controller: _aliciAdSoyadController,
-                    hintText: StringConstants.aliciAdSoyad,
+                    labelText: StringConstants.aliciAdSoyad,
                     textInputType: TextInputType.name,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p5) => p5!.isEmpty ? StringConstants.buAlanBosGecilemez : null),
+                    validator: (p5) => p5!.isEmpty
+                        ? StringConstants.buAlanBosGecilemez
+                        : null),
                 CustomTextFormField(
                     controller: _aliciTelefonController,
-                    hintText: StringConstants.aliciTelNo,
+                    labelText: StringConstants.aliciTelNo,
                     textInputType: TextInputType.phone,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p6) => p6!.isEmpty ? StringConstants.buAlanBosGecilemez : null),
+                    validator: (p6) => p6!.isEmpty
+                        ? StringConstants.buAlanBosGecilemez
+                        : null),
                 SpacerUtility.huge
               ],
             ),

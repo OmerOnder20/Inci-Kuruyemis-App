@@ -15,7 +15,7 @@ class KategoriView extends StatefulWidget {
 class _KategoriViewState extends State<KategoriView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: CategoryAppBar(),
       body: SingleChildScrollView(
         child: Column(children: [_ProductGridViewBuilder()]),
@@ -32,13 +32,16 @@ class _ProductGridViewBuilder extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10),
       child: GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 6,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 16.h, crossAxisSpacing: 8.w, childAspectRatio: 2.7 / 4),
+            crossAxisCount: 3,
+            mainAxisSpacing: 16.h,
+            crossAxisSpacing: 8.w,
+            childAspectRatio: 2.7 / 4),
         itemBuilder: (context, index) {
-          return ProductCard();
+          return const ProductCard();
         },
       ),
     );

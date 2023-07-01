@@ -55,14 +55,14 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: CustomAppBar(title: StringConstants.profilDetay),
+      appBar: const CustomAppBar(title: StringConstants.profilDetay),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(children: [
             SpacerUtility.mediumXX,
-            Center(
+            const Center(
               child: HeadlineSmall2(
                 text: StringConstants.sonBirAdimKaldi,
               ),
@@ -83,7 +83,7 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 10.w),
-                        child: BodyLarge1(
+                        child: const BodyLarge1(
                           text: StringConstants.eksiksizDoldurunuz,
                         ),
                       )
@@ -92,27 +92,30 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                   SpacerUtility.medium,
                   CustomTextFormField(
                     controller: _nameController,
-                    hintText: StringConstants.adiniz,
+                    labelText: StringConstants.adiniz,
                     textInputType: TextInputType.name,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p0) => p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                    validator: (p0) =>
+                        p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
                   CustomTextFormField(
                     controller: _surnameController,
-                    hintText: StringConstants.soyadiniz,
+                    labelText: StringConstants.soyadiniz,
                     textInputType: TextInputType.name,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p2) => p2!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                    validator: (p2) =>
+                        p2!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
                   CustomTextFormField(
                     controller: _emailController,
-                    hintText: StringConstants.epostaAdresiniz,
+                    labelText: StringConstants.epostaAdresiniz,
                     textInputType: TextInputType.emailAddress,
                     height: WidgetSizes.profilTextFieldHeight,
                     width: double.infinity,
-                    validator: (p1) => p1!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
+                    validator: (p1) =>
+                        p1!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
                 ],
               ),
@@ -128,7 +131,7 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                     Transform.scale(
                       scale: 1.1.h,
                       child: Checkbox(
-                        shape: CircleBorder(),
+                        shape: const CircleBorder(),
                         activeColor: ColorUtility.yellowColor,
                         value: isChecked,
                         checkColor: ColorUtility.greyColor,
@@ -143,7 +146,7 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                         },
                       ),
                     ),
-                    Flexible(
+                    const Flexible(
                       child: LabelLarge2(
                         text: StringConstants.uyelikSozlesmesini,
                       ),
@@ -161,16 +164,19 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: ColorUtility.blackColor,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60))),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(60))),
                     onPressed: isChecked
                         ? () {
                             if (_isValidate()) {
-                              context.read<GlobalController>().changeCompleted();
-                              context.router.replace(ProfilInfoRoute());
+                              context
+                                  .read<GlobalController>()
+                                  .changeCompleted();
+                              context.router.replace(const ProfilInfoRoute());
                             }
                           }
                         : null,
-                    child: BodyMedium1(
+                    child: const BodyMedium1(
                       text: StringConstants.uyeOl,
                     )),
               ),

@@ -24,7 +24,13 @@ class _InitViewState extends State<InitView> {
     return AutoTabsRouter.tabBar(
       physics: const NeverScrollableScrollPhysics(),
       animatePageTransition: false,
-      routes: const [AnaSayfaRoute(), AramaRoute(), SepetRoute(), KampanyaRoute(), ProfilRoute()],
+      routes: const [
+        AnaSayfaRoute(),
+        AramaRoute(),
+        SepetRoute(),
+        KampanyaRoute(),
+        ProfilRoute()
+      ],
       builder: (context, child, tabController) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
@@ -58,7 +64,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -68,7 +75,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.anaSayfa),
@@ -80,7 +88,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -90,7 +99,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.ara),
@@ -146,7 +156,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.blackColor, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.blackColor, BlendMode.srcIn),
                         ),
                       ),
                       icon: Padding(
@@ -156,7 +167,8 @@ class _InitViewState extends State<InitView> {
                           height: SizeUtility.mediumX,
                           width: SizeUtility.mediumX,
                           fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(ColorUtility.tabItemsGrey, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              ColorUtility.tabItemsGrey, BlendMode.srcIn),
                         ),
                       ),
                       label: StringConstants.profil)

@@ -33,7 +33,8 @@ class SearchProductDelegate extends SearchDelegate {
           onPressed: () {
             query = "";
           },
-          icon: Icon(Icons.clear_rounded, color: ColorUtility.blackColor, size: SizeUtility.mediumX))
+          icon: Icon(Icons.clear_rounded,
+              color: ColorUtility.blackColor, size: SizeUtility.mediumX))
     ];
   }
 
@@ -49,7 +50,8 @@ class SearchProductDelegate extends SearchDelegate {
 
           FocusScope.of(context).unfocus();
         },
-        icon: Icon(Icons.arrow_back_rounded, color: ColorUtility.blackColor, size: SizeUtility.mediumX));
+        icon: Icon(Icons.arrow_back_rounded,
+            color: ColorUtility.blackColor, size: SizeUtility.mediumX));
   }
 
   @override
@@ -82,7 +84,8 @@ class SearchProductDelegate extends SearchDelegate {
                 trailing: Container(
                   height: SizeUtility.largeXX.h,
                   width: SizeUtility.largeXX.w,
-                  decoration: BoxDecoration(color: ColorUtility.yellowColor, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(
+                      color: ColorUtility.yellowColor, shape: BoxShape.circle),
                   child: Icon(
                     Icons.chevron_right_rounded,
                     color: ColorUtility.whiteColor,
@@ -127,7 +130,8 @@ class SearchProductDelegate extends SearchDelegate {
                 trailing: Container(
                   height: SizeUtility.largeXX.h,
                   width: SizeUtility.largeXX.w,
-                  decoration: BoxDecoration(color: ColorUtility.yellowColor, shape: BoxShape.circle),
+                  decoration: const BoxDecoration(
+                      color: ColorUtility.yellowColor, shape: BoxShape.circle),
                   child: Icon(
                     Icons.chevron_right_rounded,
                     color: ColorUtility.whiteColor,
@@ -154,7 +158,7 @@ class SearchProductDelegate extends SearchDelegate {
                   textStyle: Theme.of(context).textTheme.titleSmall),
             ),
         scaffoldBackgroundColor: ColorUtility.scaffoldBackGroundColor,
-        textSelectionTheme: TextSelectionThemeData(
+        textSelectionTheme: const TextSelectionThemeData(
           cursorColor: ColorUtility.blackColor,
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -166,19 +170,24 @@ class SearchProductDelegate extends SearchDelegate {
                 textStyle: Theme.of(context).textTheme.titleSmall),
             errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5)),
+                borderSide: const BorderSide(
+                    color: ColorUtility.greyColor, width: 0.5)),
             disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5)),
+                borderSide: const BorderSide(
+                    color: ColorUtility.greyColor, width: 0.5)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5)),
+                borderSide: const BorderSide(
+                    color: ColorUtility.greyColor, width: 0.5)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5)),
+                borderSide: const BorderSide(
+                    color: ColorUtility.greyColor, width: 0.5)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5))),
+                borderSide: const BorderSide(
+                    color: ColorUtility.greyColor, width: 0.5))),
         appBarTheme: AppBarTheme(
             titleSpacing: 5,
             elevation: 0,

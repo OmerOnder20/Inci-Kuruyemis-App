@@ -22,7 +22,7 @@ class _UrunOzelliklerViewState extends State<UrunOzelliklerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: StringConstants.urunOzellikleri,
         leading: PopButton(),
       ),
@@ -35,13 +35,13 @@ class _UrunOzelliklerViewState extends State<UrunOzelliklerView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SpacerUtility.mediumXXX,
-                  TitleLarge2(
+                  const TitleLarge2(
                     text: "Kavrulmuş Yer Fıstığı",
                   ),
                   SpacerUtility.smallX,
-                  _OzelliklerDivider(),
+                  const _OzelliklerDivider(),
                   SpacerUtility.smallX,
-                  Align(
+                  const Align(
                     alignment: Alignment.centerLeft,
                     child: LabelLarge1(
                       text:

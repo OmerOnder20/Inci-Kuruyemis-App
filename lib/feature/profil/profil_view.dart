@@ -35,7 +35,7 @@ class _ProfilViewState extends State<ProfilView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: CustomAppBar(title: StringConstants.profilim),
+      appBar: const CustomAppBar(title: StringConstants.profilim),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -44,7 +44,7 @@ class _ProfilViewState extends State<ProfilView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SpacerUtility.largeXXX,
-              Center(
+              const Center(
                 child: HeadlineSmall1(text: StringConstants.hosGeldiniz),
               ),
               SpacerUtility.largeX,
@@ -53,19 +53,21 @@ class _ProfilViewState extends State<ProfilView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BodyLarge1(
+                    const BodyLarge1(
                       text: StringConstants.cepTelefonuNumarasi,
                     ),
                     SpacerUtility.smallXX,
-                    BodyLarge1(
+                    const BodyLarge1(
                       text: StringConstants.girisIcinSms,
                     ),
                     SpacerUtility.mediumXX,
                     CustomTextFormField(
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      validator: (p0) => p0!.length != 11 ? StringConstants.gecerliTelefonNumarasi : null,
+                      validator: (p0) => p0!.length != 11
+                          ? StringConstants.gecerliTelefonNumarasi
+                          : null,
                       controller: _controller,
-                      hintText: StringConstants.telefonNumarasi,
+                      labelText: StringConstants.telefonNumarasi,
                       textInputType: TextInputType.phone,
                       height: WidgetSizes.profilTextFieldHeight,
                       width: double.infinity,

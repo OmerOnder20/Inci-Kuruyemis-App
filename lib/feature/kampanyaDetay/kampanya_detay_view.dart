@@ -23,14 +23,15 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: StringConstants.kampanyaDetay,
         leading: PopButton(),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SpacerUtility.mediumX,
             SizedBox(
               height: WidgetSizes.campaignCardImageHeight,
@@ -38,21 +39,24 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
               child: Card(
                 elevation: 1,
                 margin: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
                 child: Container(
                   height: WidgetSizes.campaignCardImageHeight,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(image: AssetImage("assets/randomImage/delivery.jpg"), fit: BoxFit.cover)),
+                      image: const DecorationImage(
+                          image: AssetImage("assets/randomImage/delivery.jpg"),
+                          fit: BoxFit.cover)),
                 ),
               ),
             ),
             SpacerUtility.smallXXX,
-            TitleLarge1(text: "Kargo Bedava Kampanyası"),
+            const TitleLarge1(text: "Kargo Bedava Kampanyası"),
             SpacerUtility.smallX,
-            _CampaignDetailDivider(),
+            const _CampaignDetailDivider(),
             SpacerUtility.smallX,
-            LabelLarge1(
+            const LabelLarge1(
               text:
                   "300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz mevcut 300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz mevcut 300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz mevcut 300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz mevcut 300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz mevcut",
             ),

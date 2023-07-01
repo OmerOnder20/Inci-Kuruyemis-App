@@ -64,13 +64,16 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorUtility.blackColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60))),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(60))),
             onPressed: () {
               if (_isValidate()) {
                 showModalBottomSheet(
                   isScrollControlled: true,
                   backgroundColor: ColorUtility.scaffoldBackGroundColor,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(20))),
                   context: context,
                   builder: (context) {
                     return SizedBox(
@@ -87,19 +90,29 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                  child: HeadlineSmall1(text: StringConstants.telefonNumarasiDogrulayin),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: const HeadlineSmall1(
+                                      text: StringConstants
+                                          .telefonNumarasiDogrulayin),
                                 ),
                                 SpacerUtility.smallXX,
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                                  child: LabelLarge2(text: StringConstants.dogrulamaKodunuGiriniz),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 30.w),
+                                  child: const LabelLarge2(
+                                      text: StringConstants
+                                          .dogrulamaKodunuGiriniz),
                                 ),
                                 SpacerUtility.mediumXXX,
                                 Center(
                                   child: Pinput(
-                                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                                    androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly
+                                    ],
+                                    androidSmsAutofillMethod:
+                                        AndroidSmsAutofillMethod
+                                            .smsUserConsentApi,
                                     forceErrorState: true,
                                     textInputAction: TextInputAction.send,
                                     controller: widget.controller,
@@ -108,14 +121,16 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                                     },
                                     validator: (value) {
                                       if (value?.length != 5) {
-                                        return StringConstants.buAlanBosGecilemez;
+                                        return StringConstants
+                                            .buAlanBosGecilemez;
                                       } else {
                                         return null;
                                       }
                                     },
                                     separatorPositions: [1, 2, 3, 4],
                                     separator: Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 5.w),
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5.w),
                                       child: Container(
                                         height: 1.h,
                                         width: 10.w,
@@ -123,65 +138,89 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                                       ),
                                     ),
                                     length: 5,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     errorTextStyle: GoogleFonts.poppins(
                                         letterSpacing: 0,
                                         color: ColorUtility.redColor,
                                         fontWeight: FontWeight.w600,
-                                        textStyle: Theme.of(context).textTheme.bodyLarge),
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge),
                                     errorPinTheme: PinTheme(
                                         textStyle: GoogleFonts.poppins(
                                             letterSpacing: 0,
                                             color: ColorUtility.textColorBlack,
                                             fontWeight: FontWeight.w600,
-                                            textStyle: Theme.of(context).textTheme.bodyLarge),
+                                            textStyle: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge),
                                         width: WidgetSizes.profilPinputWidth,
                                         height: WidgetSizes.profilPinputHeight,
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8),
-                                            color: ColorUtility.scaffoldBackGroundColor,
-                                            border: Border.all(width: 1.w, color: ColorUtility.greyColor))),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: ColorUtility
+                                                .scaffoldBackGroundColor,
+                                            border: Border.all(
+                                                width: 1.w,
+                                                color:
+                                                    ColorUtility.greyColor))),
                                     defaultPinTheme: PinTheme(
                                         textStyle: GoogleFonts.poppins(
                                             letterSpacing: 0,
                                             color: ColorUtility.textColorBlack,
                                             fontWeight: FontWeight.w600,
-                                            textStyle: Theme.of(context).textTheme.bodyLarge),
+                                            textStyle: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge),
                                         width: WidgetSizes.profilPinputWidth,
                                         height: WidgetSizes.profilPinputHeight,
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8),
-                                            color: ColorUtility.scaffoldBackGroundColor,
-                                            border: Border.all(width: 1.w, color: ColorUtility.greyColor))),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: ColorUtility
+                                                .scaffoldBackGroundColor,
+                                            border: Border.all(
+                                                width: 1.w,
+                                                color:
+                                                    ColorUtility.greyColor))),
                                   ),
                                 ),
                                 SpacerUtility.smallXX,
                                 Padding(
                                   padding: EdgeInsets.only(left: 30.w),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
                                         children: [
                                           TextButton(
                                               style: TextButton.styleFrom(
                                                 padding: EdgeInsets.zero,
-                                                foregroundColor: ColorUtility.scaffoldBackGroundColor,
+                                                foregroundColor: ColorUtility
+                                                    .scaffoldBackGroundColor,
                                               ),
                                               onPressed: () {
                                                 if (_pinputValidate()) {
-                                                  context.router.replace(ProfilDetayRoute());
+                                                  context.router.replace(
+                                                      const ProfilDetayRoute());
                                                 }
                                               },
-                                              child: BodyLarge2(text: StringConstants.devamEt)),
+                                              child: const BodyLarge2(
+                                                  text:
+                                                      StringConstants.devamEt)),
                                           Padding(
                                             padding: EdgeInsets.only(left: 5.w),
                                             child: Icon(
                                               Icons.arrow_forward_rounded,
                                               size: SizeUtility.mediumX.h,
-                                              color: ColorUtility.textColorBlack,
+                                              color:
+                                                  ColorUtility.textColorBlack,
                                             ),
                                           )
                                         ],
@@ -189,30 +228,36 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                                       TextButton(
                                           style: TextButton.styleFrom(
                                             padding: EdgeInsets.zero,
-                                            foregroundColor: ColorUtility.scaffoldBackGroundColor,
+                                            foregroundColor: ColorUtility
+                                                .scaffoldBackGroundColor,
                                           ),
                                           onPressed: () {},
-                                          child: BodyLarge2(text: StringConstants.koduTekrarGonder)),
+                                          child: const BodyLarge2(
+                                              text: StringConstants
+                                                  .koduTekrarGonder)),
                                       Row(
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.only(right: 10.w),
+                                            padding:
+                                                EdgeInsets.only(right: 10.w),
                                             child: Icon(
                                               Icons.arrow_back_rounded,
                                               size: SizeUtility.mediumX.h,
-                                              color: ColorUtility.textColorBlack,
+                                              color:
+                                                  ColorUtility.textColorBlack,
                                             ),
                                           ),
                                           TextButton(
                                               style: TextButton.styleFrom(
                                                 padding: EdgeInsets.zero,
-                                                foregroundColor: ColorUtility.scaffoldBackGroundColor,
+                                                foregroundColor: ColorUtility
+                                                    .scaffoldBackGroundColor,
                                               ),
                                               onPressed: () {
                                                 context.router.pop();
                                                 widget.controller.clear();
                                               },
-                                              child: BodyLarge2(
+                                              child: const BodyLarge2(
                                                 text: StringConstants.geriDon,
                                               )),
                                         ],
@@ -229,7 +274,7 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
               }
               ;
             },
-            child: BodyMedium1(
+            child: const BodyMedium1(
               text: StringConstants.devamEt,
             )),
       ),

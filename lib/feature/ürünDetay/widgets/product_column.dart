@@ -19,17 +19,17 @@ class ProductColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ProductFeaturesButton(),
+        const ProductFeaturesButton(),
         SpacerUtility.smallX,
-        DetailDividerOne(),
+        const DetailDividerOne(),
         SpacerUtility.smallX,
-        PaymentOptionsButton(),
+        const PaymentOptionsButton(),
         SpacerUtility.smallX,
-        DetailDividerOne(),
+        const DetailDividerOne(),
         SpacerUtility.smallX,
-        DeliveryButton(),
+        const DeliveryButton(),
         SpacerUtility.smallX,
-        DetailDividerOne(),
+        const DetailDividerOne(),
       ],
     );
   }
@@ -45,13 +45,15 @@ class DeliveryButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-          style: TextButton.styleFrom(padding: EdgeInsets.zero, foregroundColor: ColorUtility.textColorGrey),
+          style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              foregroundColor: ColorUtility.textColorGrey),
           onPressed: () {},
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LabelMedium4(text: StringConstants.kargoVeTeslimat),
+              const LabelMedium4(text: StringConstants.kargoVeTeslimat),
               Icon(
                 Icons.chevron_right_rounded,
                 size: SizeUtility.mediumXx.h,
@@ -73,13 +75,15 @@ class PaymentOptionsButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-          style: TextButton.styleFrom(padding: EdgeInsets.zero, foregroundColor: ColorUtility.textColorGrey),
+          style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              foregroundColor: ColorUtility.textColorGrey),
           onPressed: () {},
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LabelMedium4(text: StringConstants.odemeSecenekleri),
+              const LabelMedium4(text: StringConstants.odemeSecenekleri),
               Icon(
                 Icons.chevron_right_rounded,
                 size: SizeUtility.mediumXx.h,
@@ -101,15 +105,17 @@ class ProductFeaturesButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-          style: TextButton.styleFrom(padding: EdgeInsets.zero, foregroundColor: ColorUtility.textColorGrey),
+          style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+              foregroundColor: ColorUtility.textColorGrey),
           onPressed: () {
-            context.router.push(UrunOzelliklerRoute());
+            context.router.push(const UrunOzelliklerRoute());
           },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LabelMedium4(text: StringConstants.urunOzellikleri),
+              const LabelMedium4(text: StringConstants.urunOzellikleri),
               Icon(
                 Icons.chevron_right_rounded,
                 size: SizeUtility.mediumXx.h,
