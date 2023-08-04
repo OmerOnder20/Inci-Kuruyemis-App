@@ -41,6 +41,11 @@ dependencies:
   #State Management
   provider: ^6.0.5
 
+  #Service Manager
+  dio: ^5.2.1+1
+
+  equatable: ^2.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +55,17 @@ dev_dependencies:
 
   #Build
   build_runner: ^2.4.5
+
+  #Launcher Icon
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/png/launcher_icon.png"
+  apaptive_icon_background: "#FFD200"
+  adaptive_icon_foreground: "assets/png/logo_foreground.png"
+
 
 #Splash
 flutter_native_splash:

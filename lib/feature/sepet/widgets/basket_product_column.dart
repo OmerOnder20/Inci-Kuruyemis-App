@@ -1,18 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_3.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_4.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_2.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_3.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_medium_1.dart';
+import 'package:provider/provider.dart';
 
+import '../../../product/models/ürün_model.dart';
 import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/constants/string_constants.dart';
 import '../../../product/utility/sizes/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../product/widgets/text/title/title_small_1.dart';
 
 class BasketProductColumn extends StatelessWidget {
-  const BasketProductColumn({super.key});
+  final String productName;
+  final String variationName;
+  final String variationPrice;
+  final String imageUrl;
+  final int productCount;
+  final Products products;
+  const BasketProductColumn({
+    super.key,
+    required this.productName,
+    required this.variationName,
+    required this.variationPrice,
+    required this.imageUrl,
+    required this.productCount,
+    required this.products,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +43,7 @@ class BasketProductColumn extends StatelessWidget {
           height: WidgetSizes.basketProductColumnHeight,
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+            padding: const EdgeInsets.only(top: 24, left: 10),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,16 +70,16 @@ class BasketProductColumn extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const LabelMedium2(
-                          text: "Kavrulmuş Yer Fıstığı",
+                        LabelMedium2(
+                          text: productName,
                         ),
                         SpacerUtility.smallX,
-                        const LabelLarge3(
-                          text: "100.00 ₺",
+                        LabelLarge3(
+                          text: "${variationPrice} ₺",
                         ),
                         SpacerUtility.smallX,
-                        const LabelMedium3(
-                          text: "500 GR",
+                        LabelMedium3(
+                          text: variationName,
                         )
                       ],
                     ),
@@ -69,14 +88,61 @@ class BasketProductColumn extends StatelessWidget {
                     padding: EdgeInsets.only(top: 10.h, left: 20.w),
                     child: Column(
                       children: [
-                        const IncreaseDeincreaseButton(),
+                        IncreaseDeincreaseButton(
+                            productCount: productCount, products: products),
                         SpacerUtility.smallXXX,
-                        const Flexible(
+                        Flexible(
                           child: TitleMedium1(
-                            text: "200.00 ₺",
-                          ),
+                              text: ((double.tryParse(variationPrice) ?? 0) *
+                                      productCount)
+                                  .toString()),
                         )
                       ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.zero,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        alignment: Alignment.centerRight,
+                        foregroundColor: ColorUtility.scaffoldBackGroundColor,
+                      ),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => SimpleDialog(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 45.w.w, vertical: 50.h),
+                            title: const Center(
+                                child: TitleMedium1(
+                              text: StringConstants.buUrunuKaldir,
+                            )),
+                            backgroundColor:
+                                ColorUtility.scaffoldBackGroundColor,
+                            children: [
+                              Center(
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ProductRemoveEvet(
+                                      products: products,
+                                    ),
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    const ProductRemoveHayir(),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                      child: const LabelLarge3(text: StringConstants.kaldir),
                     ),
                   )
                 ]),
@@ -88,9 +154,59 @@ class BasketProductColumn extends StatelessWidget {
   }
 }
 
+class ProductRemoveHayir extends StatelessWidget {
+  const ProductRemoveHayir({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 1,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        backgroundColor: Colors.amber,
+      ),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      child: const TitleSmall1(text: StringConstants.hayir),
+    );
+  }
+}
+
+class ProductRemoveEvet extends StatelessWidget {
+  final Products products;
+  const ProductRemoveEvet({
+    super.key,
+    required this.products,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 1,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        backgroundColor: Colors.amber,
+      ),
+      onPressed: () {
+        context.read<UserController>().removeUrun(products);
+
+        Navigator.of(context).pop();
+      },
+      child: const TitleSmall1(text: StringConstants.evet),
+    );
+  }
+}
+
 class IncreaseDeincreaseButton extends StatelessWidget {
+  final int productCount;
+  final Products products;
   const IncreaseDeincreaseButton({
     super.key,
+    required this.productCount,
+    required this.products,
   });
 
   @override
@@ -104,31 +220,28 @@ class IncreaseDeincreaseButton extends StatelessWidget {
           border: Border.all(width: 1, color: ColorUtility.greyColor)),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 4.w),
-        child: const Row(
+        child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [IncreaseButton(), CountText(), DeincreaseButton()]),
+            children: [
+              IncreaseButton(products: products),
+              LabelLarge4(
+                text: productCount.toString(),
+              ),
+              DeincreaseButton(
+                products: products,
+              )
+            ]),
       ),
     );
   }
 }
 
-class CountText extends StatelessWidget {
-  const CountText({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const LabelLarge4(
-      text: "2",
-    );
-  }
-}
-
 class DeincreaseButton extends StatelessWidget {
+  final Products products;
   const DeincreaseButton({
     super.key,
+    required this.products,
   });
 
   @override
@@ -141,7 +254,9 @@ class DeincreaseButton extends StatelessWidget {
               padding: EdgeInsets.zero,
               backgroundColor: ColorUtility.textColorGrey,
               shape: const CircleBorder()),
-          onPressed: () {},
+          onPressed: () {
+            context.read<UserController>().urunAdetArtma(products);
+          },
           child: Icon(
             Icons.add_rounded,
             color: ColorUtility.whiteColor,
@@ -152,8 +267,11 @@ class DeincreaseButton extends StatelessWidget {
 }
 
 class IncreaseButton extends StatelessWidget {
+  final Products products;
+
   const IncreaseButton({
     super.key,
+    required this.products,
   });
 
   @override
@@ -166,7 +284,9 @@ class IncreaseButton extends StatelessWidget {
               padding: EdgeInsets.zero,
               backgroundColor: ColorUtility.textColorGrey,
               shape: const CircleBorder()),
-          onPressed: () {},
+          onPressed: () {
+            context.read<UserController>().urunAdetAzaltma(products);
+          },
           child: Icon(
             Icons.remove_rounded,
             color: ColorUtility.whiteColor,

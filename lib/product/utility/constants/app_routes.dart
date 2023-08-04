@@ -12,8 +12,6 @@ class AppRoutes {
   static const String routeCampaign = "campaign";
   static const String routeProfile = "profile";
   static const String routeCategory = "category";
-  static const String routeDetail = "detay";
-  static const String routeFeatures = "özellikler";
   static const String routeDelivery = "teslimat";
   static const String routePayment = "ödeme";
   static const String routeCampaignDetail = "kampanyaDetay";
@@ -27,5 +25,8 @@ class AppRoutes {
 
 //Ana rootlarda slash yani iç çizgi kullanılır ama çocuklarında kullanılmaz.
 //İç rootlarda slash kullanılması taktirde hata verir.
-// Ürün detay sayfası için tekrardan videoyu izle. Yani çocuk sayfası için.
+//Ürün detay sayfası için tekrardan videoyu izle. Yani çocuk sayfası için.
+//İç içe gecen sayfalarda navigator.of kullanabılırsın bazen.Dıger turlu
+//Ust sınıftan model veya liste seklınde parametre alamazsın cunku
+//AutoRoute paketi izin vermıyor.
 }

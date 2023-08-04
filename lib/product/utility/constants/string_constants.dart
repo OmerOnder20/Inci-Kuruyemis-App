@@ -26,23 +26,30 @@ class StringConstants {
   static const String sepetiOnayla = " Sepeti Onayla";
   static const String sepeteEkle = "Sepete Ekle";
   static const String hosGeldiniz = "Hoş Geldiniz";
-  static const String cepTelefonuNumarasi = "Lütfen cep telefonu numaranızı giriniz.";
-  static const String girisIcinSms = "Giriş için size SMS ile bir doğrulama kodu göndereceğiz.";
+  static const String cepTelefonuNumarasi =
+      "Lütfen cep telefonu numaranızı giriniz.";
+  static const String girisIcinSms =
+      "Giriş için size SMS ile bir doğrulama kodu göndereceğiz.";
   static const String devamEt = "Devam Et";
   static const String telefonNumarasi = "Telefon Numarası";
-  static const String gecerliTelefonNumarasi = "Lütfen geçerli bir telefon numarası giriniz";
-  static const String telefonNumarasiDogrulayin = "Telefon numaranızı doğrulayın";
-  static const String dogrulamaKodunuGiriniz = "Lütfen cep telefonunuza gönderilen doğrulama kodunu giriniz";
+  static const String gecerliTelefonNumarasi =
+      "Lütfen geçerli bir telefon numarası giriniz";
+  static const String telefonNumarasiDogrulayin =
+      "Telefon numaranızı doğrulayın";
+  static const String dogrulamaKodunuGiriniz =
+      "Lütfen cep telefonunuza gönderilen doğrulama kodunu giriniz";
   static const String buAlanBosGecilemez = "Bu alan boş geçilemez";
   static const String koduTekrarGonder = "Kodu tekrar gönder";
   static const String geriDon = "Geri dön";
   static const String profilDetay = "Profil Detay";
   static const String sonBirAdimKaldi = "Son Bir Adım Kaldı!";
-  static const String eksiksizDoldurunuz = "Lütfen bilgileri eksiksiz doldurunuz";
+  static const String eksiksizDoldurunuz =
+      "Lütfen bilgileri eksiksiz doldurunuz";
   static const String adiniz = "Adınız";
   static const String soyadiniz = "Soyadınız";
   static const String epostaAdresiniz = "E-Posta Adresiniz";
-  static const String uyelikSozlesmesini = "Üyelik Sözleşmesini ve Aydınlatma Metni’ni okudum ve kabul ediyorum.";
+  static const String uyelikSozlesmesini =
+      "Üyelik Sözleşmesini ve Aydınlatma Metni’ni okudum ve kabul ediyorum.";
   static const String uyeOl = "Üye Ol";
   static const String gecmisSiparislerim = "Geçmiş Siparişlerim";
   static const String adreslerim = "Adreslerim";
@@ -60,4 +67,12 @@ class StringConstants {
   static const String detayliAdres = "Detaylı Adres";
   static const String aliciAdSoyad = "Alıcı Ad Soyad";
   static const String aliciTelNo = "Alıcı Telefon Numarası";
+  static const String sepetUrunKaldirma =
+      "Sepetteki tüm ürünleri kaldırmak istediğinizden emin misiniz?";
+  static const String evet = "Evet";
+  static const String hayir = "Hayır";
+  static const String kaldir = "Kaldır";
+  static const String buUrunuKaldir =
+      "Bu ürünü kaldırmak istediğinizden emin misiniz?";
+  static const String urunEklendi = "Ürün sepete eklendi";
 }

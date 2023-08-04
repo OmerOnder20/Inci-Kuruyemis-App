@@ -1,22 +1,28 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/widgets/detail_column.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/widgets/detail_info_row.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
+import 'package:inci_kuruyemis/product/widgets/text/title/title_medium_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_small_1.dart';
+import 'package:provider/provider.dart';
 
-import '../../product/utility/colors/color_utility.dart';
-import '../../product/utility/sizes/sizes.dart';
-import '../../product/utility/sizes/widget_size.dart';
-import '../../product/widgets/button/pop_button.dart';
-import 'widgets/product_column.dart';
+import '../../../product/models/ürün_model.dart';
+import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/sizes/sizes.dart';
+import '../../../product/utility/sizes/widget_size.dart';
+import '../../../product/widgets/button/pop_button.dart';
+import '../widgets/product_column.dart';
 
-@RoutePage()
 class UrunDetayView extends StatefulWidget {
-  UrunDetayView({super.key});
+  final Products products;
+  UrunDetayView({
+    super.key,
+    required this.products,
+  });
 
   @override
   State<UrunDetayView> createState() => _UrunDetayViewState();
@@ -35,7 +41,7 @@ class _UrunDetayViewState extends State<UrunDetayView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: const _DetailFloatingActionButton(),
+      floatingActionButton: _DetailFloatingActionButton(widget.products),
       appBar: const CustomAppBar(
         title: StringConstants.urunDetayi,
         leading: PopButton(),
@@ -45,18 +51,23 @@ class _UrunDetayViewState extends State<UrunDetayView> {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              DetailColumn(controller: _controller),
+              DetailColumn(
+                products: widget.products,
+                controller: _controller,
+              ),
               SpacerUtility.smallXXX,
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 60),
                 child: DetailDividerOne(),
               ),
               SpacerUtility.smallXX,
-              const DetailInfoRow(),
+              DetailInfoRow(products: widget.products),
               SpacerUtility.smallX,
               const DetailDividerOne(),
               SpacerUtility.smallX,
-              const ProductColumn()
+              ProductColumn(
+                products: widget.products,
+              ),
             ],
           ),
         ),
@@ -66,10 +77,12 @@ class _UrunDetayViewState extends State<UrunDetayView> {
 }
 
 class _DetailFloatingActionButton extends StatelessWidget {
-  const _DetailFloatingActionButton();
+  final Products products;
+  const _DetailFloatingActionButton(this.products);
 
   @override
   Widget build(BuildContext context) {
+    final userController = Provider.of<UserController>(context, listen: false);
     return SizedBox(
       height: WidgetSizes.detailFloatingActionButtonHeight,
       width: WidgetSizes.detailFloatingActionButtonWidth,
@@ -80,7 +93,15 @@ class _DetailFloatingActionButton extends StatelessWidget {
         elevation: 1,
         splashColor: ColorUtility.yellowColor,
         backgroundColor: Colors.amber,
-        onPressed: () {},
+        onPressed: () {
+          userController.sepeteUrunuEkle(products);
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              backgroundColor: ColorUtility.yellowColor,
+              elevation: 4,
+              duration: Duration(seconds: 2),
+              behavior: SnackBarBehavior.fixed,
+              content: TitleMedium1(text: StringConstants.urunEklendi)));
+        },
         label: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

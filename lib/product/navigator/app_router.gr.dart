@@ -15,72 +15,10 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    ProfilRoute.name: (routeData) {
+    AnaSayfaRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfilView(),
-      );
-    },
-    UrunDetayRoute.name: (routeData) {
-      final args = routeData.argsAs<UrunDetayRouteArgs>(
-          orElse: () => const UrunDetayRouteArgs());
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: UrunDetayView(key: args.key),
-      );
-    },
-    KampanyaDetayRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const KampanyaDetayView(),
-      );
-    },
-    SepetRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SepetView(),
-      );
-    },
-    UrunOzelliklerRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const UrunOzelliklerView(),
-      );
-    },
-    InitRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const InitView(),
-      );
-    },
-    ProfilDetayRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ProfilDetayView(),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SplashView(),
-      );
-    },
-    KategoriRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const KategoriView(),
-      );
-    },
-    ProfilInfoRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ProfilInfoView(),
-      );
-    },
-    OdemeSecenekleriRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const OdemeSecenekleriView(),
+        child: const AnaSayfaView(),
       );
     },
     AramaRoute.name: (routeData) {
@@ -89,10 +27,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AramaView(),
       );
     },
-    KargoTeslimatRoute.name: (routeData) {
+    InitRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const KargoTeslimatView(),
+        child: const InitView(),
       );
     },
     KampanyaRoute.name: (routeData) {
@@ -101,10 +39,74 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const KampanyaView(),
       );
     },
-    AnaSayfaRoute.name: (routeData) {
+    KampanyaDetayRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AnaSayfaView(),
+        child: const KampanyaDetayView(),
+      );
+    },
+    KargoTeslimatRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const KargoTeslimatView(),
+      );
+    },
+    KategoriRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<KategoriRouteArgs>(
+          orElse: () => KategoriRouteArgs(
+                categoryName: pathParams.getString('categoryName'),
+                categoryId: pathParams.getInt('categoryId'),
+              ));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: KategoriView(
+          key: args.key,
+          categoryName: args.categoryName,
+          categoryId: args.categoryId,
+        ),
+      );
+    },
+    ProfilRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilView(),
+      );
+    },
+    ProfilDetayRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilDetayView(),
+      );
+    },
+    ProfilInfoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfilInfoView(),
+      );
+    },
+    SatinAlmaRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SatinAlmaView(),
+      );
+    },
+    SepetRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SepetView(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashView(),
+      );
+    },
+    OdemeSecenekleriRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OdemeSecenekleriView(),
       );
     },
     EmptyRoute.name: (routeData) {
@@ -131,180 +133,19 @@ abstract class _$AppRouter extends RootStackRouter {
         child: EmptySepetView(),
       );
     },
-    SatinAlmaRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SatinAlmaView(),
-      );
-    },
   };
 }
 
 /// generated route for
-/// [ProfilView]
-class ProfilRoute extends PageRouteInfo<void> {
-  const ProfilRoute({List<PageRouteInfo>? children})
+/// [AnaSayfaView]
+class AnaSayfaRoute extends PageRouteInfo<void> {
+  const AnaSayfaRoute({List<PageRouteInfo>? children})
       : super(
-          ProfilRoute.name,
+          AnaSayfaRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ProfilRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [UrunDetayView]
-class UrunDetayRoute extends PageRouteInfo<UrunDetayRouteArgs> {
-  UrunDetayRoute({
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          UrunDetayRoute.name,
-          args: UrunDetayRouteArgs(key: key),
-          initialChildren: children,
-        );
-
-  static const String name = 'UrunDetayRoute';
-
-  static const PageInfo<UrunDetayRouteArgs> page =
-      PageInfo<UrunDetayRouteArgs>(name);
-}
-
-class UrunDetayRouteArgs {
-  const UrunDetayRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'UrunDetayRouteArgs{key: $key}';
-  }
-}
-
-/// generated route for
-/// [KampanyaDetayView]
-class KampanyaDetayRoute extends PageRouteInfo<void> {
-  const KampanyaDetayRoute({List<PageRouteInfo>? children})
-      : super(
-          KampanyaDetayRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'KampanyaDetayRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SepetView]
-class SepetRoute extends PageRouteInfo<void> {
-  const SepetRoute({List<PageRouteInfo>? children})
-      : super(
-          SepetRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SepetRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [UrunOzelliklerView]
-class UrunOzelliklerRoute extends PageRouteInfo<void> {
-  const UrunOzelliklerRoute({List<PageRouteInfo>? children})
-      : super(
-          UrunOzelliklerRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'UrunOzelliklerRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [InitView]
-class InitRoute extends PageRouteInfo<void> {
-  const InitRoute({List<PageRouteInfo>? children})
-      : super(
-          InitRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'InitRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ProfilDetayView]
-class ProfilDetayRoute extends PageRouteInfo<void> {
-  const ProfilDetayRoute({List<PageRouteInfo>? children})
-      : super(
-          ProfilDetayRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ProfilDetayRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SplashView]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SplashRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [KategoriView]
-class KategoriRoute extends PageRouteInfo<void> {
-  const KategoriRoute({List<PageRouteInfo>? children})
-      : super(
-          KategoriRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'KategoriRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ProfilInfoView]
-class ProfilInfoRoute extends PageRouteInfo<void> {
-  const ProfilInfoRoute({List<PageRouteInfo>? children})
-      : super(
-          ProfilInfoRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ProfilInfoRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [OdemeSecenekleriView]
-class OdemeSecenekleriRoute extends PageRouteInfo<void> {
-  const OdemeSecenekleriRoute({List<PageRouteInfo>? children})
-      : super(
-          OdemeSecenekleriRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'OdemeSecenekleriRoute';
+  static const String name = 'AnaSayfaRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -324,15 +165,15 @@ class AramaRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [KargoTeslimatView]
-class KargoTeslimatRoute extends PageRouteInfo<void> {
-  const KargoTeslimatRoute({List<PageRouteInfo>? children})
+/// [InitView]
+class InitRoute extends PageRouteInfo<void> {
+  const InitRoute({List<PageRouteInfo>? children})
       : super(
-          KargoTeslimatRoute.name,
+          InitRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'KargoTeslimatRoute';
+  static const String name = 'InitRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -352,15 +193,174 @@ class KampanyaRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [AnaSayfaView]
-class AnaSayfaRoute extends PageRouteInfo<void> {
-  const AnaSayfaRoute({List<PageRouteInfo>? children})
+/// [KampanyaDetayView]
+class KampanyaDetayRoute extends PageRouteInfo<void> {
+  const KampanyaDetayRoute({List<PageRouteInfo>? children})
       : super(
-          AnaSayfaRoute.name,
+          KampanyaDetayRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'AnaSayfaRoute';
+  static const String name = 'KampanyaDetayRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [KargoTeslimatView]
+class KargoTeslimatRoute extends PageRouteInfo<void> {
+  const KargoTeslimatRoute({List<PageRouteInfo>? children})
+      : super(
+          KargoTeslimatRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'KargoTeslimatRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [KategoriView]
+class KategoriRoute extends PageRouteInfo<KategoriRouteArgs> {
+  KategoriRoute({
+    Key? key,
+    required String categoryName,
+    required int categoryId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          KategoriRoute.name,
+          args: KategoriRouteArgs(
+            key: key,
+            categoryName: categoryName,
+            categoryId: categoryId,
+          ),
+          rawPathParams: {
+            'categoryName': categoryName,
+            'categoryId': categoryId,
+          },
+          initialChildren: children,
+        );
+
+  static const String name = 'KategoriRoute';
+
+  static const PageInfo<KategoriRouteArgs> page =
+      PageInfo<KategoriRouteArgs>(name);
+}
+
+class KategoriRouteArgs {
+  const KategoriRouteArgs({
+    this.key,
+    required this.categoryName,
+    required this.categoryId,
+  });
+
+  final Key? key;
+
+  final String categoryName;
+
+  final int categoryId;
+
+  @override
+  String toString() {
+    return 'KategoriRouteArgs{key: $key, categoryName: $categoryName, categoryId: $categoryId}';
+  }
+}
+
+/// generated route for
+/// [ProfilView]
+class ProfilRoute extends PageRouteInfo<void> {
+  const ProfilRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfilRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfilRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfilDetayView]
+class ProfilDetayRoute extends PageRouteInfo<void> {
+  const ProfilDetayRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfilDetayRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfilDetayRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfilInfoView]
+class ProfilInfoRoute extends PageRouteInfo<void> {
+  const ProfilInfoRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfilInfoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfilInfoRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SatinAlmaView]
+class SatinAlmaRoute extends PageRouteInfo<void> {
+  const SatinAlmaRoute({List<PageRouteInfo>? children})
+      : super(
+          SatinAlmaRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SatinAlmaRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SepetView]
+class SepetRoute extends PageRouteInfo<void> {
+  const SepetRoute({List<PageRouteInfo>? children})
+      : super(
+          SepetRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SepetRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SplashView]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OdemeSecenekleriView]
+class OdemeSecenekleriRoute extends PageRouteInfo<void> {
+  const OdemeSecenekleriRoute({List<PageRouteInfo>? children})
+      : super(
+          OdemeSecenekleriRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OdemeSecenekleriRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -417,20 +417,6 @@ class EmptySepetRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'EmptySepetRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SatinAlmaView]
-class SatinAlmaRoute extends PageRouteInfo<void> {
-  const SatinAlmaRoute({List<PageRouteInfo>? children})
-      : super(
-          SatinAlmaRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SatinAlmaRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

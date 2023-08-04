@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 class InciAppBarTheme {
   final AppBarTheme inciAppBarTheme = const AppBarTheme(
-      systemOverlayStyle:
-          SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light, statusBarColor: Colors.transparent));
+      systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.light,
+          statusBarColor: Colors.transparent));
 }

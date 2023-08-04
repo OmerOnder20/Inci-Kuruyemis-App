@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/widget_size.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_5.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../product/models/ürün_model.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
 
 class DetailColumn extends StatelessWidget {
-  DetailColumn({super.key, required this.controller});
+  final Products products;
+
+  DetailColumn({
+    super.key,
+    required this.controller,
+    required this.products,
+  });
   final PageController controller;
 
   @override
@@ -22,14 +30,12 @@ class DetailColumn extends StatelessWidget {
           child: PageView.builder(
             controller: controller,
             scrollDirection: Axis.horizontal,
-            itemCount: 3,
+            itemCount: products.images?.length ?? 0,
             itemBuilder: (context, index) {
               return CircleAvatar(
-                backgroundImage: const AssetImage(
-                  "assets/randomImage/kuruyemis.jpg",
-                ),
+                child: SvgPicture.network(products.images?[index].path ?? ""),
                 radius: 40.r,
-                backgroundColor: ColorUtility.avatarColorGrey,
+                backgroundColor: ColorUtility.scaffoldBackGroundColor,
               );
               //Buraya SizedBox koyacaksın sonra da childına servisten gelen resimli dataları direkt
               //Image.network() şeklinde yükleyeceksin.Bunu yaparken fit:BoxFit.cover vermeyi unutma
@@ -40,10 +46,11 @@ class DetailColumn extends StatelessWidget {
       ),
       SpacerUtility.mediumX,
       DetailIndicator(
+        count: products.images?.length ?? 0,
         controller: controller,
       ),
       SpacerUtility.mediumX,
-      const LabelLarge5(text: "Kavrulmuş Yer Fıstığı"),
+      LabelLarge5(text: products.name ?? ""),
     ]);
   }
 }
@@ -52,15 +59,17 @@ class DetailIndicator extends StatelessWidget {
   const DetailIndicator({
     super.key,
     required this.controller,
+    required this.count,
   });
 
   final PageController controller;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
     return SmoothPageIndicator(
         controller: controller,
-        count: 3,
+        count: count,
         effect: const ScrollingDotsEffect(
             activeDotScale: 1,
             spacing: 4,

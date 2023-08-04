@@ -7,8 +7,12 @@ import 'package:inci_kuruyemis/product/widgets/text/label/label_small_3.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_small_1.dart';
 
 class CategoryAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String? title;
+  final int? count;
   const CategoryAppBar({
     super.key,
+    this.title,
+    this.count,
   });
 
   @override
@@ -20,11 +24,11 @@ class CategoryAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: const PopButton(),
       title: Padding(
         padding: EdgeInsets.only(top: 18.h),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TitleSmall1(text: "Kuruyemiş,Çerez"),
-            LabelSmall3(text: "36 sonuç bulundu"),
+            TitleSmall1(text: title.toString()),
+            LabelSmall3(text: "${count} sonuç bulundu"),
           ],
         ),
       ),

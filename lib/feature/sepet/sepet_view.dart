@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_app_bar.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_product_column.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
+import 'package:provider/provider.dart';
 
 import '../../product/utility/colors/color_utility.dart';
 import '../../product/utility/constants/string_constants.dart';
@@ -43,10 +45,21 @@ class _BasketListViewBuilder extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: 1,
+      itemCount: context.watch<UserController>().sepetItems.length,
       scrollDirection: Axis.vertical,
       itemBuilder: (BuildContext context, int index) {
-        return const BasketProductColumn();
+        final products = context.watch<UserController>().sepetItems[index];
+        final selectedVariation =
+            context.watch<UserController>().selectedVariation;
+        return BasketProductColumn(
+            products: products,
+            productCount:
+                context.watch<UserController>().sepetUrunleri[products] ?? 0,
+            imageUrl: products.images?[0].path ?? "",
+            productName: products.name ?? "",
+            variationName: products.variations?[selectedVariation].name ?? "",
+            variationPrice:
+                products.variations?[selectedVariation].price ?? "");
       },
     );
   }
@@ -76,7 +89,7 @@ class _BasketFloatingActionButton extends StatelessWidget {
                     color: ColorUtility.blackColor,
                     fontWeight: FontWeight.w600,
                     textStyle: Theme.of(context).textTheme.bodyLarge),
-                text: "300.00 ₺",
+                text: "${context.watch<UserController>().sepetFiyati} ₺",
                 children: [
               TextSpan(
                   text: StringConstants.sepetiOnayla,

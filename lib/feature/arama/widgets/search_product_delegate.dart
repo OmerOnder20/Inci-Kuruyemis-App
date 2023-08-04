@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
@@ -74,8 +73,8 @@ class SearchProductDelegate extends SearchDelegate {
             ),
             InkWell(
               onTap: () {
-                context.router.navigate(UrunDetayRoute());
-                context.router.pop();
+                // context.router.navigate(UrunDetayRoute());
+                // context.router.pop();
 
                 FocusScope.of(context).unfocus();
               },
@@ -120,8 +119,8 @@ class SearchProductDelegate extends SearchDelegate {
             ),
             InkWell(
               onTap: () {
-                context.router.navigate(UrunDetayRoute());
-                context.router.pop();
+                // context.router.navigate(UrunDetayRoute());
+                // context.router.pop();
 
                 FocusScope.of(context).unfocus();
               },
