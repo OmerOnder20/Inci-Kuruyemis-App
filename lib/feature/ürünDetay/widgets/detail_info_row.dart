@@ -25,8 +25,6 @@ class DetailInfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selectedValuePrice =
-        context.watch<UserController>().selectedVariation;
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -36,8 +34,13 @@ class DetailInfoRow extends StatelessWidget {
         const DetailDividerTwo(),
         Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: TitleLarge3(
-              text: products.variations?[selectedValuePrice].price ?? ""),
+          child: Consumer<CartController>(
+            builder: (context, value, child) {
+              return TitleLarge3(
+                  text:
+                      "${products.variations?[products.variationIndex].price ?? ""}  ₺");
+            },
+          ),
         ),
       ],
     );
@@ -54,8 +57,9 @@ class ChooseGramajButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = Provider.of<CartController>(context, listen: false);
     return Padding(
-      padding: const EdgeInsets.only(left: 10),
+      padding: const EdgeInsets.only(left: 20),
       child: SizedBox(
         height: WidgetSizes.detailTextButtonHeight,
         width: WidgetSizes.detailTextButtonWidth,
@@ -89,9 +93,7 @@ class ChooseGramajButton extends StatelessWidget {
                             GramajButton(
                               text: products.variations?[0].name ?? "",
                               onPressed: () {
-                                context
-                                    .read<UserController>()
-                                    .selectVariation1();
+                                userController.selectVariation(products, 0);
                                 context.router.pop();
                               },
                             ),
@@ -101,9 +103,7 @@ class ChooseGramajButton extends StatelessWidget {
                             GramajButton(
                               text: products.variations?[1].name ?? "",
                               onPressed: () {
-                                context
-                                    .read<UserController>()
-                                    .selectVariation2();
+                                userController.selectVariation(products, 1);
                                 context.router.pop();
                               },
                             ),
@@ -113,9 +113,7 @@ class ChooseGramajButton extends StatelessWidget {
                             GramajButton(
                               text: products.variations?[2].name ?? "",
                               onPressed: () {
-                                context
-                                    .read<UserController>()
-                                    .selectVariation3();
+                                userController.selectVariation(products, 2);
                                 context.router.pop();
                               },
                             ),
@@ -125,9 +123,7 @@ class ChooseGramajButton extends StatelessWidget {
                             GramajButton(
                               text: products.variations?[3].name ?? "",
                               onPressed: () {
-                                context
-                                    .read<UserController>()
-                                    .selectVariation4();
+                                userController.selectVariation(products, 3);
                                 context.router.pop();
                               },
                             ),
@@ -143,7 +139,18 @@ class ChooseGramajButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const LabelMedium4(text: StringConstants.sec),
+                Consumer<CartController>(
+                  builder: (context, value, child) {
+                    if (products.isShown == false) {
+                      return const LabelMedium4(text: StringConstants.sec);
+                    } else {
+                      return LabelMedium4(
+                          text: products
+                                  .variations?[products.variationIndex].name ??
+                              "");
+                    }
+                  },
+                ),
                 Align(
                   alignment: Alignment.center,
                   child: Icon(

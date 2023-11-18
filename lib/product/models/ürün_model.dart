@@ -36,14 +36,17 @@ class Products extends Equatable {
   int? categoryId;
   List<Images>? images;
   List<Variations>? variations;
-
+  int variationIndex = 0;
+  bool isShown = false;
   Products(
       {this.id,
       this.name,
       this.description,
       this.categoryId,
       this.images,
-      this.variations});
+      this.variations,
+      required this.variationIndex,
+      required this.isShown});
 
   Products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -80,7 +83,8 @@ class Products extends Equatable {
   }
 
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props =>
+      [id, variationIndex, name, variations, images, categoryId, description];
 }
 
 @immutable

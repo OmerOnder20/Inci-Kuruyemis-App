@@ -120,7 +120,7 @@ class RemoveEvet extends StatelessWidget {
       ),
       onPressed: () {
         Navigator.of(context).pop();
-        context.read<UserController>().removeAllSepet();
+        context.read<CartController>().removeAllSepet();
       },
       child: const TitleSmall1(text: StringConstants.evet),
     );

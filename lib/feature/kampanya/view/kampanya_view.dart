@@ -5,7 +5,7 @@ import 'package:inci_kuruyemis/feature/kampanya/widgets/campaign_card.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 
-import '../../product/utility/spacer/spacer_utility.dart';
+import '../../../product/utility/spacer/spacer_utility.dart';
 
 @RoutePage()
 class KampanyaView extends StatefulWidget {

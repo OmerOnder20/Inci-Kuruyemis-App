@@ -75,4 +75,6 @@ class StringConstants {
   static const String buUrunuKaldir =
       "Bu ürünü kaldırmak istediğinizden emin misiniz?";
   static const String urunEklendi = "Ürün sepete eklendi";
+  static const String urunKaldirildi = "Ürün sepetten kaldırıldı";
+  static const String sepettenKaldir = "Sepetten kaldır";
 }

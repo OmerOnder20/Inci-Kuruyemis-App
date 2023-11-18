@@ -92,11 +92,10 @@ class BasketProductColumn extends StatelessWidget {
                             productCount: productCount, products: products),
                         SpacerUtility.smallXXX,
                         Flexible(
-                          child: TitleMedium1(
-                              text: ((double.tryParse(variationPrice) ?? 0) *
-                                      productCount)
-                                  .toString()),
-                        )
+                            child: TitleMedium1(
+                          text:
+                              "${(double.tryParse(variationPrice) ?? 0) * productCount} ₺",
+                        ))
                       ],
                     ),
                   ),
@@ -191,7 +190,7 @@ class ProductRemoveEvet extends StatelessWidget {
         backgroundColor: Colors.amber,
       ),
       onPressed: () {
-        context.read<UserController>().removeUrun(products);
+        context.read<CartController>().removeUrun(products);
 
         Navigator.of(context).pop();
       },
@@ -255,7 +254,7 @@ class DeincreaseButton extends StatelessWidget {
               backgroundColor: ColorUtility.textColorGrey,
               shape: const CircleBorder()),
           onPressed: () {
-            context.read<UserController>().urunAdetArtma(products);
+            context.read<CartController>().urunAdetArtma(products);
           },
           child: Icon(
             Icons.add_rounded,
@@ -285,7 +284,7 @@ class IncreaseButton extends StatelessWidget {
               backgroundColor: ColorUtility.textColorGrey,
               shape: const CircleBorder()),
           onPressed: () {
-            context.read<UserController>().urunAdetAzaltma(products);
+            context.read<CartController>().urunAdetAzaltma(products);
           },
           child: Icon(
             Icons.remove_rounded,

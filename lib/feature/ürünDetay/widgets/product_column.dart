@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCn%C3%96zellikler/%C3%BCr%C3%BCn_%C3%B6zellikler_view.dart';
+import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCn%C3%96zellikler/view/%C3%BCr%C3%BCn_%C3%B6zellikler_view.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_4.dart';
 

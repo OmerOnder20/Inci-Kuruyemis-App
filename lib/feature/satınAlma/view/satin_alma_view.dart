@@ -6,10 +6,10 @@ import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
 
-import '../../product/utility/colors/color_utility.dart';
-import '../../product/utility/sizes/widget_size.dart';
-import '../../product/widgets/text/title/title_small_1.dart';
-import '../../product/widgets/textFormField/custom_text_form_field.dart';
+import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/sizes/widget_size.dart';
+import '../../../product/widgets/text/title/title_small_1.dart';
+import '../../../product/widgets/textFormField/custom_text_form_field.dart';
 
 @RoutePage()
 class SatinAlmaView extends StatefulWidget {

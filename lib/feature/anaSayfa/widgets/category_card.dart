@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inci_kuruyemis/product/models/kategori_model.dart';
-
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/widgets/text/label/label_small_1.dart';
 
@@ -41,7 +40,7 @@ class CategoryCard extends StatelessWidget {
                     text: kategoriModel.name.toString(),
                   ),
                 ),
-              )
+              ),
             ]),
       ),
     );

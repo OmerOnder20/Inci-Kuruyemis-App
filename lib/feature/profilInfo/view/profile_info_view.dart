@@ -10,13 +10,13 @@ import 'package:inci_kuruyemis/product/widgets/text/title/title_large_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_medium_1.dart';
 import 'package:provider/provider.dart';
 
-import '../../product/utility/colors/color_utility.dart';
-import '../../product/utility/constants/asset_constants.dart';
-import '../../product/utility/constants/string_constants.dart';
-import '../../product/utility/sizes/widget_size.dart';
-import '../../product/utility/spacer/spacer_utility.dart';
-import '../../product/widgets/item/profile_info_item.dart';
-import '../../product/widgets/text/title/title_small_1.dart';
+import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/constants/asset_constants.dart';
+import '../../../product/utility/constants/string_constants.dart';
+import '../../../product/utility/sizes/widget_size.dart';
+import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../product/widgets/item/profile_info_item.dart';
+import '../../../product/widgets/text/title/title_small_1.dart';
 
 @RoutePage()
 class ProfilInfoView extends StatefulWidget {

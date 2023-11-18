@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../models/ürün_model.dart';
 
-class UserController extends ChangeNotifier {
+class CartController extends ChangeNotifier {
   Map<Products, int> sepetUrunleri = {};
 
   List<Products> get sepetItems => sepetUrunleri.keys.toList();
-
-  List<Variations>? variations = [];
-
-  int selectedVariation = 0;
 
   void removeAllSepet() {
     sepetUrunleri.clear();
@@ -21,23 +16,9 @@ class UserController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectVariation1() {
-    selectedVariation = 0;
-    notifyListeners();
-  }
-
-  void selectVariation2() {
-    selectedVariation = 1;
-    notifyListeners();
-  }
-
-  void selectVariation3() {
-    selectedVariation = 2;
-    notifyListeners();
-  }
-
-  void selectVariation4() {
-    selectedVariation = 3;
+  void selectVariation(Products products, int index) {
+    products.variationIndex = index;
+    products.isShown = true;
     notifyListeners();
   }
 
@@ -47,13 +28,21 @@ class UserController extends ChangeNotifier {
     } else {
       double _toplam = 0;
       sepetUrunleri.forEach((key, value) {
-        var selectedPrice = key.variations?[selectedVariation].price;
+        var selectedPrice = key.variations?[key.variationIndex].price;
         if (selectedPrice != null) {
           _toplam += (double.tryParse(selectedPrice) ?? 0) * value;
         }
       });
       return _toplam;
     }
+  }
+
+  int get sepetUrunSayisi {
+    int toplamUrunSayisi = 0;
+    sepetUrunleri.values.forEach((element) {
+      toplamUrunSayisi += element;
+    });
+    return toplamUrunSayisi;
   }
 
   void sepeteUrunuEkle(Products products) {

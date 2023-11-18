@@ -5,11 +5,11 @@ import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
 
-import '../../product/utility/colors/color_utility.dart';
-import '../../product/utility/sizes/widget_size.dart';
-import '../../product/utility/spacer/spacer_utility.dart';
-import '../../product/widgets/text/label/label_large_1.dart';
-import '../../product/widgets/text/title/title_large_1.dart';
+import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/sizes/widget_size.dart';
+import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../product/widgets/text/label/label_large_1.dart';
+import '../../../product/widgets/text/title/title_large_1.dart';
 
 @RoutePage()
 class KampanyaDetayView extends StatefulWidget {

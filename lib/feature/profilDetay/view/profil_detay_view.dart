@@ -7,14 +7,14 @@ import 'package:inci_kuruyemis/product/widgets/text/body/body_large_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/body/body_medium_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_2.dart';
 import 'package:provider/provider.dart';
-import '../../product/navigator/app_router.dart';
-import '../../product/utility/colors/color_utility.dart';
-import '../../product/utility/constants/string_constants.dart';
-import '../../product/utility/sizes/sizes.dart';
-import '../../product/utility/sizes/widget_size.dart';
-import '../../product/utility/spacer/spacer_utility.dart';
-import '../../product/widgets/textFormField/custom_text_form_field.dart';
-import '../../product/widgets/text/headline/headline_small_2.dart';
+import '../../../product/navigator/app_router.dart';
+import '../../../product/utility/colors/color_utility.dart';
+import '../../../product/utility/constants/string_constants.dart';
+import '../../../product/utility/sizes/sizes.dart';
+import '../../../product/utility/sizes/widget_size.dart';
+import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../product/widgets/textFormField/custom_text_form_field.dart';
+import '../../../product/widgets/text/headline/headline_small_2.dart';
 
 @RoutePage()
 class ProfilDetayView extends StatefulWidget {

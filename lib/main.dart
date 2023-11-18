@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/init/app_init.dart';
+import 'package:inci_kuruyemis/product/init/app_init_provider.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+  AppInit().initialize;
   runApp(
     MultiProvider(
-      providers: AppInit().providers,
+      providers: AppInitProvider().providers,
       child: MyApp(),
     ),
   );

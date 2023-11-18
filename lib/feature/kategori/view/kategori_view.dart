@@ -51,6 +51,9 @@ class _KategoriViewState extends KategoriViewModel {
                           Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => UrunDetayView(
                               products: Products(
+                                  isShown: urunItems?[index].isShown ?? false,
+                                  variationIndex:
+                                      urunItems?[index].variationIndex ?? 0,
                                   description: urunItems?[index].description,
                                   images: urunItems?[index].images,
                                   id: urunItems?[index].id,

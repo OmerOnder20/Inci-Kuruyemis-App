@@ -1,11 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:provider/provider.dart';
 
 import '../../product/utility/constants/asset_constants.dart';
 import '../../product/utility/sizes/widget_size.dart';
@@ -105,26 +108,81 @@ class _InitViewState extends State<InitView> {
                       ),
                       label: StringConstants.ara),
                   BottomNavigationBarItem(
-                      activeIcon: Padding(
-                        padding: const EdgeInsets.only(bottom: 2),
-                        child: Image.asset(
-                          AssetConstants.basketPng,
-                          height: SizeUtility.mediumX,
-                          width: SizeUtility.mediumX,
-                          fit: BoxFit.cover,
-                          color: ColorUtility.blackColor,
+                      activeIcon:
+                          Stack(alignment: Alignment.topRight, children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 2),
+                          child: Image.asset(
+                            AssetConstants.basketPng,
+                            height: SizeUtility.mediumX,
+                            width: SizeUtility.mediumX,
+                            fit: BoxFit.cover,
+                            color: ColorUtility.blackColor,
+                          ),
                         ),
-                      ),
-                      icon: Padding(
-                        padding: const EdgeInsets.only(bottom: 2),
-                        child: Image.asset(
-                          AssetConstants.basketPng,
-                          height: SizeUtility.mediumX,
-                          width: SizeUtility.mediumX,
-                          fit: BoxFit.cover,
-                          color: ColorUtility.tabItemsGrey,
+                        context.watch<CartController>().sepetItems.isNotEmpty
+                            ? Container(
+                                height: SizeUtility.smallXXX.h,
+                                width: SizeUtility.smallXXX.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: ColorUtility.redColor,
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  context
+                                      .watch<CartController>()
+                                      .sepetUrunSayisi
+                                      .toString(),
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 8.sp,
+                                      letterSpacing: 0,
+                                      color: ColorUtility.textColorBlack,
+                                      fontWeight: FontWeight.w600,
+                                      textStyle: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall),
+                                )),
+                              )
+                            : const SizedBox.shrink(),
+                      ]),
+                      icon: Stack(alignment: Alignment.topRight, children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 2),
+                          child: Image.asset(
+                            AssetConstants.basketPng,
+                            height: SizeUtility.mediumX,
+                            width: SizeUtility.mediumX,
+                            fit: BoxFit.cover,
+                            color: ColorUtility.tabItemsGrey,
+                          ),
                         ),
-                      ),
+                        context.watch<CartController>().sepetItems.isNotEmpty
+                            ? Container(
+                                height: SizeUtility.smallXXX.h,
+                                width: SizeUtility.smallXXX.w,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: ColorUtility.redColor,
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  context
+                                      .watch<CartController>()
+                                      .sepetUrunSayisi
+                                      .toString(),
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 8.sp,
+                                      letterSpacing: 0,
+                                      color: ColorUtility.textColorBlack,
+                                      fontWeight: FontWeight.w600,
+                                      textStyle: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall),
+                                )),
+                              )
+                            : const SizedBox.shrink(),
+                      ]),
                       label: StringConstants.sepetim),
                   BottomNavigationBarItem(
                       activeIcon: Padding(
