@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class WidgetSizes {
   const WidgetSizes._();
 
-  static double bottomNavigationBarHeight = 60;
+  static double bottomNavigationBarAndroidHeight = 60.h;
+  static double bottomNavigationBarIosHeight = 80.h;
   static double anaSayfaAppBarHeight = 76.h;
   static double anaSayfaPageViewBuilderHeight = 210.h;
   static double customAppBarHeight = 64.h;

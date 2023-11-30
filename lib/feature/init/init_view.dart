@@ -9,6 +9,7 @@ import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
 import 'package:provider/provider.dart';
+import 'dart:io' show Platform;
 
 import '../../product/utility/constants/asset_constants.dart';
 import '../../product/utility/sizes/widget_size.dart';
@@ -40,8 +41,11 @@ class _InitViewState extends State<InitView> {
           resizeToAvoidBottomInset: false,
           body: child,
           bottomNavigationBar: SizedBox(
-            height: WidgetSizes.bottomNavigationBarHeight,
+            height: Platform.isAndroid
+                ? WidgetSizes.bottomNavigationBarAndroidHeight
+                : WidgetSizes.bottomNavigationBarIosHeight,
             child: BottomNavigationBar(
+                backgroundColor: ColorUtility.whiteColor,
                 elevation: 20,
                 unselectedItemColor: const Color(0xffA5B1C0),
                 selectedItemColor: Colors.black,
