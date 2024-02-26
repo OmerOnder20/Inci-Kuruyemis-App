@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/product/controller/user_controller.dart';
+import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_medium.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_3.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_4.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_2.dart';
@@ -147,7 +148,7 @@ class BasketProductColumn extends StatelessWidget {
                 ]),
           ),
         ),
-        const BasketDivider()
+        const DividerMedium()
       ],
     );
   }
@@ -291,21 +292,6 @@ class IncreaseButton extends StatelessWidget {
             color: ColorUtility.whiteColor,
             size: SizeUtility.mediumxX.w,
           )),
-    );
-  }
-}
-
-class BasketDivider extends StatelessWidget {
-  const BasketDivider({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 1,
-      width: double.infinity,
-      color: ColorUtility.avatarColorGrey,
     );
   }
 }

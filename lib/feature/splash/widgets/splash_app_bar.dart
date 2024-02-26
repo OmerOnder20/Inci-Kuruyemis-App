@@ -9,6 +9,7 @@ class SplashAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: ColorUtility.yellowColor,
       elevation: 0,
       systemOverlayStyle:
           const SystemUiOverlayStyle(statusBarColor: ColorUtility.yellowColor),

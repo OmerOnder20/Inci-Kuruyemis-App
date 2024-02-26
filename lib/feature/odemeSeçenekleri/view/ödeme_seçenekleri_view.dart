@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/feature/kargoTeslimat/viewModel/kargo_teslimat_provider.dart';
+import 'package:inci_kuruyemis/feature/odemeSe%C3%A7enekleri/viewModel/%C3%B6deme_se%C3%A7enekleri_provider.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
@@ -12,19 +12,19 @@ import 'package:inci_kuruyemis/product/widgets/text/title/title_large_2.dart';
 import 'package:provider/provider.dart';
 
 @RoutePage()
-class KargoTeslimatView extends StatefulWidget {
-  const KargoTeslimatView({super.key});
+class OdemeSecenekleriView extends StatefulWidget {
+  const OdemeSecenekleriView({super.key});
 
   @override
-  State<KargoTeslimatView> createState() => _KargoTeslimatViewState();
+  State<OdemeSecenekleriView> createState() => _OdemeSecenekleriViewState();
 }
 
-class _KargoTeslimatViewState extends State<KargoTeslimatView> {
+class _OdemeSecenekleriViewState extends State<OdemeSecenekleriView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-          title: StringConstants.kargoVeTeslimat, leading: PopButton()),
+          title: StringConstants.odemeSecenekleri, leading: PopButton()),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
@@ -34,18 +34,17 @@ class _KargoTeslimatViewState extends State<KargoTeslimatView> {
               children: [
                 SpacerUtility.mediumXXX,
                 const TitleLarge2(
-                  text: StringConstants.kargoVeTeslimat,
+                  text: StringConstants.odemeSecenekleri,
                 ),
                 SpacerUtility.smallX,
                 const DividerLarge(),
                 SpacerUtility.smallX,
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: context.watch<KargoProvider>().isLoading
+                  child: context.watch<OdemeProvider>().isLoading
                       ? const CircularProgressIndicator.adaptive()
                       : LabelLarge1(
-                          text: (context.watch<KargoProvider>().teslimatItem ??
-                                  "")
+                          text: (context.watch<OdemeProvider>().odemeItem ?? "")
                               .replaceAll(RegExp(r'<[^>]*>'), ''),
                         ),
                 )

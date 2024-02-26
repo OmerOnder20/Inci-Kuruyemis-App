@@ -77,4 +77,9 @@ class StringConstants {
   static const String urunEklendi = "Ürün sepete eklendi";
   static const String urunKaldirildi = "Ürün sepetten kaldırıldı";
   static const String sepettenKaldir = "Sepetten kaldır";
+  static const String girisYap = "Giriş Yap";
+  static const String sifre = "Şifre";
+  static const String hesabimVar = "Hesabım var";
+  static const String yanlisGirdiniz = "Bilgileri yanliş girdiniz!";
+  static const String tekrarDene = "Tekrar dene";
 }

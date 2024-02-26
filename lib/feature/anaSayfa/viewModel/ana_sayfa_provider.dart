@@ -11,15 +11,15 @@ class AnaSayfaProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<KategoriModel>? kategoriItems = [];
+  List<Data>? kategoriItems = [];
 
   AnaSayfaProvider(this._kategoriService) {
-    _fetchKategoriItems();
+    fetchKategoriItems();
   }
 
-  Future<void> _fetchKategoriItems() async {
+  Future<void> fetchKategoriItems() async {
     _changeLoading();
-    kategoriItems = await _kategoriService.fetchKategori() ?? [];
+    kategoriItems = (await _kategoriService.fetchKategori())?.data ?? [];
     _changeLoading();
   }
 }

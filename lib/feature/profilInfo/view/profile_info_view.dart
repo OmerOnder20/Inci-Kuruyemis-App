@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inci_kuruyemis/product/controller/global_controller.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_3.dart';
@@ -40,7 +41,7 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             contentPadding:
-                EdgeInsets.symmetric(horizontal: 75.w, vertical: 50.h),
+                EdgeInsets.symmetric(horizontal: 65.w, vertical: 50.h),
             title: const Center(
                 child: TitleMedium1(
               text: StringConstants.kayitOldunuz,
@@ -70,6 +71,8 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
 
   @override
   Widget build(BuildContext context) {
+    final userController = Provider.of<UserController>(context);
+
     return Scaffold(
       appBar: const CustomAppBar(
         title: StringConstants.profilim,
@@ -87,15 +90,15 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SpacerUtility.mediumX,
-                      const TitleLarge1(text: "Ömer Faruk Önder"),
+                      TitleLarge1(text: userController.name.toString()),
                       SpacerUtility.smallXX,
-                      const LabelMedium3(text: "kyrieirving20112000@gmail.com"),
+                      LabelMedium3(text: userController.email.toString()),
                       SpacerUtility.smallX,
-                      const LabelMedium3(text: "+90 552 711 7135")
+                      LabelMedium3(text: userController.username.toString())
                     ],
                   )),
               Container(
-                height: 30.h,
+                height: 10.h,
                 width: double.infinity,
                 color: ColorUtility.avatarColorGrey,
               ),

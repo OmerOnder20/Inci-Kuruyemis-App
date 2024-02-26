@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../../product/controller/user_controller.dart';
+import '../../../product/controller/cart_controller.dart';
 import '../../../product/navigator/app_router.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';

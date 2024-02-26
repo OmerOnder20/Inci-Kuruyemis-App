@@ -91,53 +91,46 @@ class _SatinAlmaViewState extends State<SatinAlmaView> {
                   controller: _ulkeController,
                   labelText: StringConstants.ulke,
                   textInputType: TextInputType.streetAddress,
-                  height: WidgetSizes.profilTextFieldHeight,
-                  width: double.infinity,
                   validator: (p0) =>
                       p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                 ),
+                SpacerUtility.smallXXX,
                 CustomTextFormField(
                     controller: _sehirController,
                     labelText: StringConstants.sehir,
                     textInputType: TextInputType.streetAddress,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p1) => p1!.isEmpty
                         ? StringConstants.buAlanBosGecilemez
                         : null),
+                SpacerUtility.smallXXX,
                 CustomTextFormField(
                     controller: _ilceController,
                     labelText: StringConstants.ilce,
                     textInputType: TextInputType.streetAddress,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p3) => p3!.isEmpty
                         ? StringConstants.buAlanBosGecilemez
                         : null),
+                SpacerUtility.smallXXX,
                 CustomTextFormField(
                     controller: _adresController,
                     labelText: StringConstants.detayliAdres,
                     textInputType: TextInputType.streetAddress,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p4) => p4!.isEmpty
                         ? StringConstants.buAlanBosGecilemez
                         : null),
+                SpacerUtility.smallXXX,
                 CustomTextFormField(
                     controller: _aliciAdSoyadController,
                     labelText: StringConstants.aliciAdSoyad,
                     textInputType: TextInputType.name,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p5) => p5!.isEmpty
                         ? StringConstants.buAlanBosGecilemez
                         : null),
+                SpacerUtility.smallXXX,
                 CustomTextFormField(
                     controller: _aliciTelefonController,
                     labelText: StringConstants.aliciTelNo,
                     textInputType: TextInputType.phone,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p6) => p6!.isEmpty
                         ? StringConstants.buAlanBosGecilemez
                         : null),

@@ -1,16 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/view/%C3%BCr%C3%BCn_detay_view.dart';
-import 'package:inci_kuruyemis/product/controller/user_controller.dart';
+import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
 import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
 import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/button/gramaj_button.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_huge.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_large.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_small.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_5.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_4.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_large_3.dart';
 import 'package:provider/provider.dart';
-
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
 import '../../../product/utility/sizes/sizes.dart';
@@ -29,11 +30,17 @@ class DetailInfoRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const LabelMedium4(text: StringConstants.gramaj),
-        const DetailDividerTwo(),
+        const Padding(
+          padding: EdgeInsets.only(left: 10),
+          child: DividerHuge(),
+        ),
         ChooseGramajButton(products: products),
-        const DetailDividerTwo(),
+        const Padding(
+          padding: EdgeInsets.only(left: 10),
+          child: DividerHuge(),
+        ),
         Padding(
-          padding: const EdgeInsets.only(left: 20),
+          padding: const EdgeInsets.only(left: 10),
           child: Consumer<CartController>(
             builder: (context, value, child) {
               return TitleLarge3(
@@ -88,47 +95,63 @@ class ChooseGramajButton extends StatelessWidget {
                                   text: StringConstants.gramaj),
                             ),
                             SpacerUtility.smallX,
-                            const DetailDividerOne(),
+                            const DividerLarge(),
                             SpacerUtility.smallX,
                             GramajButton(
                               text: products.variations?[0].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 0);
                                 context.router.pop();
+                                print(products.variationIndex.toString());
                               },
                             ),
                             SpacerUtility.smallX,
-                            const DetailDividerThree(),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: DividerSmall(),
+                            ),
                             SpacerUtility.smallX,
                             GramajButton(
                               text: products.variations?[1].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 1);
                                 context.router.pop();
+                                print(products.variationIndex.toString());
                               },
                             ),
                             SpacerUtility.smallX,
-                            const DetailDividerThree(),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: DividerSmall(),
+                            ),
                             SpacerUtility.smallX,
                             GramajButton(
                               text: products.variations?[2].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 2);
                                 context.router.pop();
+                                print(products.variationIndex.toString());
                               },
                             ),
                             SpacerUtility.smallX,
-                            const DetailDividerThree(),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: DividerSmall(),
+                            ),
                             SpacerUtility.smallX,
                             GramajButton(
                               text: products.variations?[3].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 3);
                                 context.router.pop();
+                                print(products.variationIndex.toString());
                               },
                             ),
                             SpacerUtility.smallX,
-                            const DetailDividerThree(),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: DividerSmall(),
+                            ),
                           ]),
                     ),
                   );
@@ -161,42 +184,6 @@ class ChooseGramajButton extends StatelessWidget {
                 )
               ],
             )),
-      ),
-    );
-  }
-}
-
-class DetailDividerThree extends StatelessWidget {
-  const DetailDividerThree({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        height: 0.5.h,
-        width: double.infinity,
-        color: ColorUtility.avatarColorGrey,
-      ),
-    );
-  }
-}
-
-class DetailDividerTwo extends StatelessWidget {
-  const DetailDividerTwo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10),
-      child: Container(
-        height: 20.h,
-        width: 2,
-        color: ColorUtility.textColorGrey,
       ),
     );
   }

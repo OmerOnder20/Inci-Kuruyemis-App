@@ -39,7 +39,7 @@ class DetailColumn extends StatelessWidget {
               );
               //Buraya SizedBox koyacaksın sonra da childına servisten gelen resimli dataları direkt
               //Image.network() şeklinde yükleyeceksin.Bunu yaparken fit:BoxFit.cover vermeyi unutma
-              //Buradaki itemXount sayısı ile PageIndicator count sayısı eşit olmak zorunda.
+              //Buradaki itemCount sayısı ile PageIndicator count sayısı eşit olmak zorunda.
             },
           ),
         ),

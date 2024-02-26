@@ -2,13 +2,29 @@ import 'package:flutter/material.dart';
 
 @immutable
 class KategoriModel {
+  List<Data>? data;
+
+  KategoriModel({this.data});
+
+  KategoriModel.fromJson(Map<String, dynamic> json) {
+    if (json['data'] != null) {
+      data = <Data>[];
+      json['data'].forEach((v) {
+        data!.add(new Data.fromJson(v));
+      });
+    }
+  }
+}
+
+@immutable
+class Data {
   int? id;
   String? name;
   Image? image;
 
-  KategoriModel({this.id, this.name, this.image});
+  Data({this.id, this.name, this.image});
 
-  KategoriModel.fromJson(Map<String, dynamic> json) {
+  Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     image = json['image'] != null ? new Image.fromJson(json['image']) : null;

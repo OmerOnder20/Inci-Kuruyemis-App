@@ -5,7 +5,6 @@ import 'package:inci_kuruyemis/feature/anaSayfa/viewModel/ana_sayfa_provider.dar
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/ana_sayfa_app_bar.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/category_card.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/page_stack.dart';
-import 'package:inci_kuruyemis/product/models/kategori_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../product/navigator/app_router.dart';
@@ -76,9 +75,8 @@ class _CategoryGridViewBuilder extends StatelessWidget {
                       categoryName: provider.kategoriItems?[index].name ?? ""));
                 },
                 child: CategoryCard(
-                  kategoriModel: KategoriModel(
-                      name: provider.kategoriItems?[index].name,
-                      image: provider.kategoriItems?[index].image),
+                  categoryname: provider.kategoriItems?[index].name ?? "",
+                  imagePath: provider.kategoriItems?[index].image?.path ?? "",
                 ),
               );
             },

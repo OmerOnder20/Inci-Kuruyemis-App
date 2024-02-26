@@ -17,6 +17,7 @@ class AppRoutes {
   static const String routeCampaignDetail = "kampanyaDetay";
   static const String routeProfileDetail = "profilDetay";
   static const String routeProfileInfo = "profilInfo";
+  static const String routeHaveAcc = "haveAcc";
   static const String routePurchase = "purchase";
   static const String routeEmpty1 = "empty1";
   static const String routeEmpty2 = "empty2";

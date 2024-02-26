@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
-
-import '../../../product/utility/colors/color_utility.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_medium.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
 import '../../../product/widgets/text/label/label_large_1.dart';
@@ -54,7 +53,7 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
             SpacerUtility.smallXXX,
             const TitleLarge1(text: "Kargo Bedava Kampanyası"),
             SpacerUtility.smallX,
-            const _CampaignDetailDivider(),
+            const DividerMedium(),
             SpacerUtility.smallX,
             const LabelLarge1(
               text:
@@ -63,19 +62,6 @@ class _KampanyaDetayViewState extends State<KampanyaDetayView> {
           ]),
         ),
       ),
-    );
-  }
-}
-
-class _CampaignDetailDivider extends StatelessWidget {
-  const _CampaignDetailDivider();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 1,
-      width: double.infinity,
-      color: ColorUtility.avatarColorGrey,
     );
   }
 }

@@ -21,10 +21,10 @@ dependencies:
   flutter_screenutil: ^5.8.4
 
   #SVG Package
-  flutter_svg: ^2.0.7
+  flutter_svg: ^2.0.9
   
   #Fonts
-  google_fonts: ^5.0.0
+  google_fonts: ^6.1.0
 
   #Page Indicator
   smooth_page_indicator: ^1.1.0
@@ -39,10 +39,10 @@ dependencies:
   pinput: ^2.2.31
 
   #State Management
-  provider: ^6.0.5
+  provider: ^6.1.1
 
   #Network Manager
-  dio: ^5.2.1+1
+  dio: ^5.4.1
 
   #Cache Manager
   cached_network_image: ^3.3.0

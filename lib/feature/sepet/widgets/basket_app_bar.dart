@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:inci_kuruyemis/product/controller/user_controller.dart';
+import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
 import 'package:provider/provider.dart';
 
 import '../../../product/utility/colors/color_utility.dart';

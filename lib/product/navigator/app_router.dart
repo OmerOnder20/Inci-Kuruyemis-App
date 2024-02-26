@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:inci_kuruyemis/feature/login/view/login_view.dart';
 
 import '../../feature/anaSayfa/view/ana_sayfa_view.dart';
 import '../../feature/arama/view/arama_view.dart';
@@ -14,7 +15,7 @@ import '../../feature/profilInfo/view/profile_info_view.dart';
 import '../../feature/satınAlma/view/satin_alma_view.dart';
 import '../../feature/sepet/view/sepet_view.dart';
 import '../../feature/splash/view/splash_view.dart';
-import '../../feature/ödemeSeçenekleri/view/ödeme_seçenekleri_view.dart';
+import '../../feature/odemeSeçenekleri/view/ödeme_seçenekleri_view.dart';
 import '../utility/constants/app_routes.dart';
 
 part 'app_router.gr.dart';
@@ -85,6 +86,7 @@ class AppRouter extends _$AppRouter {
                 AutoRoute(
                     page: ProfilInfoRoute.page,
                     path: AppRoutes.routeProfileInfo),
+                AutoRoute(page: HaveAccRoute.page, path: AppRoutes.routeHaveAcc)
               ])
         ]),
       ];

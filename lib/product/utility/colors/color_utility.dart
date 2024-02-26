@@ -14,4 +14,5 @@ class ColorUtility {
   static const Color textColorGrey = Color(0xff4F5E6F);
   static Color? get avatarColorGrey => Colors.grey[350];
   static const Color greyColor = Colors.grey;
+  static const Color amberColor = Colors.amber;
 }

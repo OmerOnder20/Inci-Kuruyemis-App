@@ -42,7 +42,9 @@ class _SearchTextFieldState extends State<SearchTextField> {
               textInputAction: TextInputAction.search,
               focusNode: _focusNode,
               onTap: () {
-                showSearch(context: context, delegate: SearchProductDelegate(_focusNode));
+                showSearch(
+                    context: context,
+                    delegate: SearchProductDelegate(_focusNode));
               },
               controller: widget.controller,
               keyboardType: TextInputType.none,
@@ -58,7 +60,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
                 hintText: StringConstants.urunAra,
                 hintStyle: GoogleFonts.poppins(
                     letterSpacing: 0,
-                    height: 1,
+                    height: 0,
                     color: ColorUtility.greyColor,
                     fontWeight: FontWeight.w400,
                     textStyle: Theme.of(context).textTheme.titleSmall),
@@ -66,19 +68,24 @@ class _SearchTextFieldState extends State<SearchTextField> {
                 fillColor: ColorUtility.scaffoldBackGroundColor,
                 errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5.w)),
+                    borderSide: BorderSide(
+                        color: ColorUtility.greyColor, width: 0.5.w)),
                 disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5.w)),
+                    borderSide: BorderSide(
+                        color: ColorUtility.greyColor, width: 0.5.w)),
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5.w)),
+                    borderSide: BorderSide(
+                        color: ColorUtility.greyColor, width: 0.5.w)),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5.w)),
+                    borderSide: BorderSide(
+                        color: ColorUtility.greyColor, width: 0.5.w)),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: ColorUtility.greyColor, width: 0.5.w)),
+                    borderSide: BorderSide(
+                        color: ColorUtility.greyColor, width: 0.5.w)),
               )),
         ));
   }

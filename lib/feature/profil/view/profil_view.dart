@@ -1,11 +1,14 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/profil/widgets/profile_elevated_button.dart';
+import 'package:inci_kuruyemis/product/navigator/app_router.dart';
+import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
+import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
-import '../../../product/utility/sizes/widget_size.dart';
+import 'package:inci_kuruyemis/product/widgets/text/body/body_large_2.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
 import '../../../product/widgets/textFormField/custom_text_form_field.dart';
 import '../../../product/widgets/text/body/body_large_1.dart';
@@ -69,9 +72,32 @@ class _ProfilViewState extends State<ProfilView> {
                       controller: _controller,
                       labelText: StringConstants.telefonNumarasi,
                       textInputType: TextInputType.phone,
-                      height: WidgetSizes.profilTextFieldHeight,
-                      width: double.infinity,
                     ),
+                    SpacerUtility.smallX,
+                    Row(
+                      children: [
+                        TextButton(
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              foregroundColor:
+                                  ColorUtility.scaffoldBackGroundColor,
+                            ),
+                            onPressed: () {
+                              context.router.push(const HaveAccRoute());
+                            },
+                            child: const BodyLarge2(
+                                text: StringConstants.hesabimVar)),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5.w),
+                          child: Icon(
+                            Icons.arrow_forward_rounded,
+                            size: SizeUtility.mediumX.h,
+                            color: ColorUtility.textColorBlack,
+                          ),
+                        )
+                      ],
+                    ),
+                    SpacerUtility.smallX,
                     ProfileElevatedButton(
                       formKey: _formKey,
                       controller: _pinputController,

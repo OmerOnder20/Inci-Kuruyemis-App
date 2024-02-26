@@ -1,16 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:inci_kuruyemis/product/models/kategori_model.dart';
+
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/widgets/text/label/label_small_1.dart';
 
 class CategoryCard extends StatelessWidget {
-  final KategoriModel kategoriModel;
+  final String imagePath;
+  final String categoryname;
   const CategoryCard({
-    super.key,
-    required this.kategoriModel,
-  });
+    Key? key,
+    required this.imagePath,
+    required this.categoryname,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +31,15 @@ class CategoryCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
-                child: SvgPicture.network(
-                    kategoriModel.image?.path.toString() ?? ""),
+                child: SvgPicture.network(imagePath),
                 radius: 34.r,
                 backgroundColor: ColorUtility.whiteColor,
               ),
               Flexible(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 10.h, left: 15, right: 20),
+                  padding: EdgeInsets.only(top: 10.h, left: 15, right: 10),
                   child: LabelSmall1(
-                    text: kategoriModel.name.toString(),
+                    text: categoryname,
                   ),
                 ),
               ),

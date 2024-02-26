@@ -36,14 +36,13 @@ class WidgetSizes {
   static double campaignCard = 325.w;
   static double campaignCardTextHeight = 45.w;
   static double campaignCardTextWidth = 330.w;
-  static double profilTextFieldHeight = 100.h;
   static double profilElevatedButtonHeight = 52.h;
   static double profilBottomSheetHeight = 710.h;
   static double profilPinputHeight = 50.h;
   static double profilPinputWidth = 50.w;
   static double profilCheckBoxRowHeight = 45.h;
   static double profilInfoColumn = 145.h;
-  static double profilInfoItemHeight = 60.h;
+  static double profilInfoItemHeight = 55.h;
   static double profilInfoItemSvgHeightAndWidth = 100.h;
   static double purchaseFloatingActionHeight = 50.h;
   static double purchaseFloatingActionWidth = 130.w;

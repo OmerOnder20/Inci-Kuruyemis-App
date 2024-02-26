@@ -3,12 +3,31 @@ import 'package:flutter/material.dart';
 
 @immutable
 class UrunModel {
+  Data? data;
+
+  UrunModel({this.data});
+
+  UrunModel.fromJson(Map<String, dynamic> json) {
+    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.data != null) {
+      data['data'] = this.data!.toJson();
+    }
+    return data;
+  }
+}
+
+@immutable
+class Data {
   String? name;
   List<Products>? products;
 
-  UrunModel({this.name, this.products});
+  Data({this.name, this.products});
 
-  UrunModel.fromJson(Map<String, dynamic> json) {
+  Data.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     if (json['products'] != null) {
       products = <Products>[];
@@ -38,6 +57,7 @@ class Products extends Equatable {
   List<Variations>? variations;
   int variationIndex = 0;
   bool isShown = false;
+
   Products(
       {this.id,
       this.name,

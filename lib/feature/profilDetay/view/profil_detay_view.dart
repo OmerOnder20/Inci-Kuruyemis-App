@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/controller/global_controller.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
-import 'package:inci_kuruyemis/product/widgets/text/body/body_large_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/body/body_medium_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_large_2.dart';
 import 'package:provider/provider.dart';
 import '../../../product/navigator/app_router.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
-import '../../../product/utility/sizes/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
 import '../../../product/widgets/textFormField/custom_text_form_field.dart';
@@ -74,6 +72,7 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  /*
                   Row(
                     children: [
                       Icon(
@@ -89,34 +88,29 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                       )
                     ],
                   ),
-                  SpacerUtility.medium,
+                  */
                   CustomTextFormField(
                     controller: _nameController,
                     labelText: StringConstants.adiniz,
                     textInputType: TextInputType.name,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p0) =>
                         p0!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
+                  SpacerUtility.smallXX,
                   CustomTextFormField(
                     controller: _surnameController,
                     labelText: StringConstants.soyadiniz,
                     textInputType: TextInputType.name,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
                     validator: (p2) =>
                         p2!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
+                  SpacerUtility.smallXX,
                   CustomTextFormField(
                     controller: _emailController,
                     labelText: StringConstants.epostaAdresiniz,
                     textInputType: TextInputType.emailAddress,
-                    height: WidgetSizes.profilTextFieldHeight,
-                    width: double.infinity,
-                    validator: (p1) =>
-                        p1!.isEmpty ? StringConstants.buAlanBosGecilemez : null,
                   ),
+                  SpacerUtility.smallXX,
                 ],
               ),
             ),

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_app_bar.dart';
 import 'package:inci_kuruyemis/feature/sepet/widgets/basket_product_column.dart';
-import 'package:inci_kuruyemis/product/controller/user_controller.dart';
+import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/basket_floating_action_button.dart';

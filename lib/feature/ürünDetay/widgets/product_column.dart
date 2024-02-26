@@ -1,14 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCn%C3%96zellikler/view/%C3%BCr%C3%BCn_%C3%B6zellikler_view.dart';
+import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/product/widgets/divider/divider_large.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_4.dart';
 
 import '../../../product/models/ürün_model.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
-import '../view/ürün_detay_view.dart';
 
 class ProductColumn extends StatelessWidget {
   final Products products;
@@ -25,18 +27,22 @@ class ProductColumn extends StatelessWidget {
           products: products,
         ),
         SpacerUtility.smallX,
-        const DetailDividerOne(),
+        const DividerLarge(),
         SpacerUtility.smallX,
         const PaymentOptionsButton(),
         SpacerUtility.smallX,
-        const DetailDividerOne(),
+        const DividerLarge(),
         SpacerUtility.smallX,
         const DeliveryButton(),
         SpacerUtility.smallX,
-        const DetailDividerOne(),
+        const DividerLarge(),
       ],
     );
   }
+}
+
+class DetailDividerOne {
+  const DetailDividerOne();
 }
 
 class DeliveryButton extends StatelessWidget {
@@ -52,7 +58,9 @@ class DeliveryButton extends StatelessWidget {
           style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
               foregroundColor: ColorUtility.textColorGrey),
-          onPressed: () {},
+          onPressed: () {
+            context.router.push(const KargoTeslimatRoute());
+          },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,7 +90,9 @@ class PaymentOptionsButton extends StatelessWidget {
           style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
               foregroundColor: ColorUtility.textColorGrey),
-          onPressed: () {},
+          onPressed: () {
+            context.router.push(const OdemeSecenekleriRoute());
+          },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

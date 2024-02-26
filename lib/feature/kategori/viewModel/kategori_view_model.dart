@@ -24,7 +24,7 @@ abstract class KategoriViewModel extends State<KategoriView> {
 
   Future<void> fetchItemsWithId(int id) async {
     _changeLoading();
-    urunItems = (await urunService.fetchKategoriWithId(id))?.products;
+    urunItems = (await urunService.fetchKategoriWithId(id))?.data?.products;
     _changeLoading();
   }
 }
