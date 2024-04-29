@@ -6,7 +6,6 @@ import '../../feature/anaSayfa/view/ana_sayfa_view.dart';
 import '../../feature/arama/view/arama_view.dart';
 import '../../feature/init/init_view.dart';
 import '../../feature/kampanya/view/kampanya_view.dart';
-import '../../feature/kampanyaDetay/view/kampanya_detay_view.dart';
 import '../../feature/kargoTeslimat/view/kargo_teslimat_view.dart';
 import '../../feature/kategori/view/kategori_view.dart';
 import '../../feature/profil/view/profil_view.dart';
@@ -56,9 +55,6 @@ class AppRouter extends _$AppRouter {
                     page: KampanyaRoute.page,
                     path: AppRoutes.routeCampaign,
                     initial: true),
-                AutoRoute(
-                    page: KampanyaDetayRoute.page,
-                    path: AppRoutes.routeCampaignDetail),
               ]),
           AutoRoute(
               page: EmptySepetRoute.page,

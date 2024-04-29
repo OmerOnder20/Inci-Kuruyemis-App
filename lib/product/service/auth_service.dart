@@ -7,13 +7,14 @@ abstract class IAuthService {
 }
 
 class AuthService extends IAuthService {
-  final Dio _dio;
-  AuthService() : _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  late final Dio dio;
+
+  AuthService() : dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
 
   Future<LoginResponseModel?> loginPost(
       String username, String password) async {
     try {
-      Response response = await _dio.post(
+      Response response = await dio.post(
         "/${ApiConstants.user}/${ApiConstants.session}",
         data: {'username': username, 'password': password},
       );

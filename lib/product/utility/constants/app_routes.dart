@@ -25,7 +25,7 @@ class AppRoutes {
   static const String routeEmpty4 = "empty3";
 
 //Ana rootlarda slash yani iç çizgi kullanılır ama çocuklarında kullanılmaz.
-//İç rootlarda slash kullanılması taktirde hata verir.
+//İç rootlarda slash kullanılması takdirde hata verir.
 //Ürün detay sayfası için tekrardan videoyu izle. Yani çocuk sayfası için.
 //İç içe gecen sayfalarda navigator.of kullanabılırsın bazen.Dıger turlu
 //Ust sınıftan model veya liste seklınde parametre alamazsın cunku

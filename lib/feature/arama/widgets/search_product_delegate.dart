@@ -1,29 +1,28 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/view/%C3%BCr%C3%BCn_detay_view.dart';
+import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
+import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/sizes/sizes.dart';
-import '../../../product/utility/sizes/widget_size.dart';
 
 class SearchProductDelegate extends SearchDelegate {
   final FocusNode focusNode;
+  final String searchFieldLabel;
+  final TextStyle searchFieldStyle;
+  final TextInputType keyboardType;
+  final TextInputAction textInputAction;
 
-  List<String> nutItems = [
-    "Antep Fıstığı",
-    "Kavrulmuş Fındık",
-    "Kavrulmuş Badem",
-    "Kavrulmuş Yer Fıstığı",
-    "Ayçekirdeği",
-    "Lüks Karışık",
-    "Çiğ Karışık",
-  ];
-
-  SearchProductDelegate(
-    this.focusNode,
-  );
+  SearchProductDelegate({
+    required this.focusNode,
+    required this.searchFieldLabel,
+    required this.searchFieldStyle,
+    required this.keyboardType,
+    required this.textInputAction,
+  });
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -37,7 +36,6 @@ class SearchProductDelegate extends SearchDelegate {
     ];
   }
 
-  //Burayı veli bacıktan tekrardan izle. <T> type kısmına bak ve dıger kısımları da izle.
   @override
   Widget? buildLeading(
     BuildContext context,
@@ -46,7 +44,6 @@ class SearchProductDelegate extends SearchDelegate {
         onPressed: () {
           close(context, null);
           context.router.pop();
-
           FocusScope.of(context).unfocus();
         },
         icon: Icon(Icons.arrow_back_rounded,
@@ -55,151 +52,135 @@ class SearchProductDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<String> searchItems = [];
-    for (var item in nutItems) {
-      if (item.toLowerCase().contains(query.toLowerCase())) {
-        searchItems.add(item);
-      }
-    }
-    return ListView.builder(
-      itemCount: searchItems.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Column(
-          children: [
-            Container(
-              height: 1,
-              width: double.infinity,
-              color: ColorUtility.avatarColorGrey,
-            ),
-            InkWell(
-              onTap: () {
-                // context.router.navigate(UrunDetayRoute());
-                // context.router.pop();
-
-                FocusScope.of(context).unfocus();
+    return FutureBuilder<List<Products>>(
+        future: searchProducts(query),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Hata: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text(StringConstants.urunBulunamadi));
+          } else {
+            return ListView.builder(
+              itemCount: snapshot.data?.length,
+              itemBuilder: (BuildContext context, int index) {
+                final product = snapshot.data?[index];
+                return Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        FocusScope.of(context).unfocus();
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => UrunDetayView(
+                                products: product ??
+                                    Products(
+                                      variationIndex: 0,
+                                      isShown: false,
+                                    ))));
+                      },
+                      child: ListTile(
+                        title: Text(product?.name ?? ""),
+                        trailing: Container(
+                          height: SizeUtility.largeXX.h,
+                          width: SizeUtility.largeXX.w,
+                          decoration: const BoxDecoration(
+                              color: ColorUtility.yellowColor,
+                              shape: BoxShape.circle),
+                          child: Icon(
+                            Icons.chevron_right_rounded,
+                            color: ColorUtility.whiteColor,
+                            size: SizeUtility.mediumX,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1,
+                      width: double.infinity,
+                      color: ColorUtility.avatarColorGrey,
+                    ),
+                  ],
+                );
               },
-              child: ListTile(
-                title: Text(searchItems[index]),
-                trailing: Container(
-                  height: SizeUtility.largeXX.h,
-                  width: SizeUtility.largeXX.w,
-                  decoration: const BoxDecoration(
-                      color: ColorUtility.yellowColor, shape: BoxShape.circle),
-                  child: Icon(
-                    Icons.chevron_right_rounded,
-                    color: ColorUtility.whiteColor,
-                    size: SizeUtility.mediumX,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
+            );
+          }
+        });
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> searchItems = [];
-    for (var item in nutItems) {
-      if (item.toLowerCase().contains(query.toLowerCase())) {
-        searchItems.add(item);
-      }
-    }
-    return ListView.builder(
-      itemCount: searchItems.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Column(
-          children: [
-            Container(
-              height: 1,
-              width: double.infinity,
-              color: ColorUtility.avatarColorGrey,
-            ),
-            InkWell(
-              onTap: () {
-                // context.router.navigate(UrunDetayRoute());
-                // context.router.pop();
-
-                FocusScope.of(context).unfocus();
+    return FutureBuilder<List<Products>>(
+        future: searchProducts(query),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Hata: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text(StringConstants.urunBulunamadi));
+          } else {
+            return ListView.builder(
+              itemCount: snapshot.data?.length,
+              itemBuilder: (BuildContext context, int index) {
+                final product = snapshot.data?[index];
+                return Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        FocusScope.of(context).unfocus();
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => UrunDetayView(
+                                products: product ??
+                                    Products(
+                                      variationIndex: 0,
+                                      isShown: false,
+                                    ))));
+                      },
+                      child: ListTile(
+                        title: Text(product?.name ?? ""),
+                        trailing: Container(
+                          height: SizeUtility.largeXX.h,
+                          width: SizeUtility.largeXX.w,
+                          decoration: const BoxDecoration(
+                              color: ColorUtility.yellowColor,
+                              shape: BoxShape.circle),
+                          child: Icon(
+                            Icons.chevron_right_rounded,
+                            color: ColorUtility.whiteColor,
+                            size: SizeUtility.mediumX,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1,
+                      width: double.infinity,
+                      color: ColorUtility.avatarColorGrey,
+                    ),
+                  ],
+                );
               },
-              child: ListTile(
-                title: Text(searchItems[index]),
-                trailing: Container(
-                  height: SizeUtility.largeXX.h,
-                  width: SizeUtility.largeXX.w,
-                  decoration: const BoxDecoration(
-                      color: ColorUtility.yellowColor, shape: BoxShape.circle),
-                  child: Icon(
-                    Icons.chevron_right_rounded,
-                    color: ColorUtility.whiteColor,
-                    size: SizeUtility.mediumX,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
+            );
+          }
+        });
   }
 
-  @override
-  ThemeData appBarTheme(BuildContext context) {
-    return Theme.of(context).copyWith(
-        textTheme: Theme.of(context).textTheme.copyWith(
-              titleLarge: GoogleFonts.poppins(
-                  letterSpacing: 0,
-                  height: 1,
-                  color: ColorUtility.blackColor,
-                  fontWeight: FontWeight.w400,
-                  textStyle: Theme.of(context).textTheme.titleSmall),
-            ),
-        scaffoldBackgroundColor: ColorUtility.scaffoldBackGroundColor,
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor: ColorUtility.blackColor,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-            hintStyle: GoogleFonts.poppins(
-                letterSpacing: 0,
-                height: 1,
-                color: ColorUtility.greyColor,
-                fontWeight: FontWeight.w400,
-                textStyle: Theme.of(context).textTheme.titleSmall),
-            errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                    color: ColorUtility.greyColor, width: 0.5)),
-            disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                    color: ColorUtility.greyColor, width: 0.5)),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                    color: ColorUtility.greyColor, width: 0.5)),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                    color: ColorUtility.greyColor, width: 0.5)),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(
-                    color: ColorUtility.greyColor, width: 0.5))),
-        appBarTheme: AppBarTheme(
-            titleSpacing: 5,
-            elevation: 0,
-            color: ColorUtility.scaffoldBackGroundColor,
-            toolbarHeight: WidgetSizes.delegateTextFieldHeight));
+  Future<List<Products>> searchProducts(String query) async {
+    try {
+      final dio = Dio();
+      final response = await dio
+          .get('${ApiConstants.baseUrl}/${ApiConstants.searchQuery}$query');
+      if (response.statusCode == 200) {
+        final List<dynamic> data = response.data['data'];
+        List<Products> products =
+            data.map((e) => Products.fromJson(e)).toList();
+        return products;
+      } else {
+        throw Exception('Ürün araması başarısız oldu.');
+      }
+    } catch (e) {
+      throw Exception('Ürün araması başarısız oldu: $e');
+    }
   }
-
-  @override
-  String get searchFieldLabel => StringConstants.urunAra;
-
-  @override
-  TextInputType get keyboardType => TextInputType.name;
-
-  @override
-  TextInputAction get textInputAction => TextInputAction.search;
 }

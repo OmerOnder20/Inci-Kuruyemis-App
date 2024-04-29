@@ -44,7 +44,15 @@ class _SearchTextFieldState extends State<SearchTextField> {
               onTap: () {
                 showSearch(
                     context: context,
-                    delegate: SearchProductDelegate(_focusNode));
+                    delegate: SearchProductDelegate(
+                        searchFieldStyle: GoogleFonts.poppins(
+                            color: ColorUtility.blackColor,
+                            fontWeight: FontWeight.w400,
+                            textStyle: Theme.of(context).textTheme.titleMedium),
+                        textInputAction: TextInputAction.search,
+                        keyboardType: TextInputType.name,
+                        focusNode: _focusNode,
+                        searchFieldLabel: StringConstants.urunAra));
               },
               controller: widget.controller,
               keyboardType: TextInputType.none,

@@ -63,12 +63,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const InitView(),
       );
     },
-    KampanyaDetayRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const KampanyaDetayView(),
-      );
-    },
     KampanyaRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -250,20 +244,6 @@ class InitRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'InitRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [KampanyaDetayView]
-class KampanyaDetayRoute extends PageRouteInfo<void> {
-  const KampanyaDetayRoute({List<PageRouteInfo>? children})
-      : super(
-          KampanyaDetayRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'KampanyaDetayRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

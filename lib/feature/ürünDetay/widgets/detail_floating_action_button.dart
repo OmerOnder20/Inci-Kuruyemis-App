@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:provider/provider.dart';
 import '../../../product/controller/cart_controller.dart';
 import '../../../product/models/ürün_model.dart';
@@ -46,7 +47,7 @@ class _DetailFloatingActionButtonState
               duration: Duration(seconds: 3),
               behavior: SnackBarBehavior.fixed,
               content: TitleMedium1(text: StringConstants.urunEklendi)));
-          context.router.pop();
+          context.router.push(const AnaSayfaRoute());
         },
         label: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

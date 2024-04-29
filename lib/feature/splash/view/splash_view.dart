@@ -4,7 +4,6 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/asset_constants.dart';
-
 import '../../../product/navigator/app_router.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 import '../widgets/splash_app_bar.dart';
@@ -18,6 +17,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  bool isLoggedIn = false;
   @override
   void initState() {
     super.initState();

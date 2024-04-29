@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
@@ -101,6 +103,17 @@ class Products extends Equatable {
     }
     return data;
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! Products) return false;
+
+    return other.id == id && other.variationIndex == variationIndex;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ variationIndex.hashCode;
 
   @override
   List<Object?> get props =>

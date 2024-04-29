@@ -29,7 +29,6 @@ class WidgetSizes {
   static double basketFloatingActionButtonWidth = 210.w;
   static double detailFloatingActionButtonHeight = 56.h;
   static double detailFloatingActionButtonWidth = 150.w;
-  static double campaignCardHeight = 320.h;
   static double campaignCardImageHeight = 230.h;
   static double campaignCardTextButtonHeight = 40.h;
   static double campaignDetailCardWidth = 325.w;

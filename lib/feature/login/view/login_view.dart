@@ -39,7 +39,7 @@ class _HaveAccViewState extends LoginViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: "Hesap",
+        title: StringConstants.hesap,
         leading: PopButton(),
       ),
       body: Padding(

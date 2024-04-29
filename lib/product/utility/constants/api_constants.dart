@@ -13,4 +13,6 @@ class ApiConstants {
   static const String illuminationText = "illumination-text";
   static const String user = "user";
   static const String session = "session";
+  static const String campaigns = "campaigns";
+  static const String searchQuery = "search?query=";
 }

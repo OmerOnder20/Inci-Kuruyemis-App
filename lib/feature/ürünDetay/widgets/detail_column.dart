@@ -30,23 +30,20 @@ class DetailColumn extends StatelessWidget {
           child: PageView.builder(
             controller: controller,
             scrollDirection: Axis.horizontal,
-            itemCount: products.images?.length ?? 0,
+            itemCount: 3,
             itemBuilder: (context, index) {
               return CircleAvatar(
                 child: SvgPicture.network(products.images?[index].path ?? ""),
                 radius: 40.r,
                 backgroundColor: ColorUtility.scaffoldBackGroundColor,
               );
-              //Buraya SizedBox koyacaksın sonra da childına servisten gelen resimli dataları direkt
-              //Image.network() şeklinde yükleyeceksin.Bunu yaparken fit:BoxFit.cover vermeyi unutma
-              //Buradaki itemCount sayısı ile PageIndicator count sayısı eşit olmak zorunda.
             },
           ),
         ),
       ),
       SpacerUtility.mediumX,
       DetailIndicator(
-        count: products.images?.length ?? 0,
+        count: 3,
         controller: controller,
       ),
       SpacerUtility.mediumX,

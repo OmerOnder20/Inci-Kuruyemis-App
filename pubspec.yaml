@@ -45,7 +45,13 @@ dependencies:
   dio: ^5.4.1
 
   #Cache Manager
+  shared_preferences: ^2.2.2
   cached_network_image: ^3.3.0
+
+  #Cookie Manager
+  dio_cookie_manager: ^3.1.1
+  cookie_jar: ^4.0.8
+  path_provider: ^2.1.2
 
   equatable: ^2.0.5
 

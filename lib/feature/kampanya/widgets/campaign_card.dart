@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_large_2.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
@@ -10,15 +8,20 @@ import '../../../product/utility/sizes/widget_size.dart';
 import '../../../product/widgets/text/label/label_medium_1.dart';
 
 class CampaignCard extends StatelessWidget {
+  final String kampanyaName;
+  final String kampanyaSummary;
+  final String kampanyaUrl;
   const CampaignCard({
     super.key,
+    required this.kampanyaName,
+    required this.kampanyaSummary,
+    required this.kampanyaUrl,
   });
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-          height: WidgetSizes.campaignCardHeight,
           width: double.infinity,
           child: Card(
             elevation: 1,
@@ -38,17 +41,16 @@ class CampaignCard extends StatelessWidget {
                 children: [
                   Container(
                     height: WidgetSizes.campaignCardImageHeight,
-                    decoration: const BoxDecoration(
-                        borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20)),
+                    decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(20)),
                         image: DecorationImage(
-                            image:
-                                AssetImage("assets/randomImage/delivery.jpg"),
+                            image: NetworkImage(kampanyaUrl),
                             fit: BoxFit.cover)),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 10.w, top: 5),
-                    child: const TitleLarge2(text: "Kargo Bedava Kampanyası"),
+                    child: TitleLarge2(text: kampanyaName),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 5.h, left: 5.w),
@@ -56,31 +58,22 @@ class CampaignCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Flexible(
-                            child: LabelMedium1(
-                                text:
-                                    "300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme mevcuttur"),
+                          Flexible(
+                            child: LabelMedium1(text: kampanyaSummary),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: 5.h, right: 5.w),
-                            child: InkWell(
-                              highlightColor: ColorUtility.whiteColor,
-                              focusColor: ColorUtility.whiteColor,
-                              splashColor: ColorUtility.whiteColor,
-                              onTap: () {
-                                context.router.push(const KampanyaDetayRoute());
-                              },
-                              child: Container(
-                                height: SizeUtility.mediumXX.h,
-                                width: SizeUtility.mediumXX.w,
-                                decoration: const BoxDecoration(
-                                    color: ColorUtility.yellowColor,
-                                    shape: BoxShape.circle),
-                                child: Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: ColorUtility.whiteColor,
-                                  size: SizeUtility.mediumxX,
-                                ),
+                            padding: EdgeInsets.only(
+                                top: 5.h, right: 5.w, bottom: 10.h),
+                            child: Container(
+                              height: SizeUtility.mediumXX.h,
+                              width: SizeUtility.mediumXX.w,
+                              decoration: const BoxDecoration(
+                                  color: ColorUtility.yellowColor,
+                                  shape: BoxShape.circle),
+                              child: Icon(
+                                Icons.chevron_right_rounded,
+                                color: ColorUtility.whiteColor,
+                                size: SizeUtility.mediumxX,
                               ),
                             ),
                           ),
@@ -91,5 +84,3 @@ class CampaignCard extends StatelessWidget {
     );
   }
 }
-
-                          // "300.00 ₺ üzeri alışveriş yapan müşterilerimize kargo ücretsiz ve kapıda ödeme şeklimiz"

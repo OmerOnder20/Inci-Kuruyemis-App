@@ -72,23 +72,6 @@ class _ProfilDetayViewState extends State<ProfilDetayView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  /*
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.warning_rounded,
-                        color: ColorUtility.textColorBlack,
-                        size: SizeUtility.mediumxX.h,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10.w),
-                        child: const BodyLarge1(
-                          text: StringConstants.eksiksizDoldurunuz,
-                        ),
-                      )
-                    ],
-                  ),
-                  */
                   CustomTextFormField(
                     controller: _nameController,
                     labelText: StringConstants.adiniz,

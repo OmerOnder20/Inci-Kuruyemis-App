@@ -80,6 +80,10 @@ class StringConstants {
   static const String girisYap = "Giriş Yap";
   static const String sifre = "Şifre";
   static const String hesabimVar = "Hesabım var";
+  static const String hesap = "Hesap";
   static const String yanlisGirdiniz = "Bilgileri yanliş girdiniz!";
   static const String tekrarDene = "Tekrar dene";
+  static const String sepetBos = "Sepet Boş!";
+  static const String alisverisBasla = "Alışverişe Başla";
+  static const String urunBulunamadi = "Ürün bulunamadı.";
 }
