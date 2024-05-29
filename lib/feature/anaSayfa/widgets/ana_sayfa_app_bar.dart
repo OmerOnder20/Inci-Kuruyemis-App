@@ -16,6 +16,7 @@ class AnaSayfaAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 2,
+      automaticallyImplyLeading: false,
       centerTitle: true,
       backgroundColor: ColorUtility.yellowColor,
       actions: const [NotificationStack()],

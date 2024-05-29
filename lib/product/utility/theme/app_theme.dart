@@ -7,6 +7,9 @@ class InciAppTheme {
   final ThemeData inciAppTheme = ThemeData(
       scaffoldBackgroundColor: ColorUtility.scaffoldBackGroundColor,
       appBarTheme: InciAppBarTheme().inciAppBarTheme,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       colorScheme: ColorScheme.fromSwatch().copyWith(
         secondary: Colors.transparent,
       ));

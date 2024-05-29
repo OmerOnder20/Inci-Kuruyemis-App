@@ -26,14 +26,15 @@ abstract class LoginViewModel extends State<HaveAccView> {
 
   void loginSendDatas(String username, String password) async {
     try {
+      Directory appDocDir = await getApplicationDocumentsDirectory();
+      String appDocPath = appDocDir.path;
+      var cookieJar = PersistCookieJar(
+        ignoreExpires: true,
+        storage: FileStorage(appDocPath + "/.cookies/"),
+      );
+      _authService.dio.interceptors.add(CookieManager(cookieJar));
       final response = await _authService.loginPost(username, password);
       if (response?.status == 200) {
-        Directory appDocDir = await getApplicationDocumentsDirectory();
-        String appDocPath = appDocDir.path;
-        var cookieJar = PersistCookieJar(
-          storage: FileStorage(appDocPath + "/.cookies/"),
-        );
-        _authService.dio.interceptors.add(CookieManager(cookieJar));
         List<Cookie> cookies = await (_authService.dio.interceptors
                     .firstWhere((element) => element is CookieManager)
                 as CookieManager)
