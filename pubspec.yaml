@@ -29,6 +29,9 @@ dependencies:
   #Page Indicator
   smooth_page_indicator: ^1.1.0
 
+  #Loading
+  shimmer: ^3.0.0
+
   #Splash
   flutter_native_splash: ^2.3.1
 

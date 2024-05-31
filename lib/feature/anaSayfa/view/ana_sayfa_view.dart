@@ -1,15 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:inci_kuruyemis/feature/anaSayfa/viewModel/ana_sayfa_provider.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/ana_sayfa_app_bar.dart';
-import 'package:inci_kuruyemis/feature/anaSayfa/widgets/category_card.dart';
+import 'package:inci_kuruyemis/feature/anaSayfa/widgets/category_grid_view_builder.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/page_stack.dart';
 import 'package:inci_kuruyemis/product/controller/internet_controller.dart';
 import 'package:provider/provider.dart';
-
-import '../../../product/navigator/app_router.dart';
-import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/spacer/spacer_utility.dart';
 
 @RoutePage()
@@ -48,50 +43,9 @@ class _AnaSayfaViewState extends State<AnaSayfaView> {
             children: [
               SpacerUtility.mediumXXX,
               PageStack(controller: _controller),
-              context.watch<AnaSayfaProvider>().isLoading
-                  ? const CircularProgressIndicator()
-                  : const _CategoryGridViewBuilder(),
+              const CategoryGridViewBuilder(),
             ]),
       ),
-    );
-  }
-}
-
-class _CategoryGridViewBuilder extends StatelessWidget {
-  const _CategoryGridViewBuilder();
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<AnaSayfaProvider>(
-      builder: (context, provider, child) {
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-          child: GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: provider.kategoriItems?.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 10.h,
-                crossAxisSpacing: 10.w,
-                childAspectRatio: 0.87),
-            itemBuilder: (context, index) {
-              return InkWell(
-                highlightColor: ColorUtility.scaffoldBackGroundColor,
-                onTap: () {
-                  context.router.push(KategoriRoute(
-                      categoryId: provider.kategoriItems?[index].id ?? 0,
-                      categoryName: provider.kategoriItems?[index].name ?? ""));
-                },
-                child: CategoryCard(
-                  categoryname: provider.kategoriItems?[index].name ?? "",
-                  imagePath: provider.kategoriItems?[index].image?.path ?? "",
-                ),
-              );
-            },
-          ),
-        );
-      },
     );
   }
 }

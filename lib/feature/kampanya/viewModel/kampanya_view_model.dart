@@ -6,7 +6,7 @@ import '../../../product/service/kampanya_service.dart';
 class KampanyaProvider extends ChangeNotifier {
   final IKampanyaService _kampanyaService;
   bool isLoading = false;
-  List<Data?> kampanyaItems = [];
+  List<Data?>? kampanyaItems = [];
 
   KampanyaProvider(this._kampanyaService) {
     getKampanyaDatas();

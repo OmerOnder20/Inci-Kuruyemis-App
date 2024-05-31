@@ -1,8 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/sizes/sizes.dart';
 import '../../../product/widgets/text/label/label_small_2.dart';
@@ -36,13 +33,11 @@ class ProductCard extends StatelessWidget {
                 padding: EdgeInsets.only(top: 25.h),
                 child: Align(
                   alignment: Alignment.center,
-                  child: CachedNetworkImage(
-                    fit: BoxFit.cover,
-                    imageUrl: imageUrl.toString(),
-                    imageBuilder: (context, imageProvider) => CircleAvatar(
-                      radius: 50.h,
-                      backgroundColor: ColorUtility.whiteColor,
-                      backgroundImage: imageProvider,
+                  child: CircleAvatar(
+                    radius: 50.h,
+                    backgroundColor: Colors.grey.shade300,
+                    backgroundImage: NetworkImage(
+                      imageUrl ?? "",
                     ),
                   ),
                 ),

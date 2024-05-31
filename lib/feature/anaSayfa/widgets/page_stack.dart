@@ -15,6 +15,18 @@ class PageStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //BURAYA YUKLENIRKEN SHIMMER AYARLANACAK.
+    // if (isLoading == true) {
+    //   return   Shimmer.fromColors(
+    //             baseColor: Colors.grey.shade300,
+    //             highlightColor: Colors.grey.shade100,
+    //             child: Container(
+    //               height: WidgetSizes.anaSayfaPageViewBuilderHeight,
+    //               width: double.infinity,
+    //               color: Colors.grey.shade300,
+    //             ),
+    //           ),
+    // }
     return Stack(alignment: Alignment.bottomLeft, children: [
       SizedBox(
         height: WidgetSizes.anaSayfaPageViewBuilderHeight,
