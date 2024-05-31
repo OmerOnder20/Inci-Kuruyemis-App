@@ -22,12 +22,13 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     nagigateToInit();
-    FlutterNativeSplash.remove();
+    //DAHA ONCEDEN GIRIS YAPMIS KULLANICIYI DA SPLASHDE YUKLE
   }
 
   void nagigateToInit() async {
     await Future.delayed(const Duration(seconds: 2));
     context.router.replace(const InitRoute());
+    FlutterNativeSplash.remove();
   }
 
   @override

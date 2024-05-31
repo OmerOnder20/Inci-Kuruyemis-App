@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/kategori/widgets/product_card.dart';
 import 'package:inci_kuruyemis/feature/kategori/widgets/category_app_bar.dart';
 import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
-
 import '../../ürünDetay/view/ürün_detay_view.dart';
 import '../viewModel/kategori_view_model.dart';
 

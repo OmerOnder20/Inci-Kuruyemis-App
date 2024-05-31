@@ -9,7 +9,7 @@ class KampanyaProvider extends ChangeNotifier {
   List<Data?> kampanyaItems = [];
 
   KampanyaProvider(this._kampanyaService) {
-    _fetchKampanyaDatas();
+    getKampanyaDatas();
   }
 
   void _changeLoading() {
@@ -17,7 +17,7 @@ class KampanyaProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> _fetchKampanyaDatas() async {
+  Future<void> getKampanyaDatas() async {
     _changeLoading();
     kampanyaItems = (await _kampanyaService.fetchKampanyaDatas())?.data ?? [];
     _changeLoading();

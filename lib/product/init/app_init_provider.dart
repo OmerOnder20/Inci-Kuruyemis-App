@@ -3,6 +3,7 @@ import 'package:inci_kuruyemis/feature/odemeSe%C3%A7enekleri/viewModel/%C3%B6dem
 import 'package:inci_kuruyemis/feature/anaSayfa/viewModel/ana_sayfa_provider.dart';
 import 'package:inci_kuruyemis/feature/kargoTeslimat/viewModel/kargo_teslimat_provider.dart';
 import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
+import 'package:inci_kuruyemis/product/controller/internet_controller.dart';
 import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/service/d%C3%B6k%C3%BCman_service.dart';
 import 'package:inci_kuruyemis/product/service/kampanya_service.dart';
@@ -30,6 +31,9 @@ class AppInitProvider {
     ),
     ChangeNotifierProvider<UserController>(
       create: (context) => UserController(),
+    ),
+    ChangeNotifierProvider<InternetController>(
+      create: (context) => InternetController(),
     )
   ];
 }

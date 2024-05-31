@@ -86,4 +86,7 @@ class StringConstants {
   static const String sepetBos = "Sepet Boş!";
   static const String alisverisBasla = "Alışverişe Başla";
   static const String urunBulunamadi = "Ürün bulunamadı.";
+  static const String baglantiYok = "İNTERNET BAĞLANTISI YOK!";
+  static const String baglantiKontrol =
+      "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN";
 }

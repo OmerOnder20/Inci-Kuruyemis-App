@@ -5,6 +5,7 @@ import 'package:inci_kuruyemis/feature/anaSayfa/viewModel/ana_sayfa_provider.dar
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/ana_sayfa_app_bar.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/category_card.dart';
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/page_stack.dart';
+import 'package:inci_kuruyemis/product/controller/internet_controller.dart';
 import 'package:provider/provider.dart';
 
 import '../../../product/navigator/app_router.dart';
@@ -21,6 +22,14 @@ class AnaSayfaView extends StatefulWidget {
 
 class _AnaSayfaViewState extends State<AnaSayfaView> {
   final PageController _controller = PageController();
+
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() =>
+        Provider.of<InternetController>(context, listen: false)
+            .getConnectivity(context));
+  }
 
   @override
   void dispose() {

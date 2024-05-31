@@ -53,6 +53,10 @@ dependencies:
   cookie_jar: ^4.0.8
   path_provider: ^2.1.2
 
+  #Internet Connection Checker
+  internet_connection_checker: ^1.0.0+1
+  connectivity_plus: ^6.0.3
+
   equatable: ^2.0.5
 
 dev_dependencies:
