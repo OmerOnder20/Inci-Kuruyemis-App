@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/asset_constants.dart';
 import '../../../product/utility/constants/string_constants.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 import '../../../product/widgets/appBar/custom_app_bar.dart';
 import '../../../product/widgets/text/title/title_medium_1.dart';

@@ -4,9 +4,9 @@ import 'package:inci_kuruyemis/feature/kampanya/viewModel/kampanya_view_model.da
 import 'package:inci_kuruyemis/feature/kampanya/widgets/campaign_card.dart';
 import 'package:inci_kuruyemis/feature/kampanyaDetay/view/kampanya_detay_view.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
-import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/core/size/sizes.dart';
 import 'package:inci_kuruyemis/product/utility/sizes/widget_size.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 

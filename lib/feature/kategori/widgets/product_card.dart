@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../product/utility/colors/color_utility.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../../product/widgets/text/label/label_small_2.dart';
 
 class ProductCard extends StatelessWidget {

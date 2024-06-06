@@ -10,7 +10,7 @@ import '../../../product/navigator/app_router.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
 import '../../../product/utility/sizes/widget_size.dart';
-import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../core/spacer/spacer_utility.dart';
 import '../../../product/widgets/textFormField/custom_text_form_field.dart';
 import '../../../product/widgets/text/headline/headline_small_2.dart';
 

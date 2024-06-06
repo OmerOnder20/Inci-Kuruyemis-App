@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/models/d%C3%B6k%C3%BCman_model.dart';
 import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 
@@ -13,7 +14,7 @@ abstract class IDokumanService {
 
 class DokumanService extends IDokumanService {
   final Dio _dio;
-  DokumanService() : _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  DokumanService() : _dio = NetworkManger.instance.dio;
 
   Future<DokumanModel?> fetchOdemeDatas() async {
     try {

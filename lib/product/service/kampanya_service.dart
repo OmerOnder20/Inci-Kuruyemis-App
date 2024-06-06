@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:dio/dio.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/models/kampanya_model.dart';
 import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 
@@ -10,7 +10,7 @@ abstract class IKampanyaService {
 
 class KampanyaService extends IKampanyaService {
   final Dio _dio;
-  KampanyaService() : _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  KampanyaService() : _dio = NetworkManger.instance.dio;
 
   @override
   Future<KampanyaModel?> fetchKampanyaDatas() async {

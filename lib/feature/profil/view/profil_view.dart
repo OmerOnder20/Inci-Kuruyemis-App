@@ -6,10 +6,10 @@ import 'package:inci_kuruyemis/feature/profil/widgets/profile_elevated_button.da
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/core/size/sizes.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/text/body/body_large_2.dart';
-import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../core/spacer/spacer_utility.dart';
 import '../../../product/widgets/textFormField/custom_text_form_field.dart';
 import '../../../product/widgets/text/body/body_large_1.dart';
 import '../../../product/widgets/text/headline/headline_small_1.dart';

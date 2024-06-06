@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
 

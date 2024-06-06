@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/widgets/detail_column.dart';
 import 'package:inci_kuruyemis/feature/%C3%BCr%C3%BCnDetay/widgets/detail_info_row.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/divider/divider_large.dart';
 import '../../../product/models/ürün_model.dart';

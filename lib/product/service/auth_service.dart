@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/models/login_response_model.dart';
 import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 
@@ -9,7 +10,7 @@ abstract class IAuthService {
 class AuthService extends IAuthService {
   late final Dio dio;
 
-  AuthService() : dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  AuthService() : dio = NetworkManger.instance.dio;
 
   Future<LoginResponseModel?> loginPost(
       String username, String password) async {

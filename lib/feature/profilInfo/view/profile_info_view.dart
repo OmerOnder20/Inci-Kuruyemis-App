@@ -15,7 +15,7 @@ import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/asset_constants.dart';
 import '../../../product/utility/constants/string_constants.dart';
 import '../../../product/utility/sizes/widget_size.dart';
-import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../core/spacer/spacer_utility.dart';
 import '../../../product/widgets/item/profile_info_item.dart';
 import '../../../product/widgets/text/title/title_small_1.dart';
 

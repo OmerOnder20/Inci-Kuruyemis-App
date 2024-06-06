@@ -6,7 +6,7 @@ import 'package:inci_kuruyemis/feature/anaSayfa/viewModel/ana_sayfa_provider.dar
 import 'package:inci_kuruyemis/feature/kampanya/viewModel/kampanya_view_model.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_medium_1.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:provider/provider.dart';

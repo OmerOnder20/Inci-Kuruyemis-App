@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:inci_kuruyemis/feature/arama/widgets/search_product_delegate.dart';
-import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/core/size/sizes.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';

@@ -7,7 +7,7 @@ import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/core/size/sizes.dart';
 import 'package:provider/provider.dart';
 import 'dart:io' show Platform;
 

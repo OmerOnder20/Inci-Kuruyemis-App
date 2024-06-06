@@ -7,7 +7,7 @@ import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
 import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import '../../../product/utility/colors/color_utility.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 
 class SearchProductDelegate extends SearchDelegate {
   final FocusNode focusNode;

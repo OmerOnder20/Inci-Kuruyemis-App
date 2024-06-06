@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utility/colors/color_utility.dart';
-import '../../utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../utility/sizes/widget_size.dart';
 import '../text/label/label_large_2.dart';
 

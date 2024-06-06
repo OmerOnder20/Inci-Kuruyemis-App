@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
 import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/button/gramaj_button.dart';
 import 'package:inci_kuruyemis/product/widgets/divider/divider_huge.dart';
 import 'package:inci_kuruyemis/product/widgets/divider/divider_large.dart';
@@ -14,7 +14,7 @@ import 'package:inci_kuruyemis/product/widgets/text/title/title_large_3.dart';
 import 'package:provider/provider.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 
 class DetailInfoRow extends StatelessWidget {

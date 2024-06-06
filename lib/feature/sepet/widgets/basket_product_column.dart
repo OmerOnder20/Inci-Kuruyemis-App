@@ -12,9 +12,9 @@ import 'package:provider/provider.dart';
 import '../../../product/models/ürün_model.dart';
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/string_constants.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
-import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../core/spacer/spacer_utility.dart';
 import '../../../product/widgets/text/title/title_small_1.dart';
 
 class BasketProductColumn extends StatelessWidget {

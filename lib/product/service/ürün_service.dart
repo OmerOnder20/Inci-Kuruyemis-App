@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
 import 'dart:io';
 
@@ -10,7 +11,7 @@ abstract class IUrunService {
 
 class UrunService extends IUrunService {
   final Dio _dio;
-  UrunService() : _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  UrunService() : _dio = NetworkManger.instance.dio;
 
   Future<UrunModel?> fetchKategoriWithId(int categoryId) async {
     try {

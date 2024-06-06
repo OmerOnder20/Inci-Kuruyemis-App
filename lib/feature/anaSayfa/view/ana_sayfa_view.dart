@@ -5,7 +5,7 @@ import 'package:inci_kuruyemis/feature/anaSayfa/widgets/category_grid_view_build
 import 'package:inci_kuruyemis/feature/anaSayfa/widgets/page_stack.dart';
 import 'package:inci_kuruyemis/product/controller/internet_controller.dart';
 import 'package:provider/provider.dart';
-import '../../../product/utility/spacer/spacer_utility.dart';
+import '../../../core/spacer/spacer_utility.dart';
 
 @RoutePage()
 class AnaSayfaView extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/login/viewModel/login_view_model.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
-import 'package:inci_kuruyemis/product/utility/spacer/spacer_utility.dart';
+import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/button/pop_button.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_small_1.dart';

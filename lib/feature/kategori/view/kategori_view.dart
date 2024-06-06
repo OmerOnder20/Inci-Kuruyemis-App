@@ -5,7 +5,7 @@ import 'package:inci_kuruyemis/feature/kategori/widgets/product_card.dart';
 import 'package:inci_kuruyemis/feature/kategori/widgets/category_app_bar.dart';
 import 'package:inci_kuruyemis/product/models/%C3%BCr%C3%BCn_model.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
-import 'package:inci_kuruyemis/product/utility/sizes/sizes.dart';
+import 'package:inci_kuruyemis/core/size/sizes.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../ürünDetay/view/ürün_detay_view.dart';
 import '../viewModel/kategori_view_model.dart';

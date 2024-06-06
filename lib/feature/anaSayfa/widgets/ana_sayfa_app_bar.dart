@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
 import '../../../product/utility/constants/asset_constants.dart';
-import '../../../product/utility/sizes/sizes.dart';
+import '../../../core/size/sizes.dart';
 import '../../../product/utility/sizes/widget_size.dart';
 
 class AnaSayfaAppBar extends StatelessWidget implements PreferredSizeWidget {

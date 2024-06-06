@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/models/kategori_model.dart';
 import 'dart:io';
 
@@ -10,7 +11,7 @@ abstract class IKategoriService {
 
 class KategoriService extends IKategoriService {
   final Dio _dio;
-  KategoriService() : _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
+  KategoriService() : _dio = NetworkManger.instance.dio;
 
   Future<KategoriModel?> fetchKategori() async {
     try {
