@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
   final bool obscureText;
+  final Widget? suffixIcon;
 
   const CustomTextFormField({
     Key? key,
@@ -22,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFormatters,
     required this.labelText,
     this.obscureText = false,
+    this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -36,6 +38,7 @@ class CustomTextFormField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         keyboardType: textInputType,
         decoration: InputDecoration(
+          suffixIcon: suffixIcon,
           labelText: labelText,
           labelStyle: GoogleFonts.poppins(
               letterSpacing: 0,

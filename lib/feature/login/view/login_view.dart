@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:inci_kuruyemis/feature/login/viewModel/login_view_model.dart';
+import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/core/spacer/spacer_utility.dart';
 import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
@@ -57,7 +58,14 @@ class _HaveAccViewState extends LoginViewModel {
             ),
             SpacerUtility.medium,
             CustomTextFormField(
-              obscureText: true,
+              suffixIcon: IconButton(
+                icon: Icon(
+                  passwordVisible ? Icons.visibility : Icons.visibility_off,
+                  color: ColorUtility.blackColor,
+                ),
+                onPressed: changePasswordVisibility,
+              ),
+              obscureText: !passwordVisible,
               controller: passwordController,
               textInputType: TextInputType.emailAddress,
               labelText: StringConstants.sifre,
@@ -74,9 +82,12 @@ class _HaveAccViewState extends LoginViewModel {
                 backgroundColor: Colors.amber,
               ),
               onPressed: () {
-                loginSendDatas(
-                    usernameController.text, passwordController.text);
                 _isValidate();
+                if (usernameController.text.isNotEmpty &&
+                    passwordController.text.isNotEmpty) {
+                  loginSendDatas(
+                      usernameController.text, passwordController.text);
+                }
               },
               child: const TitleSmall1(text: StringConstants.girisYap),
             ),

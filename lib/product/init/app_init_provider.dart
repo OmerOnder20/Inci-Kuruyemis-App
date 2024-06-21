@@ -34,6 +34,6 @@ class AppInitProvider {
     ),
     ChangeNotifierProvider<InternetController>(
       create: (context) => InternetController(),
-    )
+    ),
   ];
 }

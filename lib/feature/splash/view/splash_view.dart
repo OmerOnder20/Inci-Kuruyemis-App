@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:inci_kuruyemis/product/service/auth_service.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/asset_constants.dart';
 import '../../../product/navigator/app_router.dart';
@@ -17,18 +18,25 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  bool isLoggedIn = false;
+  late final AuthService _authService;
+
   @override
   void initState() {
     super.initState();
+    _authService = AuthService();
+    deneme();
     nagigateToInit();
-    //DAHA ONCEDEN GIRIS YAPMIS KULLANICIYI DA SPLASHDE YUKLE
   }
 
-  void nagigateToInit() async {
+  Future<void> nagigateToInit() async {
     await Future.delayed(const Duration(seconds: 2));
     context.router.replace(const InitRoute());
     FlutterNativeSplash.remove();
+  }
+
+  Future<void> deneme() async {
+    final response = await _authService.loginCookie();
+    print(response?.data?.email);
   }
 
   @override

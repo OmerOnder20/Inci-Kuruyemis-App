@@ -26,21 +26,6 @@ class _ProfilViewState extends State<ProfilView> {
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _pinputController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey();
-  // late final AuthService _authService;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _authService = AuthService();
-  //   _checkLoginStatus();
-  // }
-
-  // void _checkLoginStatus() async {
-  //   bool isLoggedIn = await _authService.loginCheck();
-  //   if (isLoggedIn) {
-  //     context.router.replace(const AnaSayfaRoute());
-  //   }
-  // }
 
   @override
   void dispose() {

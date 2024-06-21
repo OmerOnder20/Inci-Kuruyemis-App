@@ -5,6 +5,7 @@ import 'package:inci_kuruyemis/product/utility/constants/api_constants.dart';
 
 abstract class IAuthService {
   Future<LoginResponseModel?> loginPost(String username, String password);
+  Future<LoginResponseModel?> loginCookie();
 }
 
 class AuthService extends IAuthService {
@@ -29,5 +30,22 @@ class AuthService extends IAuthService {
       print(error);
       throw error;
     }
+  }
+
+  @override
+  Future<LoginResponseModel?> loginCookie() async {
+    try {
+      final response = await dio.get(
+        "/${ApiConstants.user}/${ApiConstants.session}",
+      );
+      if (response.statusCode == 200) {
+        return LoginResponseModel.fromJson(response.data);
+      } else {
+        throw Exception(response.statusCode);
+      }
+    } catch (error) {
+      print(error);
+    }
+    return null;
   }
 }
