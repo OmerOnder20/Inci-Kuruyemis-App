@@ -1,7 +1,13 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
+import 'package:cookie_jar/cookie_jar.dart';
+import 'package:dio/dio.dart';
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:inci_kuruyemis/core/network/network_manager.dart';
 import 'package:inci_kuruyemis/product/controller/global_controller.dart';
 import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
@@ -9,6 +15,7 @@ import 'package:inci_kuruyemis/product/widgets/appBar/custom_app_bar.dart';
 import 'package:inci_kuruyemis/product/widgets/text/label/label_medium_3.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_large_1.dart';
 import 'package:inci_kuruyemis/product/widgets/text/title/title_medium_1.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../product/utility/colors/color_utility.dart';
@@ -28,9 +35,23 @@ class ProfilInfoView extends StatefulWidget {
 }
 
 class _ProfilInfoViewState extends State<ProfilInfoView> {
+  // Bunlari ilerde ProfilInfoViewModel'e al
+  late final Dio dio;
+
+  Future<void> logOut() async {
+    Directory appDocDir = await getApplicationDocumentsDirectory();
+    String appDocPath = appDocDir.path;
+    var cookieJar = PersistCookieJar(
+      storage: FileStorage(appDocPath + "/.cookies/"),
+    );
+    dio.interceptors.add(CookieManager(cookieJar));
+    cookieJar.deleteAll();
+  }
+
   @override
   void initState() {
     super.initState();
+    dio = NetworkManger.instance.dio;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final globalController =
           Provider.of<GlobalController>(context, listen: false);
@@ -102,7 +123,8 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
                 width: double.infinity,
                 color: ColorUtility.avatarColorGrey,
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.gecmisSiparislerim,
                 // pageRouteInfo: AnaSayfaRoute(),
               ),
@@ -111,31 +133,33 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
               //***Yeni Sayfalar ekledikçe AnaSayfaRoute kısmını doldur.
               //
               //
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.adreslerim,
-                // pageRouteInfo: AnaSayfaRoute(),
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.sikcaSorular,
-                // pageRouteInfo: AnaSayfaRoute(),
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.iletisim,
-                // pageRouteInfo: AnaSayfaRoute(),
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.yardim,
-                // pageRouteInfo: AnaSayfaRoute(),
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
+                onTap: () {},
                 text: StringConstants.hakkinda,
-                // pageRouteInfo: AnaSayfaRoute(),
               ),
-              const ProfilInfoItem(
+              ProfilInfoItem(
                 text: StringConstants.cikisYap,
-                // pageRouteInfo: AnaSayfaRoute(),
+                onTap: () {
+                  logOut();
+                  context.router.replace(const ProfilRoute());
+                },
               ),
-
               Center(
                 child: SvgPicture.asset(
                   AssetConstants.logoSvg,

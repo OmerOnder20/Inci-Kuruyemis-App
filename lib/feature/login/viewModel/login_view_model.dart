@@ -19,18 +19,12 @@ abstract class LoginViewModel extends State<HaveAccView> {
   void initState() {
     super.initState();
     _authService = AuthService();
-    deneme();
   }
 
   void changePasswordVisibility() {
     setState(() {
       passwordVisible = !passwordVisible;
     });
-  }
-
-  Future<void> deneme() async {
-    final response = await _authService.loginCookie();
-    print(response?.data?.email);
   }
 
   Future<void> loginSendDatas(String username, String password) async {

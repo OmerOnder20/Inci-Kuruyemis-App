@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:inci_kuruyemis/product/controller/cart_controller.dart';
+import 'package:inci_kuruyemis/product/controller/user_controller.dart';
 import 'package:inci_kuruyemis/product/navigator/app_router.dart';
+import 'package:inci_kuruyemis/product/service/auth_service.dart';
 import 'package:inci_kuruyemis/product/utility/colors/color_utility.dart';
 import 'package:inci_kuruyemis/product/utility/constants/string_constants.dart';
 import 'package:inci_kuruyemis/core/size/sizes.dart';
@@ -23,17 +25,52 @@ class InitView extends StatefulWidget {
 }
 
 class _InitViewState extends State<InitView> {
+  late final AuthService _authService;
+  bool isAuth = false;
+
+  void changeAuth() {
+    setState(() {
+      isAuth = true;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _authService = AuthService();
+    checkCookie();
+  }
+
+  Future<void> checkCookie() async {
+    final response = await _authService.loginCookie();
+    if (response?.data?.username != null) {
+      print("Cookie Başarılı!");
+      print(response?.data?.username);
+      print(response?.data?.id);
+      print(response?.data?.name);
+      print(response?.data?.surname);
+      print(response?.data?.email);
+      Provider.of<UserController>(context, listen: false).setUserDatas(
+          response?.data?.name ?? "",
+          response?.data?.email ?? "",
+          response?.data?.username ?? "");
+      changeAuth();
+    } else {
+      print("Cookie Başarısız!");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter.tabBar(
       physics: const NeverScrollableScrollPhysics(),
       animatePageTransition: false,
-      routes: const [
-        AnaSayfaRoute(),
-        AramaRoute(),
-        SepetRoute(),
-        KampanyaRoute(),
-        ProfilRoute()
+      routes: [
+        const AnaSayfaRoute(),
+        const AramaRoute(),
+        const SepetRoute(),
+        const KampanyaRoute(),
+        isAuth ? const ProfilInfoRoute() : const ProfilRoute()
       ],
       builder: (context, child, tabController) {
         final tabsRouter = AutoTabsRouter.of(context);

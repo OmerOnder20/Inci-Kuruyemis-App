@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../utility/colors/color_utility.dart';
 import '../../../core/size/sizes.dart';
 import '../../utility/sizes/widget_size.dart';
@@ -9,11 +7,11 @@ import '../text/label/label_large_2.dart';
 
 class ProfilInfoItem extends StatelessWidget {
   final String text;
-  final PageRouteInfo? pageRouteInfo;
+  final void Function()? onTap;
   const ProfilInfoItem({
     super.key,
     required this.text,
-    this.pageRouteInfo,
+    this.onTap,
   });
 
   @override
@@ -25,11 +23,7 @@ class ProfilInfoItem extends StatelessWidget {
           width: double.infinity,
           child: InkWell(
             highlightColor: ColorUtility.whiteColor,
-            onTap: () {
-              if (pageRouteInfo != null) {
-                context.router.push(pageRouteInfo!);
-              }
-            },
+            onTap: onTap,
             child: Padding(
               padding: EdgeInsets.only(left: 24.w),
               child: Row(
