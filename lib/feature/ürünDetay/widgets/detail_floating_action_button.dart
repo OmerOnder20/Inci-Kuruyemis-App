@@ -47,7 +47,10 @@ class _DetailFloatingActionButtonState
               duration: Duration(seconds: 3),
               behavior: SnackBarBehavior.fixed,
               content: TitleMedium1(text: StringConstants.urunEklendi)));
-          context.router.push(const AnaSayfaRoute());
+          context.router.pushAndPopUntil(
+            const AnaSayfaRoute(),
+            predicate: (route) => false,
+          );
         },
         label: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

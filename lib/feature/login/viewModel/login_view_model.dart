@@ -39,7 +39,10 @@ abstract class LoginViewModel extends State<HaveAccView> {
             response?.data?.name ?? "",
             response?.data?.email ?? "",
             response?.data?.username ?? "");
-        context.router.replace(const ProfilInfoRoute());
+        context.router.pushAndPopUntil(
+          const ProfilInfoRoute(),
+          predicate: (route) => false,
+        );
       }
     } catch (e) {
       print("Hata oluştu: $e");
