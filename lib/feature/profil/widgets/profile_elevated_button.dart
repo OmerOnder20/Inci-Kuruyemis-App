@@ -254,6 +254,7 @@ class _ProfileElevatedButtonState extends State<ProfileElevatedButton> {
                                                     .scaffoldBackGroundColor,
                                               ),
                                               onPressed: () {
+                                                // ignore: deprecated_member_use
                                                 context.router.pop();
                                                 widget.controller.clear();
                                               },

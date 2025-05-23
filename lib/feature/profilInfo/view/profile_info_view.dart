@@ -78,6 +78,7 @@ class _ProfilInfoViewState extends State<ProfilInfoView> {
                 ),
                 onPressed: () {
                   globalController.changeCompleted();
+                  // ignore: deprecated_member_use
                   context.router.pop();
                   context.router.navigate(const AnaSayfaRoute());
                 },

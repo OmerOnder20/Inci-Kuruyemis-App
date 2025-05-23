@@ -101,6 +101,7 @@ class ChooseGramajButton extends StatelessWidget {
                               text: products.variations?[0].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 0);
+                                // ignore: deprecated_member_use
                                 context.router.pop();
                                 print(products.variationIndex.toString());
                               },
@@ -115,6 +116,7 @@ class ChooseGramajButton extends StatelessWidget {
                               text: products.variations?[1].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 1);
+                                // ignore: deprecated_member_use
                                 context.router.pop();
                                 print(products.variationIndex.toString());
                               },
@@ -129,6 +131,7 @@ class ChooseGramajButton extends StatelessWidget {
                               text: products.variations?[2].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 2);
+                                // ignore: deprecated_member_use
                                 context.router.pop();
                                 print(products.variationIndex.toString());
                               },
@@ -143,6 +146,7 @@ class ChooseGramajButton extends StatelessWidget {
                               text: products.variations?[3].name ?? "",
                               onPressed: () {
                                 userController.selectVariation(products, 3);
+                                // ignore: deprecated_member_use
                                 context.router.pop();
                                 print(products.variationIndex.toString());
                               },

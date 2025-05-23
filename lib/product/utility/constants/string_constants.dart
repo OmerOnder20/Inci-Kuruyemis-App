@@ -6,6 +6,7 @@ class StringConstants {
 
   static const String appName = "İnci Kuruyemiş";
   static const String anaSayfa = "Ana Sayfa";
+  static const String uygulamadanCikmak = "Uygulamadan çıkmak istiyor musunuz?";
   static const String ara = "Ara";
   static const String sepetim = "Sepetim";
   static const String kampanya = "Kampanyalar";

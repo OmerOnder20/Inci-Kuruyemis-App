@@ -43,6 +43,7 @@ class SearchProductDelegate extends SearchDelegate {
     return IconButton(
         onPressed: () {
           close(context, null);
+          // ignore: deprecated_member_use
           context.router.pop();
           FocusScope.of(context).unfocus();
         },
