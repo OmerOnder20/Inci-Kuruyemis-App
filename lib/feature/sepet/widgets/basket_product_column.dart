@@ -58,7 +58,7 @@ class BasketProductColumn extends StatelessWidget {
                         image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                              "assets/randomImage/real_pizza.jpg",
+                              "",
                             )),
                         color: ColorUtility.avatarColorGrey,
                         borderRadius: BorderRadius.circular(10),

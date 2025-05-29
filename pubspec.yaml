@@ -82,7 +82,6 @@ flutter_icons:
 #Splash
 flutter_native_splash:
   color: "#FFD200"
-  image: assets/randomImage/real_pizza.jpg
   android: true   
   ios: true
   web: false
@@ -97,5 +96,5 @@ flutter:
   assets:
     - assets/svg/
     - assets/png/
-    - assets/randomImage/
+
 
