@@ -21,13 +21,15 @@ class SlideModel {
 class SlideData {
   int? id;
   String? name;
+  int? sortOrder;
   SlideImage? image;
 
-  SlideData({this.id, this.name, this.image});
+  SlideData({this.id, this.name, this.sortOrder, this.image});
 
   SlideData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    sortOrder = json['sort_order'];
     image = json['image'] != null ? SlideImage.fromJson(json['image']) : null;
   }
 }

@@ -22,6 +22,7 @@ class KategoriModel {
 class Data {
   int? id;
   String? name;
+  int? sortOrder;
   Image? image;
 
   Data({this.id, this.name, this.image});
@@ -29,6 +30,7 @@ class Data {
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
+    sortOrder = json['sort_order'];
     image = json['image'] != null ? new Image.fromJson(json['image']) : null;
   }
 }

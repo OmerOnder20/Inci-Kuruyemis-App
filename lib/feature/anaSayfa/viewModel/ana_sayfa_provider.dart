@@ -23,6 +23,8 @@ class AnaSayfaProvider extends ChangeNotifier {
     _changeLoading();
     kategoriItems = (await _kategoriService.fetchKategori())?.data ?? [];
     slideItems = (await _kategoriService.fetchSlide())?.data ?? [];
+    slideItems?.sort((a, b) => (a.sortOrder ?? 0).compareTo(b.sortOrder ?? 0));
+
     _changeLoading();
   }
 }
