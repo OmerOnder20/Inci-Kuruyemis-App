@@ -15,4 +15,5 @@ class ApiConstants {
   static const String session = "session";
   static const String campaigns = "campaigns";
   static const String searchQuery = "search?query=";
+  static const String slides = "slides";
 }
